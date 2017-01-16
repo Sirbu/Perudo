@@ -1,0 +1,2 @@
+INDEX VERSION 1.129+C:\Users\stri\git\Perudo\.metadata\.plugins\org.eclipse.jdt.core
+4066933950.index
