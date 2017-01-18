@@ -1,0 +1,6 @@
+package stri.ProjetJava;
+
+public class Joueur {
+	String Pseudo;
+
+}
