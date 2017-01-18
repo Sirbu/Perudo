@@ -1,0 +1,9 @@
+package stri.ProjetJava;
+
+public interface Client extends java.rmi.Remote {
+	
+	void AfficheAnnonce(Annonce a) throws java.rmi.RemoteException;
+	void FaireAnnonce(String nbreDesJoueurs) throws java.rmi.RemoteException; 
+	
+
+}

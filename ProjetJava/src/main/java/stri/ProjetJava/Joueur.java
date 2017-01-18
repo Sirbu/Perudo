@@ -1,14 +1,37 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package stri.ProjetJava;
 
-/**
- *
- * @author alexis
- */
+import java.util.Vector;
+
 public class Joueur {
     
+	public Joueur(String pseudo) {
+		super();
+		this.pseudo = pseudo;
+		
+		
+	}
+	private String pseudo;
+	private String couleur;
+	private Vector<Integer> des;
+	
+        public String getPseudo() {
+		return pseudo;
+	}
+	
+        public void setPseudo(String pseudo) {
+		pseudo = pseudo;
+	}
+	
+        public String getCouleur() {
+		return couleur;
+	}
+	public void setCouleur(String couleur) {
+		this.couleur = couleur;
+	}
+	public Vector<Integer> getDes() {
+		return des;
+	}
+	public void setDes(Vector<Integer> des) {
+		this.des = des;
+	}
 }

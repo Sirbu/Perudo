@@ -25,7 +25,7 @@ public class ServeurImplem extends UnicastRemoteObject implements Serveur {
     
     public ServeurImplem() throws RemoteException{
         super();
-        derniereAnnonce = new Annonce();
+        // derniereAnnonce = new Annonce("", "", );
     }    
     
     public synchronized boolean rejoindrePartie(String pseudo) throws java.rmi.RemoteException{
@@ -40,6 +40,7 @@ public class ServeurImplem extends UnicastRemoteObject implements Serveur {
     
     public void quitterPartie(String pseudo) throws java.rmi.RemoteException{
         // TODO : Implement !
+        
     }
     
     public Annonce getDerniereAnnonce() throws java.rmi.RemoteException{
