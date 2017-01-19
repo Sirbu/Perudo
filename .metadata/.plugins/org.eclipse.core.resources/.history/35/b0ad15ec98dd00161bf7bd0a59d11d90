@@ -14,7 +14,7 @@ public class Joueur {
 	private String couleur;
 	private Vector<Integer> des;
 	
-    public String getPseudo() {
+        public String getPseudo() {
 		return pseudo;
 	}
 	
@@ -22,7 +22,7 @@ public class Joueur {
         	this.pseudo = pseudo;
 	}
 	
-    public String getCouleur() {
+        public String getCouleur() {
 		return couleur;
 	}
 	public void setCouleur(String couleur) {

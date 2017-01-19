@@ -85,7 +85,7 @@ public class ClientImplem extends UnicastRemoteObject implements Client {
 	}
 
 	public Vector<Integer> retirerDes() throws RemoteException {
-		this.getDes().remove(this.getDes().size());
+		// TODO Auto-generated method stub
 		return null;
 	}
 

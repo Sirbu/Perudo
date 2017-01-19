@@ -73,19 +73,19 @@ public class ClientImplem extends UnicastRemoteObject implements Client {
 		for(int i=1;i<=this.getJoueur().getDes().size();i++ ){
 			
 			Random rand = new Random();
+			
 			this.getJoueur().getDes().add(rand.nextInt(6));
-		
 		}
 		
 	}
 
 	public Vector<Integer> getDes() throws RemoteException {
-		
-		return this.getJoueur().getDes() ;
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	public Vector<Integer> retirerDes() throws RemoteException {
-		this.getDes().remove(this.getDes().size());
+		// TODO Auto-generated method stub
 		return null;
 	}
 
