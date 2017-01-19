@@ -8,6 +8,9 @@ public class Joueur {
 		
 		this.pseudo = pseudo;
 		des = new Vector<Integer>(6);
+		for(int i=0;i<des.size();i++){
+			des.add(i, 0);
+		}
 		
 	}
 	private String pseudo;
