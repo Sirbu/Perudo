@@ -16,27 +16,28 @@ public class Annonce {
     	setJoueur(joueur);
     	
     }
+    
      Annonce(String t,String mess,String joueur){
-    	setType(t);
-    	
-    	
+    	setType(t);    	
     	setMessage(mess);
-    	setJoueur(joueur);
-    	
+    	setJoueur(joueur);	
     }
     
     public void setJoueur(String j) {
-		this.joueur=j;
-	}
+        this.joueur=j;
+    }
+    
     public String getJoueur() {
-		return joueur;
-	}
+        return joueur;
+    }
+    
     public String getType() {
-		return type;
-	}
-	public void setType(String type) {
-		this.type = type;
-	}
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 	public int getNombre() {
 		return nombre;
 	}
