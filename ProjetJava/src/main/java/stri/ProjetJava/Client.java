@@ -8,6 +8,7 @@ public interface Client extends java.rmi.Remote {
 	Annonce FaireAnnonce(String nbreDesJoueurs) throws java.rmi.RemoteException; 
 	void lancerDes() throws java.rmi.RemoteException;
 	Vector<Integer> getDes() throws java.rmi.RemoteException;
-	Vector<Integer> retirerDes() throws java.rmi.RemoteException;
-	Vector<Integer> ajouterDes() throws java.rmi.RemoteException;
+	void retirerDes() throws java.rmi.RemoteException;
+	void ajouterDes() throws java.rmi.RemoteException;
+	Joueur getJoueur() throws java.rmi.RemoteException;
 }

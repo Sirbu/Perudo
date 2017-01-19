@@ -7,20 +7,20 @@ public class Annonce {
 	private int valeur;
 	private String message;
 	
-    Annonce(String t, int nb,int val,String mess,String joueur){
+    Annonce(String type, int nb,int val,String message,String joueur){
     	
-    	setType(t);
+    	setType(type);
     	setNombre(nb);
     	setValeur(val);
-    	setMessage(mess);
+    	setMessage(message);
     	setJoueur(joueur);
     	
     }
-    
-     Annonce(String t,String mess,String joueur){
-    	setType(t);    	
-    	setMessage(mess);
-    	setJoueur(joueur);	
+
+     Annonce(String type,String message,String joueur){
+    	setType(type);
+    	setMessage(message);
+    	setJoueur(joueur);
     }
     
     public void setJoueur(String j) {

@@ -1,7 +1,11 @@
 package stri.ProjetJava;
 
+import java.net.MalformedURLException;
+import java.rmi.Naming;
+import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.Random;
 import java.util.Scanner;
 import java.util.Vector;
 
@@ -9,9 +13,10 @@ public class ClientImplem extends UnicastRemoteObject implements Client {
 	Joueur joueur;
 	 Serveur serveurImplem;
 
-	protected ClientImplem() throws RemoteException {
+	protected ClientImplem(Serveur a) throws RemoteException {
 		super();
 		// TODO Auto-generated constructor stub
+		this.serveurImplem=a;
 	}
 
 	/**
@@ -40,7 +45,6 @@ public class ClientImplem extends UnicastRemoteObject implements Client {
 	}
 
 	public Annonce FaireAnnonce(String nbreDesJoueurs) throws RemoteException {
-		// TODO Auto-generated method stub
 		System.out.println(nbreDesJoueurs);
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Merci de rentrer 1 pour sur encherir ");
@@ -48,43 +52,60 @@ public class ClientImplem extends UnicastRemoteObject implements Client {
 		System.out.println("Merci de rentrer 3 pour tout pile ");
 		String nombre =sc.nextLine();
 	    
+		Annonce a = null;
 		if (nombre=="1"){
-			System.out.println("merci de rentrer le nombre de Dés puis la valeur:");
-		    nombre =sc.nextLine();
-		    int nb=Integer.parseInt(nombre);
-		    nombre =sc.nextLine();
-		    int val=Integer.parseInt(nombre);
-		    Annonce a = new Annonce("encherir",nb,val," ",joueur.getPseudo());
-		    
-		}else if(nombre=="2"){
-			Annonce a = new Annonce("menteur"," ",joueur.getPseudo());
-			
+			int nb=(Integer) null;
+			int val=(Integer) null;
+			Boolean mauvaiseSaisie=true;
+			while(mauvaiseSaisie){
+				System.out.println("merci de rentrer le nombre de Dés puis la valeur:");
+			    nombre =sc.nextLine();
+			    nb=Integer.parseInt(nombre);
+			    nombre =sc.nextLine();
+			    val=Integer.parseInt(nombre);
+			    //verification
+			    if((serveurImplem.getDerniereAnnonce().getNombre()==nb && serveurImplem.getDerniereAnnonce().getValeur()< val)|| 
+			    		serveurImplem.getDerniereAnnonce().getNombre()< nb){
+			    		mauvaiseSaisie=false;
+			    }
+			    a = new Annonce("encherir",nb,val," ",joueur.getPseudo());
+			    return a;
+		   }
+		}else if (nombre == "2"){
+			 a = new Annonce("menteur"," ",joueur.getPseudo());
+			return a;
 		}
 		else{
-			Annonce a = new Annonce("toutpile"," ",joueur.getPseudo());
-			
+			 a = new Annonce("toutpile"," ",joueur.getPseudo());
+			return a;
 		}
-		return null;
+		return a;
 	}
 
 	public void lancerDes() throws RemoteException {
-		// TODO Auto-generated method stub
+		
+		for(int i=0; i< this.getJoueur().getDes().size();i++ ){
+			
+			Random rand = new Random();
+			this.getJoueur().getDes().add(i, rand.nextInt(6));;
+		
+		}
 		
 	}
 
 	public Vector<Integer> getDes() throws RemoteException {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return this.getJoueur().getDes() ;
 	}
 
-	public Vector<Integer> retirerDes() throws RemoteException {
-		// TODO Auto-generated method stub
-		return null;
+	public void retirerDes() throws RemoteException {
+		this.getDes().removeElementAt(0);
+		
 	}
 
-	public Vector<Integer> ajouterDes() throws RemoteException {
-		// TODO Auto-generated method stub
-		return null;
+	public void ajouterDes() throws RemoteException {
+		
+		this.joueur.getDes().addElement(0);;
 	}
 
 	public Joueur getJoueur() {
@@ -101,6 +122,19 @@ public class ClientImplem extends UnicastRemoteObject implements Client {
 
 	public void setServeurImplem(Serveur serveurImplem) {
 		this.serveurImplem = serveurImplem;
+	}
+	
+	public static void main (String[] args) throws RemoteException, MalformedURLException, NotBoundException{
+		
+		
+	
+		Serveur serveurimplem=(Serveur)Naming.lookup("Serveur");
+		Client clientimplem=new ClientImplem(serveurimplem);
+		Boolean rep=serveurimplem.rejoindrePartie("nadjim", "partie");
+		System.out.println("l'appel a renvoyé "+ rep);
+		
+		//clientimplem.FaireAnnonce("voila la chaine passé en param");
+		
 	}
 
 }
