@@ -78,7 +78,7 @@ public class Joueur extends UnicastRemoteObject implements Client {
 			    		serveurImplem.getDerniereAnnonce().getNombre()< nb){
 			    		mauvaiseSaisie=false;
 			    }
-			    a = new Annonce("encherir",nb,val," ",getPseudo());
+			    a = new Annonce("encherir",nb,val,getPseudo());
 			    return a;
 		   }
 		}else if (nombre == "2"){
