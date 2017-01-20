@@ -31,6 +31,7 @@ public class Partie {
     public Partie(String nom){
         this.nom = nom;
         this.status = "WAIT";
+        this.joueurs = new HashMap<String, Client>();
     }
       
     public void enleverJoueur(String pseudo){
@@ -41,7 +42,7 @@ public class Partie {
     public void ajouterJoueur(String pseudo){
         
         try {
-            Client c = (Client)Naming.lookup(pseudo);
+            Client c = (Client)Naming.lookup("rmi://10.0.0.2/" + pseudo);
          
             this.joueurs.put(pseudo, c);
                     
@@ -59,11 +60,11 @@ public class Partie {
         return this.status;
     }
     
-    public Vector<Joueur> getJoueurs(){
-        Vector<Joueur> liste = new Vector<Joueur>();
+    public Vector<Client> getJoueurs(){
+        Vector<Client> liste = new Vector<Client>();
         
-        for(Iterator i = liste.iterator(); i.hasNext();){
-            liste.add((Joueur)i.next());
+        for(Iterator<Client> i = liste.iterator(); i.hasNext();){
+            liste.add((Client)i.next());
         }
         
         return liste;

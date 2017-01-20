@@ -7,7 +7,7 @@ public class Annonce {
 	private int valeur;
 	private String message;
 	
-    Annonce(String type, int nb,int val,String message,String joueur){
+    Annonce(String type, int nb,int val,String joueur){
     	
     	setType(type);
     	setNombre(nb);

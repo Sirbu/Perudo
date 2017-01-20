@@ -11,12 +11,16 @@ import java.util.Vector;
 
 public class ClientImplem extends UnicastRemoteObject implements Client {
 	Joueur joueur;
-	 Serveur serveurImplem;
+	Serveur serveurImplem;
 
 	protected ClientImplem(Serveur a) throws RemoteException {
 		super();
 		// TODO Auto-generated constructor stub
 		this.serveurImplem=a;
+	}
+	
+	protected ClientImplem() throws RemoteException {
+		super();
 	}
 
 	/**
@@ -68,7 +72,7 @@ public class ClientImplem extends UnicastRemoteObject implements Client {
 			    		serveurImplem.getDerniereAnnonce().getNombre()< nb){
 			    		mauvaiseSaisie=false;
 			    }
-			    a = new Annonce("encherir",nb,val," ",joueur.getPseudo());
+			    a = new Annonce("encherir",nb,val,joueur.getPseudo());
 			    return a;
 		   }
 		}else if (nombre == "2"){
@@ -128,7 +132,8 @@ public class ClientImplem extends UnicastRemoteObject implements Client {
 		
 		
 	
-		Serveur serveurimplem=(Serveur)Naming.lookup("Serveur");
+		Serveur serveurimplem = new ServeurImplem();
+		serveurimplem = (Serveur)Naming.lookup("Serveur");
 		Client clientimplem=new ClientImplem(serveurimplem);
 		Boolean rep=serveurimplem.rejoindrePartie("nadjim", "partie");
 		System.out.println("l'appel a renvoyé "+ rep);
