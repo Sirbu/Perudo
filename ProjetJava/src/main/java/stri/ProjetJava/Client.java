@@ -10,5 +10,4 @@ public interface Client extends java.rmi.Remote {
 	Vector<Integer> getDes() throws java.rmi.RemoteException;
 	void retirerDes() throws java.rmi.RemoteException;
 	void ajouterDes() throws java.rmi.RemoteException;
-	Joueur getJoueur() throws java.rmi.RemoteException;
 }

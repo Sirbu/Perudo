@@ -1,7 +1,7 @@
 package stri.ProjetJava;
 
 public class Annonce {
-	private String joueur;
+	private String pseudo;
 	private String type;
 	private int nombre;
 	private int valeur;
@@ -13,22 +13,22 @@ public class Annonce {
     	setNombre(nb);
     	setValeur(val);
     	setMessage(message);
-    	setJoueur(joueur);
+    	setPseudo(joueur);
     	
     }
 
      Annonce(String type,String message,String joueur){
     	setType(type);
     	setMessage(message);
-    	setJoueur(joueur);
+    	setPseudo(joueur);
     }
     
-    public void setJoueur(String j) {
-        this.joueur=j;
+    public void setPseudo(String pseudo) {
+        this.pseudo=pseudo;
     }
     
-    public String getJoueur() {
-        return joueur;
+    public String getPseudo() {
+        return pseudo;
     }
     
     public String getType() {
