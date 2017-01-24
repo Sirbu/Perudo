@@ -20,7 +20,8 @@ public class Joueur extends UnicastRemoteObject implements Client {
 	private String pseudo;
 	private String couleur;
 	private Vector<Integer> des;
-	 Serveur serveurImplem;
+	private Serveur serveurImplem;
+	private String partie; 
 
 	 protected Joueur(Serveur serveurimplem) throws RemoteException {
 		super();
@@ -37,28 +38,33 @@ public class Joueur extends UnicastRemoteObject implements Client {
 
 
 	public void AfficheAnnonce(Annonce a) throws RemoteException {
-			
-		if(a.getType() == "menteur"){
+					
+		if(a.getType().contentEquals("menteur")){
 			System.out.println(a.getPseudo() +" accuse " +serveurImplem.getDerniereAnnonce("perudo").getPseudo() + " de menteur !!");
 			
 		}
 		
 		//tout pile
-		if(a.getType() == "toutpile"){
+		if(a.getType().contentEquals("toutpile")){
 			System.out.println(a.getPseudo() +" à decalré un tout pile !! ");
 
 		} 
 		//sur enchere
-		if(a.getType() == "encherir"){
+		if(a.getType().contentEquals("surencherir")){
 			System.out.println(a.getPseudo()+"à Annoncer " + a.getNombre()+" Dés de "+a.getValeur());
 		}
-		if(a.getType() == "info"){
+		if(a.getType().contentEquals("info")){
 			System.out.println("infoooooooo");
 		}
 	}
 
-	public Annonce FaireAnnonce(String nbreDesJoueurs) throws RemoteException {
-		System.out.println(nbreDesJoueurs);
+	public Annonce FaireAnnonce() throws RemoteException {
+		Vector<Client> player =this.serveurImplem.getJoueursConnectes(this.partie);
+		for(int i=1;i<=player.size();i++){
+			System.out.println("le joueur "+ player.elementAt(i).getPseudo() + " a "
+			+player.elementAt(i).getDes().size() +" Dés");
+		}
+		
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Merci de rentrer 1 pour sur encherir ");
 		System.out.println("Merci de rentrer 2 pour menteur ");
@@ -144,7 +150,17 @@ public class Joueur extends UnicastRemoteObject implements Client {
 		this.serveurImplem = serveurImplem;
 	}
 	
-	public static void main (String[] args) throws RemoteException, MalformedURLException, NotBoundException{
+	public String getPartie() {
+		return partie;
+	}
+
+
+
+	public void setPartie(String partie) {
+		this.partie = partie;
+	}
+	
+	public static void main (String[] args) throws RemoteException, MalformedURLException, NotBoundException, InterruptedException{
 		
 		LocateRegistry.createRegistry(1099);
 		
@@ -153,10 +169,12 @@ public class Joueur extends UnicastRemoteObject implements Client {
 		
 		//Naming.rebind("rmi://10.0.0.2/nadjim",clientimplem);
 		clientimplem.setPseudo("nadjim");
+		Thread.sleep(5000);
 		Boolean rep=serveurimplem.rejoindrePartie(clientimplem, "Perudo");
 		System.out.println("l'appel a renvoyé "+ rep);
 	
 		//clientimplem.FaireAnnonce("voila la chaine passé en param");
 		
 	}
+
 }
