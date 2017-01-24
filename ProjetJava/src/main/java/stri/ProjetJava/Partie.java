@@ -5,6 +5,8 @@
  */
 package stri.ProjetJava;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;
@@ -15,23 +17,26 @@ import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javax.swing.Timer;
+
 /**
  *
  * @author alexis
  */
-public class Partie {
+public class Partie implements ActionListener {
     
     private String nom;
     private int nbrJoueursMax = 6;              // Pourra être modifié à l'occaz
     private String status;                      // WAIT || STARTED || FINISHED
-    private Annonce derniereAnnonce;            // la derniereAnnonce émise par un joueur
-    private HashMap<String, Client> joueurs;    // Contient les joueurs
+    private Annonce derniereAnnonce;           // la derniereAnnonce émise par un joueur
+    private Vector<Client> joueurs;    			// Contient les joueurs
+    private Timer timer;
     
     
     public Partie(String nom){
         this.nom = nom;
         this.status = "WAIT";
-        this.joueurs = new HashMap<String, Client>();
+        this.joueurs = new Vector<Client>();
     }
       
     public void enleverJoueur(String pseudo){
@@ -39,20 +44,49 @@ public class Partie {
     }
     
     // TODO : change Joueurs with rmi Clients
-    public void ajouterJoueur(String pseudo){
+    public boolean ajouterJoueur(Client c){
         
-        try {
-            Client c = (Client)Naming.lookup("rmi://10.0.0.2/" + pseudo);
-         
-            this.joueurs.put(pseudo, c);
-                    
-        } catch (NotBoundException ex) {
-            Logger.getLogger(Partie.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (MalformedURLException ex) {
-            Logger.getLogger(Partie.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (RemoteException ex) {
-            Logger.getLogger(Partie.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        if(this.joueurs.size() == nbrJoueursMax){
+			return false;
+		}
+		this.joueurs.add(c);
+		
+		if(this.joueurs.size() == 1){
+		    this.timer = new Timer(120000, this);
+		    this.timer.setInitialDelay(120000);
+		    this.timer.start();
+		}
+        
+        return true;
+    }
+    
+    // Retourne le nombre de dés totaux de la valeur donnée.
+    public int compterDes(int valeur){
+    	int cpt = 0;
+    	Vector<Integer> des = new Vector<Integer>();
+    	
+    	for(Iterator<Client> i = this.getListeJoueurs().iterator(); i.hasNext();){
+    		// Pour chaque client on récupére ses dés...
+    		try {
+				des = i.next().getDes();
+			} catch (RemoteException e) {
+				// TODO: Il faudra gérer les dconnexion brutales
+				e.printStackTrace();
+			}
+    		
+    		// ... et on compte le nombre de fois qu'apparait la valeur
+    		// mais aussi le chiffre 1 (valeur du perudo)
+    		for(int j = 0; j < des.size(); j++){
+    			if((des.get(j) == valeur) || des.get(j) == 1){
+    				cpt++;
+    			}
+    		}
+    	}
+    	return cpt;
+    }
+    
+    public void lancerPartie(){
+    	// TODO do it !
     }
     
     // getters & setters
@@ -60,13 +94,32 @@ public class Partie {
         return this.status;
     }
     
-    public Vector<Client> getJoueurs(){
-        Vector<Client> liste = new Vector<Client>();
-        
-        for(Iterator<Client> i = liste.iterator(); i.hasNext();){
-            liste.add((Client)i.next());
-        }
-        
-        return liste;
+    public String getNom(){
+    	return this.nom;
     }
+    
+    public Client getJoueurByPseudo(String pseudo) throws RemoteException{
+    	int i = 0;
+    	for(i = 0; i < this.joueurs.size(); i++){
+    		if(this.joueurs.get(i).getPseudo() == pseudo){
+    			break;
+    		}
+    	}
+    	return this.joueurs.get(i);
+    }
+    
+    // Retourne la liste des joueurs connectés à la partie
+    // sous la forme d'un vector
+    public Vector<Client> getListeJoueurs(){
+        return this.joueurs;
+    }
+    
+    public Annonce getDerniereAnnonce(){
+    	return this.derniereAnnonce;
+    }
+
+	public void actionPerformed(ActionEvent arg0) {
+		 System.out.println("[+] Time's up !");
+		 System.out.println("La partie va commencer !");
+	}
 }

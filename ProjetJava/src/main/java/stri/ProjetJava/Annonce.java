@@ -6,14 +6,16 @@ public class Annonce {
 	private int nombre;
 	private int valeur;
 	private String message;
+	private String partie;
 	
-    Annonce(String type, int nb,int val,String joueur){
+    Annonce(String type, int nb,int val,String joueur, String partie){
     	
     	setType(type);
     	setNombre(nb);
     	setValeur(val);
     	setMessage(message);
     	setPseudo(joueur);
+    	setPartie(partie);
     	
     }
 
@@ -55,5 +57,12 @@ public class Annonce {
 	}
 	public void setMessage(String message) {
 		this.message = message;
+	}
+	
+	public void setPartie(String p){
+		this.partie = p;
+	}
+	public String getPartie(){
+		return this.partie;
 	}
 }

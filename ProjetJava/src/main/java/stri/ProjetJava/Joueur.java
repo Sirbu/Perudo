@@ -39,7 +39,7 @@ public class Joueur extends UnicastRemoteObject implements Client {
 	
 		
 		if(a.getType() == "menteur"){
-			System.out.println(a.getPseudo() +" accuse " +serveurImplem.getDerniereAnnonce().getPseudo() + " de menteur !!");
+			System.out.println(a.getPseudo() +" accuse " +serveurImplem.getDerniereAnnonce("perudo").getPseudo() + " de menteur !!");
 			
 		}
 		
@@ -74,11 +74,11 @@ public class Joueur extends UnicastRemoteObject implements Client {
 			    nombre =sc.nextLine();
 			    val=Integer.parseInt(nombre);
 			    //verification
-			    if((serveurImplem.getDerniereAnnonce().getNombre()==nb && serveurImplem.getDerniereAnnonce().getValeur()< val)|| 
-			    		serveurImplem.getDerniereAnnonce().getNombre()< nb){
+			    if((serveurImplem.getDerniereAnnonce("perudo").getNombre()==nb && serveurImplem.getDerniereAnnonce("perudo").getValeur()< val)|| 
+			    		serveurImplem.getDerniereAnnonce("perudo").getNombre()< nb){
 			    		mauvaiseSaisie=false;
 			    }
-			    a = new Annonce("encherir",nb,val,getPseudo());
+			    a = new Annonce("encherir",nb,val,getPseudo(), "perudo");
 			    return a;
 		   }
 		}else if (nombre == "2"){
@@ -92,21 +92,19 @@ public class Joueur extends UnicastRemoteObject implements Client {
 		return a;
 	}
 
-	public void lancerDes() throws RemoteException {
-		
+	public void lancerDes() throws RemoteException {		
 		for(int i=0; i< this.getDes().size();i++ ){
 			
 			Random rand = new Random();
-			this.getDes().add(i, rand.nextInt(6));
-		
-		}
-		
+			this.getDes().add(i, rand.nextInt(6));		
+		}		
 	}
+	
 	public String getPseudo() {
 		return pseudo;
 	}
 	
-        public void setPseudo(String pseudo) {
+    public void setPseudo(String pseudo) {
         	this.pseudo = pseudo;
 	}
 	
@@ -133,10 +131,7 @@ public class Joueur extends UnicastRemoteObject implements Client {
 	public void ajouterDes() throws RemoteException {
 		
 		getDes().addElement(0);
-	}
-
-
-	
+	}	
 
 	public Serveur getServeurImplem() {
 		return serveurImplem;
@@ -161,7 +156,4 @@ public class Joueur extends UnicastRemoteObject implements Client {
 		//clientimplem.FaireAnnonce("voila la chaine passé en param");
 		
 	}
-
-	
-
 }

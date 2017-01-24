@@ -13,8 +13,8 @@ import java.util.Vector;
  * 
  */
 public interface Serveur extends java.rmi.Remote {
-    public boolean rejoindrePartie(String pseudo, String partie) throws java.rmi.RemoteException;
+    public boolean rejoindrePartie(Client c, String partie) throws java.rmi.RemoteException;
     public void quitterPartie(String pseudo, String partie) throws java.rmi.RemoteException;
-    public Annonce getDerniereAnnonce() throws java.rmi.RemoteException;
+    public Annonce getDerniereAnnonce(String partie) throws java.rmi.RemoteException;
     public Vector<Client> getJoueursConnectes(String partie) throws java.rmi.RemoteException;
 }
