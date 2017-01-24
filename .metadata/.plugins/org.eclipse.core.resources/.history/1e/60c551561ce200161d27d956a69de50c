@@ -1,0 +1,59 @@
+package stri.ProjetJava;
+
+public class Annonce implements Serializable {
+	private String pseudo;
+	private String type;
+	private int nombre;
+	private int valeur;
+	private String message;
+	
+    Annonce(String type, int nb,int val,String joueur){
+    	
+    	setType(type);
+    	setNombre(nb);
+    	setValeur(val);
+    	setMessage(message);
+    	setPseudo(joueur);
+    	
+    }
+
+     Annonce(String type,String message,String joueur){
+    	setType(type);
+    	setMessage(message);
+    	setPseudo(joueur);
+    }
+    
+    public void setPseudo(String pseudo) {
+        this.pseudo=pseudo;
+    }
+    
+    public String getPseudo() {
+        return pseudo;
+    }
+    
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+	public int getNombre() {
+		return nombre;
+	}
+	public void setNombre(int nombre) {
+		this.nombre = nombre;
+	}
+	public int getValeur() {
+		return valeur;
+	}
+	public void setValeur(int valeur) {
+		this.valeur = valeur;
+	}
+	public String getMessage() {
+		return message;
+	}
+	public void setMessage(String message) {
+		this.message = message;
+	}
+}

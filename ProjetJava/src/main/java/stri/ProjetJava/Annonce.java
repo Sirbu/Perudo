@@ -1,6 +1,14 @@
 package stri.ProjetJava;
 
-public class Annonce {
+import java.io.Serializable;
+
+public class Annonce implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 9099397892249113227L;
+	
+	
 	private String pseudo;
 	private String type;
 	private int nombre;

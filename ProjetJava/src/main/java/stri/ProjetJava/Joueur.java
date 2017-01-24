@@ -11,6 +11,12 @@ import java.util.Scanner;
 import java.util.Vector;
 
 public class Joueur extends UnicastRemoteObject implements Client {
+	/**
+	 *  identifiant serialization généré
+	 */
+	private static final long serialVersionUID = -8485613108316528072L;
+	
+	
 	private String pseudo;
 	private String couleur;
 	private Vector<Integer> des;
@@ -28,16 +34,10 @@ public class Joueur extends UnicastRemoteObject implements Client {
 		
 	}
 
-	/**
-	 * 
-	 **/
-	private static final long serialVersionUID = 1L;
+
 
 	public void AfficheAnnonce(Annonce a) throws RemoteException {
-		// TODO Auto-generated method stub
-		
-	
-		
+			
 		if(a.getType() == "menteur"){
 			System.out.println(a.getPseudo() +" accuse " +serveurImplem.getDerniereAnnonce().getPseudo() + " de menteur !!");
 			
@@ -51,6 +51,9 @@ public class Joueur extends UnicastRemoteObject implements Client {
 		//sur enchere
 		if(a.getType() == "encherir"){
 			System.out.println(a.getPseudo()+"à Annoncer " + a.getNombre()+" Dés de "+a.getValeur());
+		}
+		if(a.getType() == "info"){
+			System.out.println("infoooooooo");
 		}
 	}
 
@@ -151,11 +154,11 @@ public class Joueur extends UnicastRemoteObject implements Client {
 		LocateRegistry.createRegistry(1099);
 		
 		Serveur serveurimplem=(Serveur)Naming.lookup("rmi://10.0.0.1/Serveur");
-		Client clientimplem=new Joueur(serveurimplem);
+		Joueur clientimplem=new Joueur(serveurimplem);
 		
-		Naming.rebind("rmi://10.0.0.2/nadjim",clientimplem);
-		
-		Boolean rep=serveurimplem.rejoindrePartie("nadjim", "Perudo");
+		//Naming.rebind("rmi://10.0.0.2/nadjim",clientimplem);
+		clientimplem.setPseudo("nadjim");
+		Boolean rep=serveurimplem.rejoindrePartie(clientimplem, "Perudo");
 		System.out.println("l'appel a renvoyé "+ rep);
 	
 		//clientimplem.FaireAnnonce("voila la chaine passé en param");

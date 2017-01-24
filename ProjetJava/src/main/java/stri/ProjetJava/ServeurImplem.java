@@ -139,7 +139,7 @@ public class ServeurImplem extends UnicastRemoteObject implements Serveur {
             
             for(Iterator<Client> i = srv.partie.getJoueurs().iterator(); i.hasNext();){
             	Client c = (Client)i.next();
-            	System.out.println(c.getJoueur().getPseudo());
+            	//System.out.println(c.getJoueur().getPseudo());
             	c.AfficheAnnonce(a);
             }         
                 
@@ -152,4 +152,9 @@ public class ServeurImplem extends UnicastRemoteObject implements Serveur {
     public boolean rejoindrePartie(Joueur j, String partie) throws RemoteException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+	public boolean rejoindrePartie(Client pseudo, String partie) throws RemoteException {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }
