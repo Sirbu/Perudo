@@ -57,8 +57,8 @@ public class Joueur extends UnicastRemoteObject implements Client {
 		}
 	}
 
-	public Annonce FaireAnnonce(String nbreDesJoueurs) throws RemoteException {
-		System.out.println(nbreDesJoueurs);
+	public Annonce FaireAnnonce() throws RemoteException {
+		//System.out.println(nbreDesJoueurs);
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Merci de rentrer 1 pour sur encherir ");
 		System.out.println("Merci de rentrer 2 pour menteur ");

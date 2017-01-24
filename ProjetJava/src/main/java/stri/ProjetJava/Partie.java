@@ -7,15 +7,9 @@ package stri.ProjetJava;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.net.MalformedURLException;
-import java.rmi.Naming;
-import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Vector;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import javax.swing.Timer;
 
@@ -26,7 +20,7 @@ import javax.swing.Timer;
 public class Partie implements ActionListener {
     
     private String nom;
-    private int nbrJoueursMax = 6;              // Pourra être modifié à l'occaz
+    private int nbrJoueursMax = 2;              // Pourra être modifié à l'occaz
     private String status;                      // WAIT || STARTED || FINISHED
     private Annonce derniereAnnonce;           // la derniereAnnonce émise par un joueur
     private Vector<Client> joueurs;    			// Contient les joueurs
@@ -39,11 +33,26 @@ public class Partie implements ActionListener {
         this.joueurs = new Vector<Client>();
     }
       
-    public void enleverJoueur(String pseudo){
-        this.joueurs.remove(pseudo);
+    public void enleverJoueurByPseudo(String pseudo){
+    	int joueurCourant = 0;
+    	try {
+    		
+			for(joueurCourant = 0; 
+					(joueurCourant < this.joueurs.size()) 
+					&& (this.joueurs.get(joueurCourant).getPseudo() != pseudo); 
+					joueurCourant++);
+			this.joueurs.remove(joueurCourant);
+		
+    	} catch (RemoteException e) {
+			System.out.println("Le client "+ joueurCourant + " est déconnecté !");
+			this.joueurs.remove(joueurCourant);
+		}
     }
     
-    // TODO : change Joueurs with rmi Clients
+    public void enleverJoueurByIndex(int i){
+    	this.joueurs.remove(i);
+    }
+    
     public boolean ajouterJoueur(Client c){
         
         if(this.joueurs.size() == nbrJoueursMax){
@@ -55,6 +64,8 @@ public class Partie implements ActionListener {
 		    this.timer = new Timer(120000, this);
 		    this.timer.setInitialDelay(120000);
 		    this.timer.start();
+		}else if(this.joueurs.size() == nbrJoueursMax){
+			this.timer.stop();	
 		}
         
         return true;
@@ -85,8 +96,67 @@ public class Partie implements ActionListener {
     	return cpt;
     }
     
-    public void lancerPartie(){
-    	// TODO do it !
+    // Envoie l'annonce donnée à tous les joueurs sur la partie donnée
+    public void broadcastAnnonce(Annonce a) throws RemoteException{
+        for(int i = 0; i < this.getListeJoueurs().size(); i++){
+        	this.getListeJoueurs().get(i).AfficheAnnonce(a);
+        }   	
+    }
+    
+    // traiterAnnonce exécute le traitement associé au type de l'annonce
+    void traiterAnnonce(Annonce annonceCourante) throws RemoteException{
+		// On doit d'abord diffuser l'annonce courante
+	    broadcastAnnonce(annonceCourante);
+	    
+	    // Dans le cas d'une surenchère, on ne fait rien d'autre
+	    // que de diffuser l'annonce. Dans le cas contraire on
+	    // peut commencer à compter les dés de la dernière annonce
+	    if(annonceCourante.getType() != "encherir"){
+	       	Annonce derniereAnnonce = this.getDerniereAnnonce();
+	        
+	        int valeur = derniereAnnonce.getValeur();
+	        int nbrDesAnnonce = derniereAnnonce.getNombre();
+	        int nbrDesReel = 0;
+	        
+	        // TODO: Vérifier le nom de la partie
+	        nbrDesReel = this.compterDes(valeur);  
+	    	
+	        if(annonceCourante.getType() == "menteur"){
+		        if(nbrDesReel < nbrDesAnnonce){
+		        	Annonce a = new Annonce("info", "Oups... "+annonceCourante.getPseudo()+" a perdu un dé !", "Serveur");
+		        	this.getJoueurByPseudo(annonceCourante.getPseudo()).retirerDes();
+		        	broadcastAnnonce(a);
+		        }
+		    }else if(annonceCourante.getType() == "pile"){
+		        if(nbrDesReel == nbrDesAnnonce){
+		        	Annonce a = new Annonce("info", "Yeah ! "+annonceCourante.getPseudo()+" a gagné un dé !", "Serveur");
+		        	this.getJoueurByPseudo(annonceCourante.getPseudo()).ajouterDes();
+		        	broadcastAnnonce(a);
+		        }else{
+		        	Annonce a = new Annonce("info", "Oups...", "Serveur");
+		        	broadcastAnnonce(a);
+		        	this.getJoueurByPseudo(annonceCourante.getPseudo()).retirerDes();
+		        }
+		    }
+	    }
+	}
+   
+    // Ne pas incrémenter le compteur de joueur lors de l'élimination d'un joueur
+    public void lancerPartie(){    	
+    	int joueurCourant = 0;
+    	Annonce annonceCourante;
+    	while(this.joueurs.size() != 1){
+    		try {
+				annonceCourante = this.joueurs.get(joueurCourant).FaireAnnonce();
+				traiterAnnonce(annonceCourante);
+				
+			} catch (RemoteException e) {
+				// TODO Améliorer la gestion des déconnexions brutales
+				System.out.println("[!] Le client "+ joueurCourant +" est déconnecté !");
+				this.enleverJoueurByIndex(joueurCourant);
+				continue;
+			}
+    	}
     }
     
     // getters & setters
