@@ -1,40 +1,53 @@
 package stri.ProjetJava;
 
-public class Annonce {
-	private String joueur;
+import java.io.Serializable;
+
+public class Annonce implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 9099397892249113227L;
+	
+	
+	private String pseudo;
 	private String type;
 	private int nombre;
 	private int valeur;
 	private String message;
+	private String partie;
 	
-    Annonce(String type, int nb,int val,String message,String joueur){
+    Annonce(String type, int nb,int val,String joueur, String partie){
     	
     	setType(type);
     	setNombre(nb);
     	setValeur(val);
     	setMessage(message);
-    	setJoueur(joueur);
+    	setPseudo(joueur);
+    	setPartie(partie);
     	
     }
+
      Annonce(String type,String message,String joueur){
     	setType(type);
     	setMessage(message);
-    	setJoueur(joueur);
-    	
+    	setPseudo(joueur);
     }
     
-    public void setJoueur(String j) {
-		this.joueur=j;
-	}
-    public String getJoueur() {
-		return joueur;
-	}
+    public void setPseudo(String pseudo) {
+        this.pseudo=pseudo;
+    }
+    
+    public String getPseudo() {
+        return pseudo;
+    }
+    
     public String getType() {
-		return type;
-	}
-	public void setType(String type) {
-		this.type = type;
-	}
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 	public int getNombre() {
 		return nombre;
 	}
@@ -52,5 +65,12 @@ public class Annonce {
 	}
 	public void setMessage(String message) {
 		this.message = message;
+	}
+	
+	public void setPartie(String p){
+		this.partie = p;
+	}
+	public String getPartie(){
+		return this.partie;
 	}
 }
