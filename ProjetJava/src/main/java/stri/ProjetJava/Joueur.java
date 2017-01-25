@@ -25,26 +25,28 @@ public class Joueur extends UnicastRemoteObject implements Client {
 
 	 protected Joueur(Serveur serveurimplem) throws RemoteException {
 		super();
-		// TODO Auto-generated constructor stub
-	
+		
+		this.serveurImplem=serveurimplem;
 		des = new Vector<Integer>();
-		for(int i=0;i<des.size();i++){
+		//au debut de la partie tout le monde a 6 des initilaisé à 0
+		for(int i=0;i<6;i++){
 			des.add(i, 0);
 		}
-		this.serveurImplem=serveurimplem;
+		
 		
 	}
 
 
 
 	public void AfficheAnnonce(Annonce a) throws RemoteException {
-					
+		// menteur			
 		if(a.getType().contentEquals("menteur")){
-			System.out.println(a.getPseudo() +" accuse " +serveurImplem.getDerniereAnnonce("perudo").getPseudo() + " de menteur !!");
+			System.out.println(a.getPseudo() +" accuse " +serveurImplem.getDerniereAnnonce(this.partie).getPseudo() + " de menteur !!");
 			
 		}
 		
 		//tout pile
+		
 		if(a.getType().contentEquals("toutpile")){
 			System.out.println(a.getPseudo() +" à decalré un tout pile !! ");
 
@@ -53,14 +55,16 @@ public class Joueur extends UnicastRemoteObject implements Client {
 		if(a.getType().contentEquals("surencherir")){
 			System.out.println(a.getPseudo()+"à Annoncer " + a.getNombre()+" Dés de "+a.getValeur());
 		}
+		// annonce de type info
 		if(a.getType().contentEquals("info")){
 			System.out.println("infoooooooo");
 		}
 	}
 
 	public Annonce FaireAnnonce() throws RemoteException {
+		
 		Vector<Client> player =this.serveurImplem.getJoueursConnectes(this.partie);
-		for(int i=1;i<=player.size();i++){
+		for(int i=0;i< player.size();i++){
 			System.out.println("le joueur "+ player.elementAt(i).getPseudo() + " a "
 			+player.elementAt(i).getDes().size() +" Dés");
 		}
@@ -72,6 +76,7 @@ public class Joueur extends UnicastRemoteObject implements Client {
 		String nombre =sc.nextLine();
 	    
 		Annonce a = null;
+		
 		if (nombre=="1"){
 			int nb=(Integer) null;
 			int val=(Integer) null;
@@ -82,21 +87,22 @@ public class Joueur extends UnicastRemoteObject implements Client {
 			    nb=Integer.parseInt(nombre);
 			    nombre =sc.nextLine();
 			    val=Integer.parseInt(nombre);
-			    //verification
+			    //verification de l validité de la saisie
+			    
 			    if((serveurImplem.getDerniereAnnonce("perudo").getNombre()==nb && serveurImplem.getDerniereAnnonce("perudo").getValeur()< val)|| 
 			    		serveurImplem.getDerniereAnnonce("perudo").getNombre()< nb){
 			    		mauvaiseSaisie=false;
 			    }
 			    a = new Annonce("encherir",nb,val,getPseudo(), "perudo");
-			    return a;
+			    
 		   }
 		}else if (nombre == "2"){
 			 a = new Annonce("menteur"," ",getPseudo());
-			return a;
+			
 		}
 		else{
 			 a = new Annonce("toutpile"," ",getPseudo());
-			return a;
+			
 		}
 		return a;
 	}
