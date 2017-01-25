@@ -168,4 +168,7 @@ public class ServeurImplem extends UnicastRemoteObject implements Serveur {
     public Partie getPartie(String nom){
     	return this.partie;
     }
+    public void setPartie(Partie p){
+        this.partie = p;
+    }
 }
