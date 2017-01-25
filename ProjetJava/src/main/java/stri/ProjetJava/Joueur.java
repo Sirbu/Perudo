@@ -5,24 +5,27 @@ import java.util.Vector;
 public class Joueur {
     
 	public Joueur(String pseudo) {
-		super();
-		this.pseudo = pseudo;
 		
+		this.pseudo = pseudo;
+		des = new Vector<Integer>(6);
+		for(int i=0;i<des.size();i++){
+			des.add(i, 0);
+		}
 		
 	}
 	private String pseudo;
 	private String couleur;
 	private Vector<Integer> des;
 	
-        public String getPseudo() {
+    public String getPseudo() {
 		return pseudo;
 	}
 	
         public void setPseudo(String pseudo) {
-		pseudo = pseudo;
+        	this.pseudo = pseudo;
 	}
 	
-        public String getCouleur() {
+    public String getCouleur() {
 		return couleur;
 	}
 	public void setCouleur(String couleur) {
