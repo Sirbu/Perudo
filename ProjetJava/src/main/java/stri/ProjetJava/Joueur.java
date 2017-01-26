@@ -22,6 +22,7 @@ public class Joueur extends UnicastRemoteObject implements Client {
 	private Vector<Integer> des;
 	private Serveur serveurImplem;
 	private String partie; 
+	private String statut;
 
 	 protected Joueur(Serveur serveurimplem) throws RemoteException {
 		super();
@@ -68,7 +69,7 @@ public class Joueur extends UnicastRemoteObject implements Client {
 			System.out.println("le joueur "+ player.elementAt(i).getPseudo() + " a "
 			+player.elementAt(i).getDes().size() +" Dés");
 		}
-		
+
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Merci de rentrer 1 pour sur encherir ");
 		System.out.println("Merci de rentrer 2 pour menteur ");
@@ -81,6 +82,7 @@ public class Joueur extends UnicastRemoteObject implements Client {
 			int nb=(Integer) null;
 			int val=(Integer) null;
 			Boolean mauvaiseSaisie=true;
+			
 			while(mauvaiseSaisie){
 				System.out.println("merci de rentrer le nombre de Dés puis la valeur:");
 			    nombre =sc.nextLine();
@@ -88,16 +90,13 @@ public class Joueur extends UnicastRemoteObject implements Client {
 			    nombre =sc.nextLine();
 			    val=Integer.parseInt(nombre);
 			    //verification de l validité de la saisie
-			    
-			    if((serveurImplem.getDerniereAnnonce("perudo").getNombre()==nb && serveurImplem.getDerniereAnnonce("perudo").getValeur()< val)|| 
-			    		serveurImplem.getDerniereAnnonce("perudo").getNombre()< nb){
-			    		mauvaiseSaisie=false;
-			    }
+			    //3 des de 4 derniere annonce
+			    // 2 des de 4 moi
 			    a = new Annonce("encherir",nb,val,getPseudo(), "perudo");
-			    
+			    mauvaiseSaisie=a.verifAnnonce(serveurImplem);    
 		   }
 		}else if (nombre == "2"){
-			 a = new Annonce("menteur"," ",getPseudo());
+			 	a = new Annonce("menteur"," ",getPseudo());
 			
 		}
 		else{
@@ -170,8 +169,12 @@ public class Joueur extends UnicastRemoteObject implements Client {
 		
 		LocateRegistry.createRegistry(1099);
 		
-		Serveur serveurimplem=(Serveur)Naming.lookup("rmi://10.0.0.1/Serveur");
+		//Serveur serveurimplem=(Serveur)Naming.lookup("rmi://10.0.0.1/Serveur");
+		Serveur serveurimplem= new ServeurImplem();
 		Joueur clientimplem=new Joueur(serveurimplem);
+		Annonce a=clientimplem.FaireAnnonce();
+		clientimplem.AfficheAnnonce(a);
+		
 		
 		//Naming.rebind("rmi://10.0.0.2/nadjim",clientimplem);
 		clientimplem.setPseudo("nadjim");
@@ -181,6 +184,19 @@ public class Joueur extends UnicastRemoteObject implements Client {
 	
 		//clientimplem.FaireAnnonce("voila la chaine passé en param");
 		
+		
+	}
+
+
+
+	public String getStatut() {
+		return statut;
+	}
+
+
+
+	public void setStatut(String statut) {
+		this.statut = statut;
 	}
 
 }

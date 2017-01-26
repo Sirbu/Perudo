@@ -1,6 +1,7 @@
 package stri.ProjetJava;
 
 import java.io.Serializable;
+import java.rmi.RemoteException;
 
 public class Annonce implements Serializable {
 	/**
@@ -33,6 +34,10 @@ public class Annonce implements Serializable {
     	setPseudo(joueur);
     }
     
+    public boolean verifAnnonce(Serveur serveurImplem) throws RemoteException{
+    	return ((serveurImplem.getDerniereAnnonce("perudo").getNombre()==this.getNombre() && serveurImplem.getDerniereAnnonce("perudo").getValeur()< this.getValeur())|| 
+	    		serveurImplem.getDerniereAnnonce("perudo").getNombre()< this.getNombre());
+    }
     public void setPseudo(String pseudo) {
         this.pseudo=pseudo;
     }
