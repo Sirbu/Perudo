@@ -77,9 +77,7 @@ public class ServeurImplem extends UnicastRemoteObject implements Serveur {
             System.out.println("[+] Serveur déclaré");
 
             srv.partie = new Partie("Perudo");
-            System.out.println("[+] Partie initialisée");       
-            
-            
+            System.out.println("[+] Partie initialisée");
             
         }catch(MalformedURLException e){
             e.printStackTrace();

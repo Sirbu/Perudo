@@ -62,8 +62,8 @@ public class Partie implements ActionListener {
 		this.joueurs.add(c);
 
 		if(this.joueurs.size() == 1){
-		    this.timer = new Timer(120000, this);
-		    this.timer.setInitialDelay(120000);
+		    this.timer = new Timer(5000, this);
+		    this.timer.setInitialDelay(5000);
 		    this.timer.start();
 		}else if(this.joueurs.size() == nbrJoueursMax){
 			this.timer.stop();
@@ -139,22 +139,44 @@ public class Partie implements ActionListener {
 		    }
 
 	        broadcastAnnonce(a);
+	        this.derniereAnnonce = a;
 	    }
 	}
 
+    private void lancerTousLesDes(){
+    	for(int i = 0; i < this.joueurs.size(); i++){
+    		try {
+    			System.out.println("[+] Lancer de dés pour "+ this.joueurs.get(i).getPseudo());
+				this.joueurs.get(i).lancerDes();
+			} catch (RemoteException e) {
+				this.enleverJoueurByIndex(i);
+				continue;
+			}
+    	}
+    }
+    
     // Ne pas incrémenter le compteur de joueur lors de l'élimination d'un joueur
     public void lancerPartie(){
     	int joueurCourant = 0;
     	Annonce annonceCourante;
+    	// DEBUG ANNONCE
+    	this.derniereAnnonce = new Annonce("surenchrir", 5, 5, "nadjim", "Perudo");
     	
-    	this.derniereAnnonce = new Annonce("surenchrir", 5, 5, "Sirbu", "Perudo");
-    	while(this.joueurs.size() != 1){
+//    	this.lancerTousLesDes();
+		try {
+			this.joueurs.get(0).lancerDes();
+		} catch (RemoteException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+
+    	while(this.joueurs.size() != 0){
     		try {
 				annonceCourante = this.joueurs.get(joueurCourant).FaireAnnonce();
 				System.out.println(annonceCourante.getType());
 				System.out.println(annonceCourante.getMessage());
 				traiterAnnonce(annonceCourante);
-				// decrementer joueurCourant si il perd ou gagne un dé !
+				// décrementer joueurCourant si il perd ou gagne un dé !
 
 			} catch (RemoteException e) {
 				// TODO Améliorer la gestion des déconnexions brutales
@@ -163,7 +185,7 @@ public class Partie implements ActionListener {
 				continue;
 			}
     		
-    		if(joueurCourant == this.joueurs.size()){
+    		if(joueurCourant == (this.joueurs.size()-1)){
     			joueurCourant = 0;
     		}else{
     			joueurCourant++;
@@ -182,11 +204,8 @@ public class Partie implements ActionListener {
 
     public Client getJoueurByPseudo(String pseudo) throws RemoteException{
     	int i = 0;
-    	for(i = 0; i < this.joueurs.size(); i++){
-    		if(this.joueurs.get(i).getPseudo() == pseudo){
-    			break;
-    		}
-    	}
+    	for(i = 0; (i < this.joueurs.size()) && (!this.joueurs.get(i).getPseudo().contentEquals(pseudo)); i++);
+    	System.out.println(" Index joueur => "+ i);
     	return this.joueurs.get(i);
     }
 
@@ -202,6 +221,8 @@ public class Partie implements ActionListener {
 
 	public void actionPerformed(ActionEvent arg0) {
 		 System.out.println("[+] Time's up !");
-		 System.out.println("La partie va commencer !");
+		 System.out.println("[+] La partie va commencer !");
+		 this.timer.stop();
+		 this.lancerPartie();
 	}
 }
