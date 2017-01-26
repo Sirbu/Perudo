@@ -62,8 +62,7 @@ public class Joueur extends UnicastRemoteObject implements Client {
 		}
 	}
 
-	public Annonce FaireAnnonce() throws RemoteException {
-		
+	public Annonce FaireAnnonce() throws RemoteException {		
 		Vector<Client> player =this.serveurImplem.getJoueursConnectes(this.partie);
 		for(int i=0;i< player.size();i++){
 			System.out.println("le joueur "+ player.elementAt(i).getPseudo() + " a "
