@@ -40,23 +40,22 @@ public class Joueur extends UnicastRemoteObject implements Client {
 
 
 	public void AfficheAnnonce(Annonce a) throws RemoteException {
-		// menteur			
-		
+		// menteur		
 		if(a.getType().contentEquals("menteur")){
 			System.out.println(a.getPseudo() +" accuse " +serveurImplem.getDerniereAnnonce(this.partie).getPseudo() + " de menteur !!");
-			
 		}
 		
 		//tout pile
-		
 		if(a.getType().contentEquals("toutpile")){
 			System.out.println(a.getPseudo() +" à decalré un tout pile !! ");
 
-		} 
+		}
+		
 		//sur enchere
 		if(a.getType().contentEquals("surencherir")){
 			System.out.println(a.getPseudo()+" à Annoncer " + a.getNombre()+" Dés de "+a.getValeur());
 		}
+		
 		// annonce de type info
 		if(a.getType().contentEquals("info")){
 			System.out.println(a.getMessage());
@@ -69,7 +68,7 @@ public class Joueur extends UnicastRemoteObject implements Client {
 			System.out.println("le joueur "+ player.elementAt(i).getPseudo() + " a "
 			+player.elementAt(i).getDes().size() +" Dés");
 		}
-		System.out.println("votre jeu est le suivante");
+		System.out.println("votre jeu est le suivant");
 		
 		for(int i=0;i <this.getDes().size();i++){
 			System.out.print(" "+this.getDes().elementAt(i));
@@ -147,6 +146,11 @@ public class Joueur extends UnicastRemoteObject implements Client {
 		if(this.getDes().size() > 0){
 			this.getDes().removeElementAt(0);
 		}
+		
+		if(this.des.size() == 0){
+			// ici on a plus de dés donc on doit quitter la partie
+			this.serveurImplem.quitterPartie(this.pseudo, this.partie);
+		}
 	}
 
 	public void ajouterDes() throws RemoteException {
@@ -183,7 +187,6 @@ public class Joueur extends UnicastRemoteObject implements Client {
 	public static void main (String[] args) throws RemoteException, MalformedURLException, NotBoundException, InterruptedException{
 		
 		System.out.println("*****************************PERUDO**************************************");
-		System.out.println("*****************************PERUDO**************************************");
 		System.out.println("1: quitter");
 		System.out.println("2: Rejoindre une Partie");
 		System.out.println("merci d'indiquer votre choix : ");
@@ -193,21 +196,21 @@ public class Joueur extends UnicastRemoteObject implements Client {
 	    	
 	    	System.out.println("************************MERCI DE VOTRE VISITE***********************");
 	    }else{
-	    	LocateRegistry.createRegistry(1099);
+	    	//LocateRegistry.createRegistry(1099);
 			
-			Serveur serveurimplem=(Serveur)Naming.lookup("rmi://10.0.0.1/Serveur");
+			Serveur serveurimplem=(Serveur)Naming.lookup("rmi://127.0.0.1/Serveur");
 			Joueur clientimplem=new Joueur(serveurimplem);
 			//Annonce a=clientimplem.FaireAnnonce();
 			//clientimplem.AfficheAnnonce(a);
 			//Naming.rebind("rmi://10.0.0.2/nadjim",clientimplem);
 			clientimplem.setPseudo("nadjim");
-		
+			clientimplem.setPartie("Perudo");
+			
 			Boolean rep=serveurimplem.rejoindrePartie(clientimplem, "Perudo");
 			System.out.println("l'appel a renvoyé "+ rep);
 	    }
 	
 		//clientimplem.FaireAnnonce("voila la chaine passé en param");
-		
 		
 	}
 

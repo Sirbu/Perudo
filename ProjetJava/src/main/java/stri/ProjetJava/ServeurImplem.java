@@ -73,7 +73,7 @@ public class ServeurImplem extends UnicastRemoteObject implements Serveur {
             // initialise la registry              
             LocateRegistry.createRegistry(1099);
 
-            Naming.rebind("rmi://10.0.0.1/Serveur", srv);
+            Naming.rebind("rmi://127.0.0.1/Serveur", srv);
             System.out.println("[+] Serveur déclaré");
 
             srv.partie = new Partie("Perudo");

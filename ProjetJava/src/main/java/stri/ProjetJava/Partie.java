@@ -21,7 +21,7 @@ public class Partie implements ActionListener {
 
     private String nom;
     private int nbrJoueursMax = 2;              // Pourra être modifié à l'occaz
-    private String status;                      // WAIT || STARTED || FINISHED
+    private String status;                      // WAIT || RUNNING || OVER
     private Annonce derniereAnnonce;           // la derniereAnnonce émise par un joueur
     private Vector<Client> joueurs;    			// Contient les joueurs
     private Timer timer;
@@ -76,13 +76,13 @@ public class Partie implements ActionListener {
     public int compterDes(int valeur){
     	int cpt = 0;
     	Vector<Integer> des = new Vector<Integer>();
-
-    	for(Iterator<Client> i = this.getListeJoueurs().iterator(); i.hasNext();){
+    	
+    	for(int i = 0; i< this.joueurs.size(); i++){
     		// Pour chaque client on récupére ses dés...
     		try {
-				des = i.next().getDes();
+				des = this.joueurs.get(i).getDes();
 			} catch (RemoteException e) {
-				// TODO: Il faudra gérer les dconnexion brutales
+				// TODO Il faudra gérer les déconnexion brutales
 				e.printStackTrace();
 			}
 
@@ -98,49 +98,69 @@ public class Partie implements ActionListener {
     }
 
     // Envoie l'annonce donnée à tous les joueurs sur la partie donnée
-    public void broadcastAnnonce(Annonce a) throws RemoteException{
+    public void broadcastAnnonce(Annonce a){
         for(int i = 0; i < this.getListeJoueurs().size(); i++){
-        	this.getListeJoueurs().get(i).AfficheAnnonce(a);
+        	try {
+				this.getListeJoueurs().get(i).AfficheAnnonce(a);
+			} catch (RemoteException e) {
+				System.out.println("Client "+ i +" déconnecté !");
+				this.enleverJoueurByIndex(i);
+			}
         }
     }
 
-    // traiterAnnonce exécute le traitement associé au type de l'annonce
-    void traiterAnnonce(Annonce annonceCourante) throws RemoteException{
-		// On doit d'abord diffuser l'annonce courante
+    // traiterAnnonce exécute le traitement associé au type de l'annonce.
+    // Elle retourne false rien de spécial ne s'est passé, mais renvoie
+    // true si il y a eu une annonce de menteur ou tout pile et qu'il 
+    // faut donc recommencer la manche.
+    boolean traiterAnnonce(Annonce annonceCourante) throws RemoteException{
+		boolean ret = false; 
+    	
+    	// On doit d'abord diffuser l'annonce courante
 	    broadcastAnnonce(annonceCourante);
 
 	    // Dans le cas d'une surenchère, on ne fait rien d'autre
 	    // que de diffuser l'annonce. Dans le cas contraire on
 	    // peut commencer à compter les dés de la dernière annonce
-	    if(!annonceCourante.getType().contentEquals("surencherir")){
+	    if(annonceCourante.getType().contentEquals("surencherir")){ 
+	    	// Si l'annonce est une simple surenchère, on l'enregistre comme dernière annonce
+		    this.derniereAnnonce = annonceCourante;
+	    }else{
 	       	Annonce derniereAnnonce = this.getDerniereAnnonce();
-	        Annonce a = null;
+	        Annonce annonceNotif = new Annonce("info", "", "Serveur");
 
-	        int valeur = derniereAnnonce.getValeur();
+	        int valeurAnnonce = derniereAnnonce.getValeur();
 	        int nbrDesAnnonce = derniereAnnonce.getNombre();
 	        int nbrDesReel = 0;
 
 	        // TODO: Vérifier le nom de la partie
-	        nbrDesReel = this.compterDes(valeur);
-
+	        nbrDesReel = this.compterDes(valeurAnnonce);
+	        
+	        System.out.println("Il y a en tout "+ nbrDesReel + " de "+ valeurAnnonce);
+	        
 	        if(annonceCourante.getType().contentEquals("menteur")){
 		        if(nbrDesReel < nbrDesAnnonce){
-		        	a = new Annonce("info", "Oups... "+annonceCourante.getPseudo()+" a perdu un dé !", "Serveur");
+		        	// Là celui qui vien de dénoncer un mensonge a eu raison !
+		        	annonceNotif.setMessage("Hé oui ! "+derniereAnnonce.getPseudo()+" était un sale menteur !\nJ'aime pas les menteurs et les fils de pute.");
+		        	this.getJoueurByPseudo(derniereAnnonce.getPseudo()).retirerDes();
+		        }else{
+		        	// Ici celui qui dénnonce le mensonge a tort
+		        	annonceNotif.setMessage("Loupé... "+ derniereAnnonce.getPseudo()+" avait raison !");
 		        	this.getJoueurByPseudo(annonceCourante.getPseudo()).retirerDes();
 		        }
 		    }else if(annonceCourante.getType().contentEquals("toutpile")){
 		        if(nbrDesReel == nbrDesAnnonce){
-		        	a = new Annonce("info", "Yeah ! "+annonceCourante.getPseudo()+" a gagné un dé !", "Serveur");
+		        	annonceNotif.setMessage(("Yeah ! "+annonceCourante.getPseudo()+" a gagné un dé !"));
 		        	this.getJoueurByPseudo(annonceCourante.getPseudo()).ajouterDes();
 		        }else{
-		        	a = new Annonce("info", "Oups...", "Serveur");
+		        	annonceNotif.setMessage("Ouch..." + annonceCourante.getPseudo() + " a perdu un dé !");
 		        	this.getJoueurByPseudo(annonceCourante.getPseudo()).retirerDes();
 		        }
 		    }
-
-	        broadcastAnnonce(a);
-	        this.derniereAnnonce = a;
-	    }
+	        broadcastAnnonce(annonceNotif);
+	        ret = true;
+	    }	  
+	    return ret;
 	}
 
     private void lancerTousLesDes(){
@@ -156,13 +176,19 @@ public class Partie implements ActionListener {
     }
     
     // Ne pas incrémenter le compteur de joueur lors de l'élimination d'un joueur
-    public void lancerPartie(){
-    	int joueurCourant = 0;
+    public void lancerPartie(int joueur){
+    	boolean finTour = false; 
+    	int joueurCourant = joueur;
     	Annonce annonceCourante;
+    	
+    	System.out.println("[+] Début d'une manche !");
+    	this.broadcastAnnonce(new Annonce("info", "Une nouvelle manche commence !", "Serveur"));
+    	
     	// DEBUG ANNONCE
     	this.derniereAnnonce = new Annonce("surenchrir", 5, 5, "nadjim", "Perudo");
     	
-//    	this.lancerTousLesDes();
+    	this.lancerTousLesDes();
+    	
 		try {
 			this.joueurs.get(0).lancerDes();
 		} catch (RemoteException e1) {
@@ -170,14 +196,15 @@ public class Partie implements ActionListener {
 			e1.printStackTrace();
 		}
 
-    	while(this.joueurs.size() != 0){
+    	while((this.joueurs.size() != 0) && (!finTour)){
     		try {
 				annonceCourante = this.joueurs.get(joueurCourant).FaireAnnonce();
-				System.out.println(annonceCourante.getType());
-				System.out.println(annonceCourante.getMessage());
-				traiterAnnonce(annonceCourante);
-				// décrementer joueurCourant si il perd ou gagne un dé !
 
+				finTour = traiterAnnonce(annonceCourante);
+				if(finTour){
+					this.lancerPartie(joueurCourant);
+				}
+				
 			} catch (RemoteException e) {
 				// TODO Améliorer la gestion des déconnexions brutales
 				System.out.println("[!] Le client "+ joueurCourant +" est déconnecté !");
@@ -223,7 +250,8 @@ public class Partie implements ActionListener {
 		 System.out.println("[+] Time's up !");
 		 System.out.println("[+] La partie va commencer !");
 		 this.timer.stop();
-		 this.lancerPartie();
+		 this.status = "RUNNNING";
+		 this.lancerPartie(0);
 	}
 
 	public int getNbrJoueursMax() {
