@@ -63,12 +63,14 @@ public class Joueur extends UnicastRemoteObject implements Client {
 		}
 	}
 
-	public Annonce FaireAnnonce() throws RemoteException {		
+	public Annonce FaireAnnonce() throws RemoteException {	
+		// recupére le nombre de des de chaque joueur pour l'aider a ajuster son annonce
 		Vector<Client> player =this.serveurImplem.getJoueursConnectes(this.partie);
 		for(int i=0;i< player.size();i++){
 			System.out.println("le joueur "+ player.elementAt(i).getPseudo() + " a "
 			+player.elementAt(i).getDes().size() +" Dés");
 		}
+		// affiche aux joueurs son jeux
 		System.out.println("votre jeu est le suivante");
 		
 		for(int i=0;i <this.getDes().size();i++){
