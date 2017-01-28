@@ -225,4 +225,40 @@ public class Partie implements ActionListener {
 		 this.timer.stop();
 		 this.lancerPartie();
 	}
+
+	public int getNbrJoueursMax() {
+		return nbrJoueursMax;
+	}
+
+	public void setNbrJoueursMax(int nbrJoueursMax) {
+		this.nbrJoueursMax = nbrJoueursMax;
+	}
+
+	public Vector<Client> getJoueurs() {
+		return joueurs;
+	}
+
+	public void setJoueurs(Vector<Client> joueurs) {
+		this.joueurs = joueurs;
+	}
+
+	public Timer getTimer() {
+		return timer;
+	}
+
+	public void setTimer(Timer timer) {
+		this.timer = timer;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public void setDerniereAnnonce(Annonce derniereAnnonce) {
+		this.derniereAnnonce = derniereAnnonce;
+	}
 }
