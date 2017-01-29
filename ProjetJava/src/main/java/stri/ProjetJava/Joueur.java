@@ -62,17 +62,28 @@ public class Joueur extends UnicastRemoteObject implements Client {
 	}
 
 	public Annonce FaireAnnonce() throws RemoteException {	
+		int tot=0;
 		// recupére le nombre de des de chaque joueur pour l'aider a ajuster son annonce
 		Vector<Client> player =this.serveurImplem.getJoueursConnectes(this.partie);
 		for(int i=0;i< player.size();i++){
 			System.out.println("le joueur "+ player.elementAt(i).getPseudo() + " a "
 			+player.elementAt(i).getDes().size() +" Dés");
+			tot+=player.elementAt(i).getDes().size();
 		}
 		
+		System.out.println("le nombre total de des dans le jeu est de : "+tot);
+		//on affiche la derniere annonce
+		System.out.println("la deniere mise : "+this.serveurImplem.getDerniereAnnonce("Perudo").getPseudo()+" a dit "+this.serveurImplem.getDerniereAnnonce("Perudo").getNombre()
+				+" Dés de "+this.serveurImplem.getDerniereAnnonce("Perudo").getValeur());
+		//on affiche le jeu du joueur
 		System.out.println("votre jeu est le suivant");
 		
 		for(int i=0;i <this.getDes().size();i++){
-			System.out.print(" "+this.getDes().elementAt(i));
+			if(this.getDes().elementAt(i).intValue()==1){
+				System.out.print(" |Perudo");
+			}else{
+				System.out.print(" |"+this.getDes().elementAt(i));
+			}
 		}
 		System.out.println(" ");
 
@@ -89,7 +100,7 @@ public class Joueur extends UnicastRemoteObject implements Client {
 			int nb=0;
 			int val=0;
 			Boolean bonneSaisie=false;
-			
+	
 			while(!bonneSaisie){
 				System.out.println("merci de rentrer le nombre de Dés puis la valeur:");
 			    nombre =sc.nextLine();
@@ -196,6 +207,7 @@ public class Joueur extends UnicastRemoteObject implements Client {
 	    if(nombre.contentEquals("1")){
 	    	
 	    	System.out.println("************************MERCI DE VOTRE VISITE***********************");
+	    	System.exit(0);
 	    }else{
 	    	//LocateRegistry.createRegistry(1099);
 			
