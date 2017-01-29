@@ -4,7 +4,6 @@ import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
-import java.rmi.registry.LocateRegistry;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.Random;
 import java.util.Scanner;
@@ -22,6 +21,7 @@ public class Joueur extends UnicastRemoteObject implements Client {
 	private Vector<Integer> des;
 	private Serveur serveurImplem;
 	private String partie; 
+	private String statut;
 
 	 protected Joueur(Serveur serveurimplem) throws RemoteException {
 		super();
@@ -39,65 +39,71 @@ public class Joueur extends UnicastRemoteObject implements Client {
 
 
 	public void AfficheAnnonce(Annonce a) throws RemoteException {
-		// menteur			
+		// menteur		
 		if(a.getType().contentEquals("menteur")){
 			System.out.println(a.getPseudo() +" accuse " +serveurImplem.getDerniereAnnonce(this.partie).getPseudo() + " de menteur !!");
-			
 		}
 		
 		//tout pile
-		
 		if(a.getType().contentEquals("toutpile")){
 			System.out.println(a.getPseudo() +" à decalré un tout pile !! ");
 
-		} 
+		}
+		
 		//sur enchere
 		if(a.getType().contentEquals("surencherir")){
-			System.out.println(a.getPseudo()+"à Annoncer " + a.getNombre()+" Dés de "+a.getValeur());
+			System.out.println(a.getPseudo()+" à Annoncer " + a.getNombre()+" Dés de "+a.getValeur());
 		}
+		
 		// annonce de type info
 		if(a.getType().contentEquals("info")){
-			System.out.println("infoooooooo");
+			System.out.println(a.getMessage());
 		}
 	}
 
-	public Annonce FaireAnnonce() throws RemoteException {
-		
+	public Annonce FaireAnnonce() throws RemoteException {	
+		// recupére le nombre de des de chaque joueur pour l'aider a ajuster son annonce
 		Vector<Client> player =this.serveurImplem.getJoueursConnectes(this.partie);
 		for(int i=0;i< player.size();i++){
 			System.out.println("le joueur "+ player.elementAt(i).getPseudo() + " a "
 			+player.elementAt(i).getDes().size() +" Dés");
 		}
 		
+		System.out.println("votre jeu est le suivant");
+		
+		for(int i=0;i <this.getDes().size();i++){
+			System.out.print(" "+this.getDes().elementAt(i));
+		}
+		System.out.println(" ");
+
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Merci de rentrer 1 pour sur encherir ");
 		System.out.println("Merci de rentrer 2 pour menteur ");
 		System.out.println("Merci de rentrer 3 pour tout pile ");
+		
 		String nombre =sc.nextLine();
 	    
 		Annonce a = null;
 		
-		if (nombre=="1"){
-			int nb=(Integer) null;
-			int val=(Integer) null;
-			Boolean mauvaiseSaisie=true;
-			while(mauvaiseSaisie){
+		if (nombre.contentEquals("1")){
+			int nb=0;
+			int val=0;
+			Boolean bonneSaisie=false;
+			
+			while(!bonneSaisie){
 				System.out.println("merci de rentrer le nombre de Dés puis la valeur:");
 			    nombre =sc.nextLine();
 			    nb=Integer.parseInt(nombre);
 			    nombre =sc.nextLine();
 			    val=Integer.parseInt(nombre);
 			    //verification de l validité de la saisie
-			    
-			    if((serveurImplem.getDerniereAnnonce("perudo").getNombre()==nb && serveurImplem.getDerniereAnnonce("perudo").getValeur()< val)|| 
-			    		serveurImplem.getDerniereAnnonce("perudo").getNombre()< nb){
-			    		mauvaiseSaisie=false;
-			    }
-			    a = new Annonce("encherir",nb,val,getPseudo(), "perudo");
-			    
+			    //3 des de 4 derniere annonce
+			    // 2 des de 4 moi
+			    a = new Annonce("surencherir",nb,val,getPseudo(), "perudo");
+			    bonneSaisie=a.verifAnnonce(serveurImplem);    
 		   }
-		}else if (nombre == "2"){
-			 a = new Annonce("menteur"," ",getPseudo());
+		}else if (nombre.contentEquals("2")){
+			 	a = new Annonce("menteur"," ",getPseudo());
 			
 		}
 		else{
@@ -107,11 +113,10 @@ public class Joueur extends UnicastRemoteObject implements Client {
 		return a;
 	}
 
-	public void lancerDes() throws RemoteException {		
+	public void lancerDes() throws RemoteException {
+		Random rand = new Random();
 		for(int i=0; i< this.getDes().size();i++ ){
-			
-			Random rand = new Random();
-			this.getDes().add(i, rand.nextInt(6));		
+			this.getDes().setElementAt(rand.nextInt(5)+1,i);	
 		}		
 	}
 	
@@ -139,8 +144,14 @@ public class Joueur extends UnicastRemoteObject implements Client {
 	
 
 	public void retirerDes() throws RemoteException {
-		this.getDes().removeElementAt(0);
+		if(this.getDes().size() > 0){
+			this.getDes().removeElementAt(0);
+		}
 		
+		if(this.des.size() == 0){
+			// ici on a plus de dés donc on doit quitter la partie
+			this.serveurImplem.quitterPartie(this.pseudo, this.partie);
+		}
 	}
 
 	public void ajouterDes() throws RemoteException {
@@ -159,7 +170,15 @@ public class Joueur extends UnicastRemoteObject implements Client {
 	public String getPartie() {
 		return partie;
 	}
+	public String getStatut() {
+		return statut;
+	}
 
+
+
+	public void setStatut(String statut) {
+		this.statut = statut;
+	}
 
 
 	public void setPartie(String partie) {
@@ -168,16 +187,29 @@ public class Joueur extends UnicastRemoteObject implements Client {
 	
 	public static void main (String[] args) throws RemoteException, MalformedURLException, NotBoundException, InterruptedException{
 		
-		LocateRegistry.createRegistry(1099);
-		
-		Serveur serveurimplem=(Serveur)Naming.lookup("rmi://10.0.0.1/Serveur");
-		Joueur clientimplem=new Joueur(serveurimplem);
-		
-		//Naming.rebind("rmi://10.0.0.2/nadjim",clientimplem);
-		clientimplem.setPseudo("nadjim");
-		Thread.sleep(5000);
-		Boolean rep=serveurimplem.rejoindrePartie(clientimplem, "Perudo");
-		System.out.println("l'appel a renvoyé "+ rep);
+		System.out.println("*****************************PERUDO**************************************");
+		System.out.println("1: quitter");
+		System.out.println("2: Rejoindre une Partie");
+		System.out.println("merci d'indiquer votre choix : ");
+		Scanner sc=new Scanner(System.in);
+		String nombre =sc.nextLine();
+	    if(nombre.contentEquals("1")){
+	    	
+	    	System.out.println("************************MERCI DE VOTRE VISITE***********************");
+	    }else{
+	    	//LocateRegistry.createRegistry(1099);
+			
+			Serveur serveurimplem=(Serveur)Naming.lookup("rmi://127.0.0.1/Serveur");
+			Joueur clientimplem=new Joueur(serveurimplem);
+			//Annonce a=clientimplem.FaireAnnonce();
+			//clientimplem.AfficheAnnonce(a);
+			//Naming.rebind("rmi://10.0.0.2/nadjim",clientimplem);
+			clientimplem.setPseudo("nadjim");
+			clientimplem.setPartie("Perudo");
+			
+			Boolean rep=serveurimplem.rejoindrePartie(clientimplem, "Perudo");
+			System.out.println("l'appel a renvoyé "+ rep);
+	    }
 	
 		//clientimplem.FaireAnnonce("voila la chaine passé en param");
 		
