@@ -35,8 +35,12 @@ public class Annonce implements Serializable {
     }
     
     public boolean verifAnnonce(Serveur serveurImplem) throws RemoteException{
-    	return ((serveurImplem.getDerniereAnnonce("perudo").getNombre()==this.getNombre() && serveurImplem.getDerniereAnnonce("perudo").getValeur()< this.getValeur())|| 
-	    		serveurImplem.getDerniereAnnonce("perudo").getNombre()< this.getNombre());
+    	System.out.println("le serveur a erenvoyé " +serveurImplem.getDerniereAnnonce("Perudo").getValeur()
+    			+" "+serveurImplem.getDerniereAnnonce("Perudo").getNombre());
+    	int nbserv = serveurImplem.getDerniereAnnonce("Perudo").getNombre();
+    	int valserv=serveurImplem.getDerniereAnnonce("Perudo").getValeur();
+    	
+    	return ( ( nbserv == this.getNombre() && valserv< this.getValeur() ) || nbserv < this.getNombre() );
     }
     public void setPseudo(String pseudo) {
         this.pseudo=pseudo;
