@@ -113,11 +113,12 @@ public class Joueur extends UnicastRemoteObject implements Client {
 			    a = new Annonce("surencherir",nb,val,getPseudo(), "perudo");
 			    bonneSaisie=a.verifAnnonce(serveurImplem);    
 		   }
-		}else if (nombre.contentEquals("2")){
+			// si le joueur est le premier a jouer dans cette manche il ne peut dire toutpile ni menteur
+		}else if (nombre.contentEquals("2") && this.serveurImplem.getDerniereAnnonce("Perudo")!=null){
 			 	a = new Annonce("menteur"," ",getPseudo());
 			
 		}
-		else{
+		else if(this.serveurImplem.getDerniereAnnonce("Perudo")!=null){
 			 a = new Annonce("toutpile"," ",getPseudo());
 			
 		}
