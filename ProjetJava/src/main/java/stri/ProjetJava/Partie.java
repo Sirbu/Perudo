@@ -114,7 +114,7 @@ public class Partie implements ActionListener {
     // true si il y a eu une annonce de menteur ou tout pile et qu'il 
     // faut donc recommencer la manche.
     boolean traiterAnnonce(Annonce annonceCourante) throws RemoteException{
-		boolean ret = false; 
+		boolean ret = false;
     	
     	// On doit d'abord diffuser l'annonce courante
 	    broadcastAnnonce(annonceCourante);
