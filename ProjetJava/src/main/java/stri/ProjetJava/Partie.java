@@ -292,7 +292,4 @@ public class Partie implements ActionListener {
 		this.status = status;
 	}
 
-	public void setDerniereAnnonce(Annonce derniereAnnonce) {
-		this.derniereAnnonce = derniereAnnonce;
-	}
 }
