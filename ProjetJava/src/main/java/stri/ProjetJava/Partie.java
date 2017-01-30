@@ -8,7 +8,6 @@ package stri.ProjetJava;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.rmi.RemoteException;
-import java.util.Iterator;
 import java.util.Vector;
 
 import javax.swing.Timer;
@@ -62,8 +61,8 @@ public class Partie implements ActionListener {
 		this.joueurs.add(c);
 
 		if(this.joueurs.size() == 1){
-		    this.timer = new Timer(5000, this);
-		    this.timer.setInitialDelay(5000);
+		    this.timer = new Timer(10000, this);
+		    this.timer.setInitialDelay(10000);
 		    this.timer.start();
 		}else if(this.joueurs.size() == nbrJoueursMax){
 			this.timer.stop();
@@ -250,8 +249,6 @@ public class Partie implements ActionListener {
     	this.derniereAnnonce = a;
     }
     
-
-
     public void actionPerformed(ActionEvent arg0) {
              System.out.println("[+] Time's up !");
              System.out.println("[+] La partie va commencer !");
@@ -291,5 +288,4 @@ public class Partie implements ActionListener {
     public void setStatus(String status) {
             this.status = status;
     }
-
 }
