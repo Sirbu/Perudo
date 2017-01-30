@@ -210,13 +210,11 @@ public class Joueur extends UnicastRemoteObject implements Client {
 	    	System.exit(0);
 	    }else{
 	    	//LocateRegistry.createRegistry(1099);
-			
-			Serveur serveurimplem=(Serveur)Naming.lookup("rmi://127.0.0.1/Serveur");
+			// 78.213.56.30
+			Serveur serveurimplem=(Serveur)Naming.lookup("rmi://78.245.85.41/Serveur");
 			Joueur clientimplem=new Joueur(serveurimplem);
-			//Annonce a=clientimplem.FaireAnnonce();
-			//clientimplem.AfficheAnnonce(a);
-			//Naming.rebind("rmi://10.0.0.2/nadjim",clientimplem);
-			clientimplem.setPseudo("nadjim");
+
+			clientimplem.setPseudo("sirbu");
 			clientimplem.setPartie("Perudo");
 			
 			Boolean rep=serveurimplem.rejoindrePartie(clientimplem, "Perudo");
