@@ -1,7 +1,7 @@
 package stri.ProjetJava;
 
 import java.rmi.RemoteException;
-
+import jdk.nashorn.internal.runtime.RewriteException;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -17,8 +17,8 @@ public class AppTest extends TestCase{
      * @param testName name of the test case
      * @throws RemoteException 
      */
-    public AppTest( String testName ) throws RemoteException
     
+    public AppTest( String testName ) throws RemoteException
     {
     	super( testName );
     	ServeurImplem serveur1= new ServeurImplem();    //on créer le serveur
@@ -43,16 +43,19 @@ public class AppTest extends TestCase{
     /**
      * @return the suite of tests being tested
      */
-    public static Test suite()
+    /*public static Test suite()
     {
-        return new TestSuite( AppTest.class );
+        return new TestSuite(AppTest.class);
     }
 
     /**
      * Rigourous Test :-)
      */
-    public void testApp()
+    
+    /*public void testApp()
     {
-        assertTrue( true );
-    }
+        assertTrue(true);
+    }*/
 }
+
+

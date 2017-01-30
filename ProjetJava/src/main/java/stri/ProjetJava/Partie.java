@@ -245,6 +245,12 @@ public class Partie implements ActionListener {
     public Annonce getDerniereAnnonce(){
     	return this.derniereAnnonce;
     }
+    
+    public void setDerniereAnnonce(Annonce a){
+    	this.derniereAnnonce = a;
+    }
+    
+    
 
 	public void actionPerformed(ActionEvent arg0) {
 		 System.out.println("[+] Time's up !");
