@@ -94,11 +94,15 @@ public class Joueur extends UnicastRemoteObject implements Client {
 		Annonce a = null;
 		String nombre = "";
 		
-		while((!nombre.contentEquals("1") && !nombre.contentEquals("2") && !nombre.contentEquals("3")) || a == null){
+		do{
 			System.out.println("Merci de rentrer 1 pour sur encherir ");
 			System.out.println("Merci de rentrer 2 pour menteur ");
 			System.out.println("Merci de rentrer 3 pour tout pile ");
 			
+			if(a != null){
+				System.out.println(a.getPseudo());
+				System.out.println(a);
+			}
 			nombre =sc.nextLine();
 
 			if (nombre.contentEquals("1")){
@@ -134,7 +138,8 @@ public class Joueur extends UnicastRemoteObject implements Client {
 			}else {
 					System.out.println("Vous êtes stupide, ce n'est pas un chiffre valide...");
 			}	
-		}
+		}while((!nombre.contentEquals("1") && !nombre.contentEquals("2") && !nombre.contentEquals("3")) || a == null);
+		
 		return a;
 	}
 
