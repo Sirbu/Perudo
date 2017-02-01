@@ -74,8 +74,8 @@ public class Joueur extends UnicastRemoteObject implements Client {
 		System.out.println("le nombre total de dés dans le jeu est de : "+tot);
 		//on affiche la derniere annonce
 		if(this.serveurImplem.getDerniereAnnonce(this.partie) != null){
-			System.out.println("la denière mise : "+this.serveurImplem.getDerniereAnnonce("Perudo").getPseudo()+" a dit "+this.serveurImplem.getDerniereAnnonce("Perudo").getNombre()
-					+" Dés de "+this.serveurImplem.getDerniereAnnonce("Perudo").getValeur());
+			System.out.println("la denière mise : "+this.serveurImplem.getDerniereAnnonce(this.getPartie()).getPseudo()+" a dit "+this.serveurImplem.getDerniereAnnonce(this.getPartie()).getNombre()
+					+" Dés de "+this.serveurImplem.getDerniereAnnonce(this.getPartie()).getValeur());
 		}
 		//on affiche le jeu du joueur
 		System.out.println("votre jeu est le suivant");
@@ -232,11 +232,11 @@ public class Joueur extends UnicastRemoteObject implements Client {
 			Serveur serveurimplem=(Serveur)Naming.lookup("rmi://10.0.0.1/Serveur");
 			Joueur clientimplem=new Joueur(serveurimplem);
 
-			clientimplem.setPseudo("Sirbu");
+			clientimplem.setPseudo("Nadjim");
 
 			clientimplem.setPartie("Perudo");
 			
-			Boolean rep=serveurimplem.rejoindrePartie(clientimplem, "Perudo");
+			Boolean rep=serveurimplem.rejoindrePartie(clientimplem, clientimplem.getPartie());
 			System.out.println("l'appel a renvoyé "+ rep);
 	    }
 	

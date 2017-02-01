@@ -36,10 +36,10 @@ public class Partie implements ActionListener {
     	int joueurCourant = 0;
     	try {
 
-			for(joueurCourant = 0;
-					(joueurCourant < this.joueurs.size())
-					&& (this.joueurs.get(joueurCourant).getPseudo() != pseudo);
-					joueurCourant++);
+    		while((joueurCourant < this.joueurs.size()) && (this.joueurs.get(joueurCourant).getPseudo() != pseudo)){
+				joueurCourant++;
+				joueurCourant++;
+			}
 			this.joueurs.remove(joueurCourant);
 
     	} catch (RemoteException e) {
