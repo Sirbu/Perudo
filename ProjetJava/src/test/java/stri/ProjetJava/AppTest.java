@@ -39,6 +39,20 @@ public class AppTest extends TestCase{
         Annonce annonce3 = new Annonce("surencherir",5,5,"joueur1","partie1"); 
         assertEquals(false, annonce3.verifAnnonce(serveur1));
     }
+    
+    public AppTest2(String testName) throws RemoteException{
+        super(testName);
+        
+        ServeurImplem serveur1= new ServeurImplem();    //on créer le serveur
+        Joueur joueur1 = new Joueur(serveur1);          //on créer le joueur
+        joueur1.setPseudo("Saidharan");                 //on affecte un pseudo au joueur
+        
+        joueur1.setDes(des);
+        joueur1.retirerDes();
+        
+        assertEquals(false, joueur1.getDes().size());
+        
+    }
 
     /**
      * @return the suite of tests being tested
