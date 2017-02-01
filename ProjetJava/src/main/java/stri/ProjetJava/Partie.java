@@ -36,10 +36,10 @@ public class Partie implements ActionListener {
     	int joueurCourant = 0;
     	try {
 
-			for(joueurCourant = 0;
-					(joueurCourant < this.joueurs.size())
-					&& (this.joueurs.get(joueurCourant).getPseudo() != pseudo);
-					joueurCourant++);
+			while((joueurCourant < this.joueurs.size()-1) && (this.joueurs.get(joueurCourant).getPseudo() != pseudo)){
+				joueurCourant++;
+			}
+			System.out.println(this.joueurs.get(joueurCourant).getPseudo());
 			this.joueurs.remove(joueurCourant);
 
     	} catch (RemoteException e) {
@@ -201,8 +201,8 @@ public class Partie implements ActionListener {
 					if(this.joueurs.size() == 1){
 						System.out.println("[+] Il ne reste plus qu'un joueur.");
 						System.out.println("[+] C'est la victoire pour "+ this.joueurs.get(0).getPseudo()+" !");
-						this.enleverJoueurByPseudo(this.joueurs.get(0).getPseudo());
 					}
+					// TODO: mauvaise reprise de joueur
 					this.lancerPartie(joueurCourant);
 				}
 				
