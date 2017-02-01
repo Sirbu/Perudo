@@ -19,7 +19,7 @@ import javax.swing.Timer;
 public class Partie implements ActionListener {
 
     private String nom;
-    private int nbrJoueursMax = 2;              // Pourra être modifié à l'occaz
+    private int nbrJoueursMax = 6;              // Pourra être modifié à l'occaz
     private String status;                      // WAIT || RUNNING || OVER
     private Annonce derniereAnnonce;           // la derniereAnnonce émise par un joueur
     private Vector<Client> joueurs;    			// Contient les joueurs
@@ -65,7 +65,7 @@ public class Partie implements ActionListener {
 		    this.timer.setInitialDelay(10000);
 		    this.timer.start();
 		}else if(this.joueurs.size() == nbrJoueursMax){
-			this.timer.stop();
+			this.actionPerformed(null);
 		}
 
         return true;
@@ -181,10 +181,8 @@ public class Partie implements ActionListener {
     	Annonce annonceCourante;
     	
     	System.out.println("[+] Début d'une manche !");
+    	this.derniereAnnonce = null;
     	this.broadcastAnnonce(new Annonce("info", "Une nouvelle manche commence !", "Serveur"));
-    	
-    	// DEBUG ANNONCE
-    	this.derniereAnnonce = new Annonce("surenchrir", 5, 5, "nadjim", "Perudo");
     	
     	this.lancerTousLesDes();
     	

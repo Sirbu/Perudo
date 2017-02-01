@@ -73,8 +73,10 @@ public class Joueur extends UnicastRemoteObject implements Client {
 		
 		System.out.println("le nombre total de des dans le jeu est de : "+tot);
 		//on affiche la derniere annonce
-		System.out.println("la deniere mise : "+this.serveurImplem.getDerniereAnnonce("Perudo").getPseudo()+" a dit "+this.serveurImplem.getDerniereAnnonce("Perudo").getNombre()
-				+" Dés de "+this.serveurImplem.getDerniereAnnonce("Perudo").getValeur());
+		if(this.serveurImplem.getDerniereAnnonce(this.partie) != null){
+			System.out.println("la deniere mise : "+this.serveurImplem.getDerniereAnnonce("Perudo").getPseudo()+" a dit "+this.serveurImplem.getDerniereAnnonce("Perudo").getNombre()
+					+" Dés de "+this.serveurImplem.getDerniereAnnonce("Perudo").getValeur());
+		}
 		//on affiche le jeu du joueur
 		System.out.println("votre jeu est le suivant");
 		
@@ -88,40 +90,46 @@ public class Joueur extends UnicastRemoteObject implements Client {
 		System.out.println(" ");
 
 		Scanner sc=new Scanner(System.in);
-		System.out.println("Merci de rentrer 1 pour sur encherir ");
-		System.out.println("Merci de rentrer 2 pour menteur ");
-		System.out.println("Merci de rentrer 3 pour tout pile ");
-		
-		String nombre =sc.nextLine();
 	    
 		Annonce a = null;
+		String nombre = "";
 		
-		if (nombre.contentEquals("1")){
-			int nb=0;
-			int val=0;
-			Boolean bonneSaisie=false;
-	
-			while(!bonneSaisie){
-				System.out.println("merci de rentrer le nombre de Dés puis la valeur:");
-			    nombre =sc.nextLine();
-			    nb=Integer.parseInt(nombre);
-			    nombre =sc.nextLine();
-			    val=Integer.parseInt(nombre);
-			    //verification de l validité de la saisie
-			    //3 des de 4 derniere annonce
-			    // 2 des de 4 moi
-			    a = new Annonce("surencherir",nb,val,getPseudo(), "perudo");
-			    bonneSaisie=a.verifAnnonce(serveurImplem);    
-		   }
-			// si le joueur est le premier a jouer dans cette manche il ne peut dire toutpile ni menteur
-		}else if (nombre.contentEquals("2") && this.serveurImplem.getDerniereAnnonce("Perudo")!=null){
-			 	a = new Annonce("menteur"," ",getPseudo());
+		while(!nombre.contentEquals("1") && !nombre.contentEquals("2") && !nombre.contentEquals("3")){
+			System.out.println("Merci de rentrer 1 pour sur encherir ");
+			System.out.println("Merci de rentrer 2 pour menteur ");
+			System.out.println("Merci de rentrer 3 pour tout pile ");
 			
-		}
-		else if(this.serveurImplem.getDerniereAnnonce("Perudo")!=null){
-			 a = new Annonce("toutpile"," ",getPseudo());
-			
-		}
+			nombre =sc.nextLine();
+
+			if (nombre.contentEquals("1")){
+				int nb=0;
+				int val=0;
+				Boolean bonneSaisie=false;
+		
+				while(!bonneSaisie){
+					System.out.println("merci de rentrer le nombre de Dés puis la valeur:");
+				    nombre =sc.nextLine();
+				    nb=Integer.parseInt(nombre);
+				    nombre =sc.nextLine();
+				    val=Integer.parseInt(nombre);
+				    //verification de l validité de la saisie
+				    //3 des de 4 derniere annonce
+				    // 2 des de 4 moi
+				    a = new Annonce("surencherir",nb,val,getPseudo(), "perudo");
+				    bonneSaisie=a.verifAnnonce(serveurImplem);    
+			   }
+				// si le joueur est le premier a jouer dans cette manche il ne peut dire toutpile ni menteur
+			}else if (nombre.contentEquals("2") && this.serveurImplem.getDerniereAnnonce("Perudo")!=null){
+				 	a = new Annonce("menteur"," ",getPseudo());
+				
+			}
+			else if(this.serveurImplem.getDerniereAnnonce("Perudo")!=null){
+				 a = new Annonce("toutpile"," ",getPseudo());	
+			}else{
+				System.out.println("Vous êtes stupide, ce n'est pas un chiffre valide...");
+			}			
+		}	
+		
 		return a;
 	}
 
@@ -211,8 +219,7 @@ public class Joueur extends UnicastRemoteObject implements Client {
 	    	System.exit(0);
 	    }else{
 	    	//LocateRegistry.createRegistry(1099);
-			// 78.213.56.30
-			Serveur serveurimplem=(Serveur)Naming.lookup("rmi://78.245.85.41/Serveur");
+			Serveur serveurimplem=(Serveur)Naming.lookup("rmi://10.0.0.1/Serveur");
 			Joueur clientimplem=new Joueur(serveurimplem);
 
 			clientimplem.setPseudo("sirbu");
