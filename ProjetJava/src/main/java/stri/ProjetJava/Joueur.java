@@ -91,18 +91,15 @@ public class Joueur extends UnicastRemoteObject implements Client {
 
 		Scanner sc=new Scanner(System.in);
 	    
-		Annonce a = null;
+		Annonce a;
 		String nombre = "";
 		
 		do{
+			a = null;
 			System.out.println("Merci de rentrer 1 pour sur encherir ");
 			System.out.println("Merci de rentrer 2 pour menteur ");
 			System.out.println("Merci de rentrer 3 pour tout pile ");
 			
-			if(a != null){
-				System.out.println(a.getPseudo());
-				System.out.println(a);
-			}
 			nombre =sc.nextLine();
 
 			if (nombre.contentEquals("1")){
@@ -112,10 +109,12 @@ public class Joueur extends UnicastRemoteObject implements Client {
 		
 				while(!bonneSaisie){
 					System.out.println("merci de rentrer le nombre de Dés puis la valeur:");
-				    nombre =sc.nextLine();
-				    nb=Integer.parseInt(nombre);
-				    nombre =sc.nextLine();
-				    val=Integer.parseInt(nombre);
+				    try{
+				    	nb = Integer.parseInt(sc.nextLine());
+				    	val = Integer.parseInt(sc.nextLine());
+				    }catch(NumberFormatException e){
+				    	continue;
+				    }
 				    //verification de l validité de la saisie
 				    //3 des de 4 derniere annonce
 				    // 2 des de 4 moi
@@ -138,6 +137,7 @@ public class Joueur extends UnicastRemoteObject implements Client {
 			}else {
 					System.out.println("Vous êtes stupide, ce n'est pas un chiffre valide...");
 			}	
+			
 		}while((!nombre.contentEquals("1") && !nombre.contentEquals("2") && !nombre.contentEquals("3")) || a == null);
 		
 		return a;
