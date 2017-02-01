@@ -223,7 +223,7 @@ public class Joueur extends UnicastRemoteObject implements Client {
 			Serveur serveurimplem=(Serveur)Naming.lookup("rmi://10.0.0.1/Serveur");
 			Joueur clientimplem=new Joueur(serveurimplem);
 
-			clientimplem.setPseudo("sirbu");
+			clientimplem.setPseudo("Nadjim");
 			clientimplem.setPartie("Perudo");
 			
 			Boolean rep=serveurimplem.rejoindrePartie(clientimplem, "Perudo");
