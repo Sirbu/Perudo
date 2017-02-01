@@ -71,10 +71,10 @@ public class Joueur extends UnicastRemoteObject implements Client {
 			tot+=player.elementAt(i).getDes().size();
 		}
 		
-		System.out.println("le nombre total de des dans le jeu est de : "+tot);
+		System.out.println("le nombre total de dés dans le jeu est de : "+tot);
 		//on affiche la derniere annonce
 		if(this.serveurImplem.getDerniereAnnonce(this.partie) != null){
-			System.out.println("la deniere mise : "+this.serveurImplem.getDerniereAnnonce("Perudo").getPseudo()+" a dit "+this.serveurImplem.getDerniereAnnonce("Perudo").getNombre()
+			System.out.println("la denière mise : "+this.serveurImplem.getDerniereAnnonce("Perudo").getPseudo()+" a dit "+this.serveurImplem.getDerniereAnnonce("Perudo").getNombre()
 					+" Dés de "+this.serveurImplem.getDerniereAnnonce("Perudo").getValeur());
 		}
 		//on affiche le jeu du joueur

@@ -82,7 +82,6 @@ public class ServeurImplem extends UnicastRemoteObject implements Serveur {
         }catch(MalformedURLException e){
             e.printStackTrace();
         }
-        
     }    
     
     // getters & setters

@@ -189,7 +189,6 @@ public class Partie implements ActionListener {
 		try {
 			this.joueurs.get(0).lancerDes();
 		} catch (RemoteException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 
@@ -199,6 +198,11 @@ public class Partie implements ActionListener {
 
 				finTour = traiterAnnonce(annonceCourante);
 				if(finTour){
+					if(this.joueurs.size() == 1){
+						System.out.println("[+] Il ne reste plus qu'un joueur.");
+						System.out.println("[+] C'est la victoire pour "+ this.joueurs.get(0).getPseudo()+" !");
+						this.enleverJoueurByPseudo(this.joueurs.get(0).getPseudo());
+					}
 					this.lancerPartie(joueurCourant);
 				}
 				
@@ -249,10 +253,16 @@ public class Partie implements ActionListener {
     
     public void actionPerformed(ActionEvent arg0) {
              System.out.println("[+] Time's up !");
-             System.out.println("[+] La partie va commencer !");
-             this.timer.stop();
-             this.status = "RUNNNING";
-             this.lancerPartie(0);
+             if(this.joueurs.size() == 1){
+            	 System.out.println("[+] Mais personne n'est là pour jouer...");
+            	 System.out.println("[+] Relance du timer !");
+            	 this.timer.start();
+             }else{
+            	 System.out.println("[+] La partie va commencer !");
+                 this.timer.stop();
+                 this.status = "RUNNNING";
+                 this.lancerPartie(0); 
+             }
     }
 
     public int getNbrJoueursMax() {
