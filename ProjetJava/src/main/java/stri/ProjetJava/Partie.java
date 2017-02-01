@@ -45,7 +45,6 @@ public class Partie implements ActionListener {
     	} catch (RemoteException e) {
 			System.out.println("Le client "+ joueurCourant + " est déconnecté !");
 			this.joueurs.remove(joueurCourant);
-          
 		}
     }
 
@@ -109,11 +108,10 @@ public class Partie implements ActionListener {
     }
 
     // traiterAnnonce exécute le traitement associé au type de l'annonce.
-    // Elle retourne false rien de spécial ne s'est passé, mais renvoie
-    // true si il y a eu une annonce de menteur ou tout pile et qu'il 
-    // faut donc recommencer la manche.
-    boolean traiterAnnonce(Annonce annonceCourante) throws RemoteException{
-		boolean ret = false;
+    // Si l'annonce termine une manche, traiterAnnonce retourne le pseudo
+    // du joueur à reprendre la main. Sinon elle retourne une chaine vide
+    String traiterAnnonce(Annonce annonceCourante) throws RemoteException{
+		String prochainJoueur = "";
     	
     	// On doit d'abord diffuser l'annonce courante
 	    broadcastAnnonce(annonceCourante);
@@ -142,10 +140,12 @@ public class Partie implements ActionListener {
 		        	// Là celui qui vien de dénoncer un mensonge a eu raison !
 		        	annonceNotif.setMessage("Hé oui ! "+derniereAnnonce.getPseudo()+" était un sale menteur !\nJ'aime pas les menteurs et les fils de pute.");
 		        	this.getJoueurByPseudo(derniereAnnonce.getPseudo()).retirerDes();
+		        	prochainJoueur = derniereAnnonce.getPseudo();
 		        }else{
 		        	// Ici celui qui dénnonce le mensonge a tort
 		        	annonceNotif.setMessage("Loupé... "+ derniereAnnonce.getPseudo()+" avait raison !");
 		        	this.getJoueurByPseudo(annonceCourante.getPseudo()).retirerDes();
+		        	prochainJoueur = annonceCourante.getPseudo();
 		        }
 		    }else if(annonceCourante.getType().contentEquals("toutpile")){
 		        if(nbrDesReel == nbrDesAnnonce){
@@ -155,11 +155,11 @@ public class Partie implements ActionListener {
 		        	annonceNotif.setMessage("Ouch..." + annonceCourante.getPseudo() + " a perdu un dé !");
 		        	this.getJoueurByPseudo(annonceCourante.getPseudo()).retirerDes();
 		        }
+		        prochainJoueur = annonceCourante.getPseudo();
 		    }
 	        broadcastAnnonce(annonceNotif);
-	        ret = true;
 	    }	  
-	    return ret;
+	    return prochainJoueur;
 	}
 
     private void lancerTousLesDes(){
@@ -176,7 +176,7 @@ public class Partie implements ActionListener {
     
     // Ne pas incrémenter le compteur de joueur lors de l'élimination d'un joueur
     public void lancerPartie(int joueur){
-    	boolean finTour = false; 
+    	String joueurReprise = "";  // Le nom du joueur qui reprend la main après la fin d'une manche  
     	int joueurCourant = joueur;
     	Annonce annonceCourante;
     	
@@ -192,18 +192,23 @@ public class Partie implements ActionListener {
 			e1.printStackTrace();
 		}
 
-    	while((this.joueurs.size() != 0) && (!finTour)){
+    	while((this.joueurs.size() != 0) && !(joueurReprise.contentEquals(""))){
     		try {
 				annonceCourante = this.joueurs.get(joueurCourant).FaireAnnonce();
 
-				finTour = traiterAnnonce(annonceCourante);
-				if(finTour){
+				joueurReprise = traiterAnnonce(annonceCourante);
+				if(!joueurReprise.contentEquals("")){
 					if(this.joueurs.size() == 1){
 						System.out.println("[+] Il ne reste plus qu'un joueur.");
 						System.out.println("[+] C'est la victoire pour "+ this.joueurs.get(0).getPseudo()+" !");
 					}
-					// TODO: mauvaise reprise de joueur
-					this.lancerPartie(joueurCourant);
+					
+					// Permet de retrouver l'indice du joueur dont le pseudo est joueurReprise
+					int i = 0;
+					while( (i < this.joueurs.size()) && !this.joueurs.get(i).getPseudo().contentEquals(joueurReprise) ){
+						i++;
+					}
+					this.lancerPartie(i);
 				}
 				
 			} catch (RemoteException e) {
