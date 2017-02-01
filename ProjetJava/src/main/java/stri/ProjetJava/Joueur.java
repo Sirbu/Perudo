@@ -115,21 +115,22 @@ public class Joueur extends UnicastRemoteObject implements Client {
 				    //verification de l validité de la saisie
 				    //3 des de 4 derniere annonce
 				    // 2 des de 4 moi
-				    a = new Annonce("surencherir",nb,val,getPseudo(), "perudo");
+				    a = new Annonce("surencherir",nb,val,this.getPseudo(), "perudo");
 				    bonneSaisie=a.verifAnnonce(serveurImplem);    
-			   }
-				// si le joueur est le premier a jouer dans cette manche il ne peut dire toutpile ni menteur
-			}else if (nombre.contentEquals("2") && this.serveurImplem.getDerniereAnnonce("Perudo")!=null){
-				 	a = new Annonce("menteur"," ",getPseudo());
-				
-			}
-			else if(this.serveurImplem.getDerniereAnnonce("Perudo")!=null){
-				 a = new Annonce("toutpile"," ",getPseudo());	
-			}else{
-				System.out.println("Vous êtes stupide, ce n'est pas un chiffre valide...");
-			}			
-		}	
-		
+				 // si le joueur est le premier a jouer dans cette manche il ne peut dire toutpile ni menteur
+				}
+			}else if(this.serveurImplem.getDerniereAnnonce(this.partie) == null){
+				System.out.println("Impossible, vous êtes le premier joueur !");
+			}else if(this.serveurImplem.getDerniereAnnonce(this.partie) != null){
+				if(nombre.contentEquals("2")){
+					a = new Annonce("menteur"," ",this.getPseudo());
+				}else if(nombre.contentEquals("3")){
+					a = new Annonce("toutpile"," ",this.getPseudo());	
+				}
+			}else if(!nombre.contentEquals("2") && !nombre.contentEquals("3")){
+					System.out.println("Vous êtes stupide, ce n'est pas un chiffre valide...");
+			}	
+		}
 		return a;
 	}
 
