@@ -37,16 +37,14 @@ public class Annonce implements Serializable {
     public boolean verifAnnonce(Serveur serveurImplem) throws RemoteException{
     	// on verifie bien que la mise respecte les condition du jeu et que les valeurs annoncées soit raisonnable 
     	//càd ne pas annocer 2 des de 45 ...par exemple
-    	if (this.getType().contentEquals("surencherir") && serveurImplem.getDerniereAnnonce(this.getPartie())!=null){
-        	int nbserv = serveurImplem.getDerniereAnnonce("Perudo").getNombre();
-        	int valserv=serveurImplem.getDerniereAnnonce("Perudo").getValeur();
-        	
-        	return ( (( nbserv == this.getNombre() && valserv< this.getValeur() ) || nbserv < this.getNombre() ) &&
-        			(this.getValeur()>1 && this.getValeur()<=6));
-        	}
-        	else return true;
+    	
+    	int nbserv = serveurImplem.getDerniereAnnonce(this.getPartie()).getNombre();
+    	int valserv=serveurImplem.getDerniereAnnonce(this.getPartie()).getValeur();
+    	return(( nbserv == this.getNombre() && valserv< this.getValeur() ) || nbserv < this.getNombre() ) &&
+    			(this.getValeur()>1 && this.getValeur()<=6);
     	
     }
+    
     public void setPseudo(String pseudo) {
         this.pseudo=pseudo;
     }
