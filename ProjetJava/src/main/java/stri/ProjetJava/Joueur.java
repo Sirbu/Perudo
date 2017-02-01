@@ -63,6 +63,7 @@ public class Joueur extends UnicastRemoteObject implements Client {
 
 	public Annonce FaireAnnonce() throws RemoteException {	
 		int tot=0;
+		boolean ok = true;	// true si l'annonce est valide, false sinon
 		// recupére le nombre de des de chaque joueur pour l'aider a ajuster son annonce
 		Vector<Client> player =this.serveurImplem.getJoueursConnectes(this.partie);
 		for(int i=0;i< player.size();i++){
@@ -121,11 +122,14 @@ public class Joueur extends UnicastRemoteObject implements Client {
 				}
 			}else if(this.serveurImplem.getDerniereAnnonce(this.partie) == null){
 				System.out.println("Impossible, vous êtes le premier joueur !");
+				ok = false;
 			}else if(this.serveurImplem.getDerniereAnnonce(this.partie) != null){
 				if(nombre.contentEquals("2")){
 					a = new Annonce("menteur"," ",this.getPseudo());
+					ok = true;
 				}else if(nombre.contentEquals("3")){
 					a = new Annonce("toutpile"," ",this.getPseudo());	
+					ok = true;
 				}
 			}else if(!nombre.contentEquals("2") && !nombre.contentEquals("3")){
 					System.out.println("Vous êtes stupide, ce n'est pas un chiffre valide...");
@@ -224,6 +228,7 @@ public class Joueur extends UnicastRemoteObject implements Client {
 			Joueur clientimplem=new Joueur(serveurimplem);
 
 			clientimplem.setPseudo("Nadjim");
+
 			clientimplem.setPartie("Perudo");
 			
 			Boolean rep=serveurimplem.rejoindrePartie(clientimplem, "Perudo");
