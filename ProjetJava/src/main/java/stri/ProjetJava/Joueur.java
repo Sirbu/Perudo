@@ -95,7 +95,7 @@ public class Joueur extends UnicastRemoteObject implements Client {
 		Annonce a = null;
 		String nombre = "";
 		
-		while(!nombre.contentEquals("1") && !nombre.contentEquals("2") && !nombre.contentEquals("3") && ok){
+		while(!nombre.contentEquals("1") && !nombre.contentEquals("2") && !nombre.contentEquals("3") && !ok){
 			System.out.println("Merci de rentrer 1 pour sur encherir ");
 			System.out.println("Merci de rentrer 2 pour menteur ");
 			System.out.println("Merci de rentrer 3 pour tout pile ");
