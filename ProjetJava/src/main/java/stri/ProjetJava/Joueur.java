@@ -120,18 +120,23 @@ public class Joueur extends UnicastRemoteObject implements Client {
 				    bonneSaisie=a.verifAnnonce(serveurImplem);    
 				 // si le joueur est le premier a jouer dans cette manche il ne peut dire toutpile ni menteur
 				}
-			}else if(this.serveurImplem.getDerniereAnnonce(this.partie) == null){
-				System.out.println("Impossible, vous êtes le premier joueur !");
-				ok = false;
-			}else if(this.serveurImplem.getDerniereAnnonce(this.partie) != null){
-				if(nombre.contentEquals("2")){
+			}else if(nombre.contentEquals("2")){
+				if(this.serveurImplem.getDerniereAnnonce(this.partie) == null){
+					System.out.println("Impossible, vous êtes le premier joueur !");
+					ok = false;
+				}else{
 					a = new Annonce("menteur"," ",this.getPseudo());
 					ok = true;
-				}else if(nombre.contentEquals("3")){
+				}
+			}else if(nombre.contentEquals("3")){
+				if(this.serveurImplem.getDerniereAnnonce(this.partie) == null){
+					System.out.println("Impossible, vous êtes le premier joueur !");
+					ok = false;
+				}else{
 					a = new Annonce("toutpile"," ",this.getPseudo());	
 					ok = true;
 				}
-			}else if(!nombre.contentEquals("2") && !nombre.contentEquals("3")){
+			}else {
 					System.out.println("Vous êtes stupide, ce n'est pas un chiffre valide...");
 			}	
 		}
