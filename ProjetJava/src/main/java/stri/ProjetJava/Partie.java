@@ -32,14 +32,24 @@ public class Partie implements ActionListener {
         this.joueurs = new Vector<Client>();
     }
 
-    public void enleverJoueurByPseudo(String pseudo){
+    public boolean checkFinPartie(){
+    	
+    	if(this.joueurs.size() == 1){
+    		System.out.println("[+] Plus qu'un seul joueur dans la partie. " + this.joueurs.get(0) + " est le vainqueur !");
+    		return true;
+    	}    	
+    	return false;
+    }
+    
+    public synchronized void enleverJoueurByPseudo(String pseudo){
     	int joueurCourant = 0;
     	try {
-			while((joueurCourant < this.joueurs.size()-1) && (this.joueurs.get(joueurCourant).getPseudo() != pseudo)){
+			while((joueurCourant < this.joueurs.size()) && (this.joueurs.get(joueurCourant).getPseudo() != pseudo)){
 				joueurCourant++;
 			}
-			System.out.println(this.joueurs.get(joueurCourant).getPseudo());
+			System.out.println("Il va partir : "+this.joueurs.get(joueurCourant).getPseudo());
 
+			// -1 car la boucle while s'exécute uen fois de trop.
 			this.joueurs.remove(joueurCourant);
 
     	} catch (RemoteException e) {
@@ -48,11 +58,11 @@ public class Partie implements ActionListener {
 		}
     }
 
-    public void enleverJoueurByIndex(int i){
+    public synchronized void enleverJoueurByIndex(int i){
     	this.joueurs.remove(i);
     }
 
-    public boolean ajouterJoueur(Client c){
+    public synchronized boolean ajouterJoueur(Client c){
 
         if(this.joueurs.size() == nbrJoueursMax){
 			return false;
@@ -186,44 +196,79 @@ public class Partie implements ActionListener {
     	
     	this.lancerTousLesDes();
 
-    	while((this.joueurs.size() != 0)){
+    	while((this.joueurs.size() > 1)){
     		try {
 				annonceCourante = this.joueurs.get(joueurCourant).FaireAnnonce();
 
 				joueurReprise = traiterAnnonce(annonceCourante);
+				
 				if(!joueurReprise.contentEquals("none")){
-					if(this.joueurs.size() == 1){
-						System.out.println("[+] Il ne reste plus qu'un joueur.");
-						System.out.println("[+] C'est la victoire pour "+ this.joueurs.get(0).getPseudo()+" !");
+					// Permet de retrouver l'indice du joueur dont le pseudo est joueurReprise
+					// TODO : a mettre dans une fonction
+					int i = 0;
+					while( (i < this.joueurs.size()) && !this.joueurs.get(i).getPseudo().contentEquals(joueurReprise) ){
+						i++;
+					}
+					
+					System.out.println("Manche terminée : " + this.joueurs.get(i).getPseudo() + " doit recommencer !");
+					
+					// déterminer si un joueur doit quitter la partie.
+					if(this.getJoueurByPseudo(joueurReprise).getDes().size() == 0){
+						// on prévient tout le monde de la défaite du joueur
+						System.out.println("[+] Le joueur "+ joueurReprise +" n'a plus de dés !");
+						Annonce a = new Annonce("info", "Le joueur " + joueurReprise + " a perdu !", "Serveur");
+						broadcastAnnonce(a);
 						
-						// on informe le joueur que la partie est terminée
-						Annonce a = new Annonce("info", "gameover", "Serveur");
-						this.joueurs.get(0).AfficheAnnonce(a);
-						this.enleverJoueurByIndex(0);
-					}else{
-						// Permet de retrouver l'indice du joueur dont le pseudo est joueurReprise
-						int i = 0;
+						// on prévient le joueur avec une annonce particulière
+						a.setType("defaite");
+						this.getJoueurByPseudo(joueurReprise).AfficheAnnonce(a);
+						this.enleverJoueurByPseudo(joueurReprise);
+						
+						// Comme le joueur qui devait reprendre a perdu, on rend 
+						// la main au joueur suivant.
+						i = 0;
 						while( (i < this.joueurs.size()) && !this.joueurs.get(i).getPseudo().contentEquals(joueurReprise) ){
 							i++;
 						}
-						System.out.println("Manche terminée : " + this.joueurs.get(i).getPseudo() + " doit recommencer !");
-						this.lancerPartie(i);
-					}				
+						joueurCourant = i+1;
+						
+					}
+					
+					this.lancerPartie(i);			
 				}
-				
+
 			} catch (RemoteException e) {
 				// TODO Améliorer la gestion des déconnexions brutales
 				System.out.println("[!] Le client "+ joueurCourant +" est déconnecté !");
-				this.enleverJoueurByIndex(joueurCourant);
+				
+				if(this.joueurs.size() >= joueurCourant){
+					System.out.println("[+] Il est déjà parti...");
+				}else{
+					this.enleverJoueurByIndex(joueurCourant);
+				}
 				continue;
 			}
     		
-    		if(joueurCourant == (this.joueurs.size()-1)){
+    		if(joueurCourant >= (this.joueurs.size())){
     			joueurCourant = 0;
     		}else{
     			joueurCourant++;
     		}
     	}
+		
+		try {
+			System.out.println("[+] Il ne reste plus qu'un joueur.");
+			System.out.println("[+] C'est la victoire pour "+ this.joueurs.get(0).getPseudo()+" !");
+			
+			// on informe le joueur que la partie est terminée
+			Annonce a = new Annonce("gameover", "gameover", "Serveur");
+			this.joueurs.get(0).AfficheAnnonce(a);
+			this.enleverJoueurByIndex(0);
+			
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
 
     // getters & setters
@@ -238,7 +283,6 @@ public class Partie implements ActionListener {
     public Client getJoueurByPseudo(String pseudo) throws RemoteException{
     	int i = 0;
     	for(i = 0; (i < this.joueurs.size()) && (!this.joueurs.get(i).getPseudo().contentEquals(pseudo)); i++);
-    	System.out.println(" Index joueur => "+ i);
     	return this.joueurs.get(i);
     }
 
