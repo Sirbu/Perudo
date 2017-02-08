@@ -29,7 +29,7 @@ public class Joueur extends UnicastRemoteObject implements Client {
 		this.serveurImplem=serveurimplem;
 		des = new Vector<Integer>();
 		//au debut de la partie tout le monde a 6 des initilaisé à 0
-		for(int i=0;i<2;i++){
+		for(int i=0;i<1;i++){
 			des.add(i, 0);
 		}
 		
@@ -58,6 +58,9 @@ public class Joueur extends UnicastRemoteObject implements Client {
 		// annonce de type info
 		if(a.getType().contentEquals("info")){
 			System.out.println(a.getMessage());
+			if(a.getMessage().contentEquals("gameover")){// l'adversaire a gagné
+				this.serveurImplem.quitterPartie(this.pseudo, this.getPartie());
+			}
 		}
 	}
 
@@ -180,7 +183,9 @@ public class Joueur extends UnicastRemoteObject implements Client {
 		
 		if(this.des.size() == 0){
 			// ici on a plus de dés donc on doit quitter la partie
+			System.out.println("il ne vous reste plus de des ....CIAO");
 			this.serveurImplem.quitterPartie(this.pseudo, this.partie);
+			System.exit(0);
 		}
 	}
 
@@ -232,7 +237,7 @@ public class Joueur extends UnicastRemoteObject implements Client {
 			Serveur serveurimplem=(Serveur)Naming.lookup("rmi://10.0.0.1/Serveur");
 			Joueur clientimplem=new Joueur(serveurimplem);
 
-			clientimplem.setPseudo("Nadjim");
+			clientimplem.setPseudo("sirbu");
 
 			clientimplem.setPartie("Perudo");
 			
