@@ -45,23 +45,25 @@ public class Joueur extends UnicastRemoteObject implements Client {
 		}
 		
 		//tout pile
-		if(a.getType().contentEquals("toutpile")){
+		else if(a.getType().contentEquals("toutpile")){
 			System.out.println(a.getPseudo() +" à decalré un tout pile !! ");
 
 		}
 		
 		//sur enchere
-		if(a.getType().contentEquals("surencherir")){
+		else if(a.getType().contentEquals("surencherir")){
 			System.out.println(a.getPseudo()+" à Annoncer " + a.getNombre()+" Dés de "+a.getValeur());
 		}
 		
 		// annonce de type info
-		if(a.getType().contentEquals("info")){
+		else if(a.getType().contentEquals("info")){
 			System.out.println(a.getMessage());
-			if(a.getMessage().contentEquals("gameover")){// l'adversaire a gagné
-				this.serveurImplem.quitterPartie(this.pseudo, this.getPartie());
-			}
 		}
+		else {
+			System.out.println("tu quittes le jeu");
+			System.exit(0);
+		}
+		
 	}
 
 	public Annonce FaireAnnonce() throws RemoteException {	
@@ -181,12 +183,12 @@ public class Joueur extends UnicastRemoteObject implements Client {
 			this.getDes().removeElementAt(0);
 		}
 		
-		if(this.des.size() == 0){
+	/*	if(this.des.size() == 0){
 			// ici on a plus de dés donc on doit quitter la partie
-			System.out.println("il ne vous reste plus de des ....CIAO");
+			System.out.println("il ne vous reste plus de des, vous avez perdu ....CIAO");
 			this.serveurImplem.quitterPartie(this.pseudo, this.partie);
 			System.exit(0);
-		}
+		}*/
 	}
 
 	public void ajouterDes() throws RemoteException {
@@ -237,7 +239,7 @@ public class Joueur extends UnicastRemoteObject implements Client {
 			Serveur serveurimplem=(Serveur)Naming.lookup("rmi://10.0.0.1/Serveur");
 			Joueur clientimplem=new Joueur(serveurimplem);
 
-			clientimplem.setPseudo("sirbu");
+			clientimplem.setPseudo("Nadjim");
 
 			clientimplem.setPartie("Perudo");
 			
