@@ -111,7 +111,7 @@ public class Partie implements ActionListener {
     // Si l'annonce termine une manche, traiterAnnonce retourne le pseudo
     // du joueur à reprendre la main. Sinon elle retourne une chaine vide
     String traiterAnnonce(Annonce annonceCourante) throws RemoteException{
-		String prochainJoueur = "";
+		String prochainJoueur = "none";
     	
     	// On doit d'abord diffuser l'annonce courante
 	    broadcastAnnonce(annonceCourante);
@@ -176,7 +176,7 @@ public class Partie implements ActionListener {
     
     // Ne pas incrémenter le compteur de joueur lors de l'élimination d'un joueur
     public void lancerPartie(int joueur){
-    	String joueurReprise = "";  // Le nom du joueur qui reprend la main après la fin d'une manche  
+    	String joueurReprise = "none";
     	int joueurCourant = joueur;
     	Annonce annonceCourante;
     	
@@ -185,30 +185,30 @@ public class Partie implements ActionListener {
     	this.broadcastAnnonce(new Annonce("info", "Une nouvelle manche commence !", "Serveur"));
     	
     	this.lancerTousLesDes();
-    	
-		try {
-			this.joueurs.get(0).lancerDes();
-		} catch (RemoteException e1) {
-			e1.printStackTrace();
-		}
 
-    	while((this.joueurs.size() != 0) && !(joueurReprise.contentEquals(""))){
+    	while((this.joueurs.size() != 0)){
     		try {
 				annonceCourante = this.joueurs.get(joueurCourant).FaireAnnonce();
 
 				joueurReprise = traiterAnnonce(annonceCourante);
-				if(!joueurReprise.contentEquals("")){
+				if(!joueurReprise.contentEquals("none")){
 					if(this.joueurs.size() == 1){
 						System.out.println("[+] Il ne reste plus qu'un joueur.");
 						System.out.println("[+] C'est la victoire pour "+ this.joueurs.get(0).getPseudo()+" !");
-					}
-					
-					// Permet de retrouver l'indice du joueur dont le pseudo est joueurReprise
-					int i = 0;
-					while( (i < this.joueurs.size()) && !this.joueurs.get(i).getPseudo().contentEquals(joueurReprise) ){
-						i++;
-					}
-					this.lancerPartie(i);
+						
+						// on informe le joueur que la partie est terminée
+						Annonce a = new Annonce("info", "gameover", "Serveur");
+						this.joueurs.get(0).AfficheAnnonce(a);
+						this.enleverJoueurByIndex(0);
+					}else{
+						// Permet de retrouver l'indice du joueur dont le pseudo est joueurReprise
+						int i = 0;
+						while( (i < this.joueurs.size()) && !this.joueurs.get(i).getPseudo().contentEquals(joueurReprise) ){
+							i++;
+						}
+						System.out.println("Manche terminée : " + this.joueurs.get(i).getPseudo() + " doit recommencer !");
+						this.lancerPartie(i);
+					}				
 				}
 				
 			} catch (RemoteException e) {
