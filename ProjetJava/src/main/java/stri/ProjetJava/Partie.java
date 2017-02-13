@@ -197,8 +197,8 @@ public class Partie implements ActionListener {
     		
     	 	System.out.println("[+] Début d'une manche !");
         	this.derniereAnnonce = null;
+        	joueurReprise="none";
         	this.broadcastAnnonce(new Annonce("info", "Une nouvelle manche commence !", "Serveur"));
-        	
         	this.lancerTousLesDes();
 
         	while(joueurReprise.contentEquals("none")){
@@ -227,44 +227,45 @@ public class Partie implements ActionListener {
         	// ici, le joueurReprise != "none"
         	// Permet de retrouver l'indice du joueur dont le pseudo est joueurReprise
 			// TODO : a mettre dans une fonction
-			try{				
-				indexJoueurReprise = getIndexByPseudo(joueurReprise);
-				
-				// offset to test
-				System.out.println("Joueur de merde : "+ this.joueurs.get(indexJoueurReprise).getPseudo() + "index : " + indexJoueurReprise);
-				
-				System.out.println("Manche terminée : " + this.joueurs.get(indexJoueurReprise).getPseudo() + " doit recommencer !");
-				
-				// déterminer si le joueur doit quitter la partie.
-				if(this.getJoueurByPseudo(joueurReprise).getDes().size() == 0){
-					// on prévient tout le monde de la défaite du joueur
-					System.out.println("[+] Le joueur "+ joueurReprise +" n'a plus de dés !");
-					Annonce a = new Annonce("info", "Le joueur " + joueurReprise + " a perdu !", "Serveur");
-					broadcastAnnonce(a);
+        	if(!joueurReprise.contentEquals("none")){
+        		try{				
+					indexJoueurReprise = getIndexByPseudo(joueurReprise);
 					
-					// on prévient le joueur avec une annonce particulière
-					a.setType("defaite");
-					this.getJoueurByPseudo(joueurReprise).AfficheAnnonce(a);
-
-					this.enleverJoueurByIndex(indexJoueurReprise);
-					System.out.println("AFTER => Taille joueurs = " + this.joueurs.size());
+					// offset to test
+					System.out.println("Joueur de merde : "+ this.joueurs.get(indexJoueurReprise).getPseudo() + "index : " + indexJoueurReprise);
 					
-					// Comme le joueur qui devait reprendre a perdu, on rend 
-					// la main au joueur suivant.
-					// joueurCourant = indexJoueurReprise+1;
+					System.out.println("Manche terminée : " + this.joueurs.get(indexJoueurReprise).getPseudo() + " doit recommencer !");
+					
+					// déterminer si le joueur doit quitter la partie.
+					if(this.getJoueurByPseudo(joueurReprise).getDes().size() == 0){
+						// on prévient tout le monde de la défaite du joueur
+						System.out.println("[+] Le joueur "+ joueurReprise +" n'a plus de dés !");
+						Annonce a = new Annonce("info", "Le joueur " + joueurReprise + " a perdu !", "Serveur");
+						broadcastAnnonce(a);
+						
+						// on prévient le joueur avec une annonce particulière
+						a.setType("defaite");
+						this.getJoueurByPseudo(joueurReprise).AfficheAnnonce(a);
+	
+						this.enleverJoueurByIndex(indexJoueurReprise);
+						System.out.println("AFTER => Taille joueurs = " + this.joueurs.size());
+						
+						// Comme le joueur qui devait reprendre a perdu, on rend 
+						// la main au joueur suivant.
+						// joueurCourant = indexJoueurReprise+1;
+					}	
+				}catch(RemoteException e){
+					System.out.println("RemoteException");
+					e.printStackTrace();
+					System.out.println("Taille de merde : " + this.joueurs.size());
 				}
-
-
-			}catch(RemoteException e){
-				System.out.println("RemoteException");
-				e.printStackTrace();
-				System.out.println("Taille de merde : " + this.joueurs.size());
+        		
+			}else{        	
+				joueurCourant++;
+	    		if(joueurCourant >= (this.joueurs.size())){
+	    			joueurCourant = 0;
+	    		}
 			}
-        	
-			joueurCourant++;
-    		if(joueurCourant >= (this.joueurs.size())){
-    			joueurCourant = 0;
-    		}
     	}
 		
 		try {
