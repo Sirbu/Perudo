@@ -29,11 +29,9 @@ public class Joueur extends UnicastRemoteObject implements Client {
 		this.serveurImplem=serveurimplem;
 		des = new Vector<Integer>();
 		//au debut de la partie tout le monde a 6 des initilaisé à 0
-		for(int i=0;i<1;i++){
+		for(int i=0;i<6;i++){
 			des.add(i, 0);
-		}
-		
-		
+		}		
 	}
 
 
@@ -61,7 +59,7 @@ public class Joueur extends UnicastRemoteObject implements Client {
 		}
 		else {
 			System.out.println("tu quittes le jeu");
-			System.exit(0);
+//			System.exit(0);
 		}
 		
 	}
