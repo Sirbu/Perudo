@@ -197,7 +197,9 @@ public class Partie implements ActionListener {
     		
     	 	System.out.println("[+] Début d'une manche !");
         	this.derniereAnnonce = null;
-        	joueurReprise="none";
+
+        	joueurReprise = "none";
+
         	this.broadcastAnnonce(new Annonce("info", "Une nouvelle manche commence !", "Serveur"));
         	this.lancerTousLesDes();
 
@@ -223,6 +225,7 @@ public class Partie implements ActionListener {
         			joueurCourant = 0;
         		}
         	}
+        	
         	
         	// ici, le joueurReprise != "none"
         	// Permet de retrouver l'indice du joueur dont le pseudo est joueurReprise
@@ -253,27 +256,33 @@ public class Partie implements ActionListener {
 						// Comme le joueur qui devait reprendre a perdu, on rend 
 						// la main au joueur suivant.
 						// joueurCourant = indexJoueurReprise+1;
-					}	
+					}
+					
+					joueurCourant = getIndexByPseudo(joueurReprise);
+					
 				}catch(RemoteException e){
 					System.out.println("RemoteException");
 					e.printStackTrace();
 					System.out.println("Taille de merde : " + this.joueurs.size());
-				}
-        		
-			}else{        	
+				}      		        		
+			}else{
 				joueurCourant++;
-	    		if(joueurCourant >= (this.joueurs.size())){
-	    			joueurCourant = 0;
-	    		}
 			}
+			
+    		if(joueurCourant >= (this.joueurs.size())){
+    			joueurCourant = 0;
+    		}
     	}
 		
 		try {
 			System.out.println("[+] Il ne reste plus qu'un joueur.");
 			System.out.println("[+] C'est la victoire pour "+ this.joueurs.get(0).getPseudo()+" !");
 			
+			Annonce a = new Annonce("info", "Vous avez gagné !", "Serveur");
+			this.joueurs.get(0).AfficheAnnonce(a);
+			
 			// on informe le joueur que la partie est terminée
-			Annonce a = new Annonce("gameover", "gameover", "Serveur");
+			a = new Annonce("gameover", "gameover", "Serveur");
 			this.joueurs.get(0).AfficheAnnonce(a);
 			this.enleverJoueurByIndex(0);
 			
