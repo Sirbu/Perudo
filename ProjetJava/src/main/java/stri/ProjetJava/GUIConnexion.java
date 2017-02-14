@@ -48,6 +48,7 @@ public class GUIConnexion extends javax.swing.JFrame {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Partie 1", "Partie 2", "Partie 3" }));
 
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Démarrer !");
 
         label1.setFont(new java.awt.Font("Dialog", 1, 48)); // NOI18N
