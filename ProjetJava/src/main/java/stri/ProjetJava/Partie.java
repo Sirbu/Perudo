@@ -16,7 +16,7 @@ import javax.swing.Timer;
  *
  * @author alexis
  */
-public class Partie implements ActionListener {
+public class Partie implements Runnable, ActionListener {
 
     private String nom;
     private int nbrJoueursMax = 6;              // Pourra être modifié à l'occaz
@@ -185,7 +185,7 @@ public class Partie implements ActionListener {
     }
     
     // Ne pas incrémenter le compteur de joueur lors de l'élimination d'un joueur
-    public void lancerPartie(){
+    public void run(){
     	int joueurCourant = 0;
     	int indexJoueurReprise = 0;
     	String joueurReprise = "none";
@@ -339,7 +339,7 @@ public class Partie implements ActionListener {
             	 System.out.println("[+] La partie va commencer !");
                  this.timer.stop();
                  this.status = "RUNNNING";
-                 this.lancerPartie(); 
+                 this.run(); 
              }
     }
 

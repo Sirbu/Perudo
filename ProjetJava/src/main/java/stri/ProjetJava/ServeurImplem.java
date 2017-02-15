@@ -35,16 +35,18 @@ public class ServeurImplem extends UnicastRemoteObject implements Serveur {
         // D'abord on vérifie que la partie est bien en attente de joueurs
         if(this.getPartie(partie) == null){
         	System.out.println("[*] Tentative de connexion sur une partie non existante..." + ((Joueur)c).getPseudo());
-        	return false;
-        }
-        
-        if(this.getPartie(partie).getStatus() != "WAIT"){
+        	
+        	System.out.println("[+] Je vais donc créer la partie !");
+        	Partie p = new Partie(partie);
+        	
+        	this.parties.add(p);
+        }else if(this.getPartie(partie).getStatus() != "WAIT"){
             System.out.println("[-] Connexion impossible : La partie n'est pas prête...");
             return false;
         }
         
         this.getPartie(partie).ajouterJoueur(c);
-        Annonce a = new Annonce("info", "Le joueur "+c.getPseudo()+" à rejoint la partie !", "Serveur");
+        Annonce a = new Annonce("info", "Le joueur "+c.getPseudo()+" à rejoint la partie "+partie+" !", "Serveur");
         System.out.println(a.getMessage());
         this.getPartie(partie).broadcastAnnonce(a);
         
@@ -106,7 +108,15 @@ public class ServeurImplem extends UnicastRemoteObject implements Serveur {
     	return this.parties.get(i);
     }
 
+    // Returns the lists of waiting parties
 	public Vector<Partie> getListePartie() throws RemoteException {
-		return this.parties;
+		Vector<Partie> p = new Vector<Partie>();
+		int i = 0;
+		while(i < this.parties.size()){
+			if(this.parties.get(i).getStatus().contentEquals("WAIT")){
+				p.add(this.parties.get(i));
+			}
+		}
+		return p;
 	}
 }
