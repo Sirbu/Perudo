@@ -224,7 +224,7 @@ public class Joueur extends UnicastRemoteObject implements Client {
 		
 		System.out.println("*****************************PERUDO**************************************");
 		System.out.println("1: quitter");
-		System.out.println("2: Rejoindre une Partie");
+		System.out.println("2: Rejoindre ou Créer une Partie");
 		System.out.println("merci d'indiquer votre choix : ");
 		Scanner sc=new Scanner(System.in);
 		String nombre =sc.nextLine();
@@ -233,13 +233,26 @@ public class Joueur extends UnicastRemoteObject implements Client {
 	    	System.out.println("************************MERCI DE VOTRE VISITE***********************");
 	    	System.exit(0);
 	    }else{
+	    	
 	    	//LocateRegistry.createRegistry(1099);
 			Serveur serveurimplem=(Serveur)Naming.lookup("rmi://10.0.0.1/Serveur");
 			Joueur clientimplem=new Joueur(serveurimplem);
+			Vector<Partie> listPartie=serveurimplem.getListePartie();
+			System.out.println("Merci de rentrer un pseudo: ");
+			Scanner nom=new Scanner(System.in);
+			String nomJ =nom.nextLine();
+			clientimplem.setPseudo(nomJ);
+			System.out.println("Voici la liste des Parties, Rejoignez-en une ou saisissez un nom pour en créer une!! ");
+			for(int i=0; i < listPartie.size();i++){
+				System.out.println(listPartie.get(i).getNom());
+			}
+			
+			Scanner reponse=new Scanner(System.in);
+			String partie =reponse.nextLine();
+			
+			
 
-			clientimplem.setPseudo("Sirbu");
-
-			clientimplem.setPartie("Perudo");
+			clientimplem.setPartie(partie);
 			
 			Boolean rep=serveurimplem.rejoindrePartie(clientimplem, clientimplem.getPartie());
 			System.out.println("l'appel a renvoyé "+ rep);
