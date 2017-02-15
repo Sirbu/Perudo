@@ -121,7 +121,7 @@ public class Joueur extends UnicastRemoteObject implements Client {
 				    //verification de l validité de la saisie
 				    //3 des de 4 derniere annonce
 				    // 2 des de 4 moi
-				    a = new Annonce("surencherir",nb,val,this.getPseudo(), "perudo");
+				    a = new Annonce("surencherir",nb,val,this.getPseudo(), this.partie);
 				    bonneSaisie=a.verifAnnonce(serveurImplem);    
 				 // si le joueur est le premier a jouer dans cette manche il ne peut dire toutpile ni menteur
 				}
@@ -237,12 +237,12 @@ public class Joueur extends UnicastRemoteObject implements Client {
 	    	//LocateRegistry.createRegistry(1099);
 			Serveur serveurimplem=(Serveur)Naming.lookup("rmi://10.0.0.1/Serveur");
 			Joueur clientimplem=new Joueur(serveurimplem);
-			Vector<Partie> listPartie=serveurimplem.getListePartie();
 			System.out.println("Merci de rentrer un pseudo: ");
 			Scanner nom=new Scanner(System.in);
 			String nomJ =nom.nextLine();
 			clientimplem.setPseudo(nomJ);
 			System.out.println("Voici la liste des Parties, Rejoignez-en une ou saisissez un nom pour en créer une!! ");
+			Vector<Partie> listPartie=serveurimplem.getListePartie();
 			for(int i=0; i < listPartie.size();i++){
 				System.out.println(listPartie.get(i).getNom());
 			}

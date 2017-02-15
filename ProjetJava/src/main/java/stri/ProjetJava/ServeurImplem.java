@@ -28,18 +28,19 @@ public class ServeurImplem extends UnicastRemoteObject implements Serveur {
     
     public ServeurImplem() throws RemoteException{
         super();
-        // derniereAnnonce = new Annonce("", "", );
+        this.parties = new Vector<Partie>();
     }    
     
     public synchronized boolean rejoindrePartie(Client c, String partie) throws java.rmi.RemoteException{
         // D'abord on vérifie que la partie est bien en attente de joueurs
         if(this.getPartie(partie) == null){
-        	System.out.println("[*] Tentative de connexion sur une partie non existante..." + ((Joueur)c).getPseudo());
+        	System.out.println("[*] Tentative de connexion sur une partie non existante..." + c.getPseudo());
         	
         	System.out.println("[+] Je vais donc créer la partie !");
         	Partie p = new Partie(partie);
         	
         	this.parties.add(p);
+        	
         }else if(this.getPartie(partie).getStatus() != "WAIT"){
             System.out.println("[-] Connexion impossible : La partie n'est pas prête...");
             return false;
@@ -77,9 +78,6 @@ public class ServeurImplem extends UnicastRemoteObject implements Serveur {
 
             Naming.rebind("rmi://10.0.0.1/Serveur", srv);
             System.out.println("[+] Serveur déclaré");
-
-            srv.parties.add(new Partie("Perudo"));
-            System.out.println("[+] Partie initialisée");
             
         }catch(MalformedURLException e){
             e.printStackTrace();
@@ -87,35 +85,39 @@ public class ServeurImplem extends UnicastRemoteObject implements Serveur {
     }    
     
     // getters & setters
-    public Annonce getDerniereAnnonce(String partie) throws java.rmi.RemoteException{
-        return this.getPartie(partie).getDerniereAnnonce();
+    public synchronized Annonce getDerniereAnnonce(String partie) throws java.rmi.RemoteException{
+        System.out.println("DEBUG : "+ partie);
+    	return this.getPartie(partie).getDerniereAnnonce();
     }
     
-    public Vector<Client> getJoueursConnectes(String partie) throws java.rmi.RemoteException{
+    public synchronized Vector<Client> getJoueursConnectes(String partie) throws java.rmi.RemoteException{
         return this.getPartie(partie).getListeJoueurs();
     } 
     
     // Retourne la partie désignée par le nom
     // ou null si elle n'exsite pas
-    public Partie getPartie(String nom){
+    public synchronized Partie getPartie(String nom){
     	int i = 0;
-    	while((this.parties.get(i).getNom() != nom)){
-    		i++;
-    		if(i == this.parties.size()){
-    			break;
+    	while(i < this.parties.size()){
+    		if((this.parties.get(i).getNom().equals(nom))){
+    	    	return this.parties.get(i);
     		}
+    		i++;
     	}
-    	return this.parties.get(i);
+    	// ici on est arrivé au botu du tableau sans rien trouver...
+		return null;	
     }
 
     // Returns the lists of waiting parties
-	public Vector<Partie> getListePartie() throws RemoteException {
+	public synchronized Vector<Partie> getListePartie() throws RemoteException {
 		Vector<Partie> p = new Vector<Partie>();
 		int i = 0;
 		while(i < this.parties.size()){
+			System.out.println("Partie "+ this.parties.get(i).getNom()+" -> statut : "+ this.parties.get(i).getStatus());
 			if(this.parties.get(i).getStatus().contentEquals("WAIT")){
 				p.add(this.parties.get(i));
 			}
+			i++;
 		}
 		return p;
 	}

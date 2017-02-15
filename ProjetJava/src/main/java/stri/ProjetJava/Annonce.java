@@ -34,7 +34,7 @@ public class Annonce implements Serializable {
     	setPseudo(joueur);
     }
     
-    public boolean verifAnnonce(Serveur serveurImplem) throws RemoteException{
+    public synchronized boolean verifAnnonce(Serveur serveurImplem) throws RemoteException{
     	// on verifie bien que la mise respecte les condition du jeu et que les valeurs annoncées soit raisonnable 
     	//càd ne pas annocer 2 des de 45 ...par exemple
     	if(serveurImplem.getDerniereAnnonce(this.getPartie()) != null){

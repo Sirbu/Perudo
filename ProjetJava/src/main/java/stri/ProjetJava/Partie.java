@@ -7,6 +7,7 @@ package stri.ProjetJava;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.Serializable;
 import java.rmi.RemoteException;
 import java.util.Vector;
 
@@ -16,9 +17,15 @@ import javax.swing.Timer;
  *
  * @author alexis
  */
-public class Partie implements Runnable, ActionListener {
+public class Partie extends Thread implements Serializable, ActionListener{
 
-    private String nom;
+    /**
+	 *  Generated serial UID
+	 */
+	private static final long serialVersionUID = 7389133810306179749L;
+	
+	
+	private String nom;
     private int nbrJoueursMax = 6;              // Pourra être modifié à l'occaz
     private String status;                      // WAIT || RUNNING || OVER
     private Annonce derniereAnnonce;           // la derniereAnnonce émise par un joueur
@@ -30,6 +37,7 @@ public class Partie implements Runnable, ActionListener {
         this.nom = nom;
         this.status = "WAIT";
         this.joueurs = new Vector<Client>();
+        this.derniereAnnonce = null;
     }
 
     public boolean checkFinPartie(){
@@ -339,7 +347,7 @@ public class Partie implements Runnable, ActionListener {
             	 System.out.println("[+] La partie va commencer !");
                  this.timer.stop();
                  this.status = "RUNNNING";
-                 this.run(); 
+                 this.start();
              }
     }
 
