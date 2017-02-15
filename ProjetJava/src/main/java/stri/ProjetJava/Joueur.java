@@ -29,11 +29,10 @@ public class Joueur extends UnicastRemoteObject implements Client {
 		this.serveurImplem=serveurimplem;
 		des = new Vector<Integer>();
 		//au debut de la partie tout le monde a 6 des initilaisé à 0
-		for(int i=0;i<2;i++){
+		for(int i=0;i < 6;i++){
+
 			des.add(i, 0);
-		}
-		
-		
+		}		
 	}
 
 
@@ -45,20 +44,24 @@ public class Joueur extends UnicastRemoteObject implements Client {
 		}
 		
 		//tout pile
-		if(a.getType().contentEquals("toutpile")){
+		else if(a.getType().contentEquals("toutpile")){
 			System.out.println(a.getPseudo() +" à decalré un tout pile !! ");
 
 		}
 		
 		//sur enchere
-		if(a.getType().contentEquals("surencherir")){
+		else if(a.getType().contentEquals("surencherir")){
 			System.out.println(a.getPseudo()+" à Annoncer " + a.getNombre()+" Dés de "+a.getValeur());
 		}
 		
 		// annonce de type info
-		if(a.getType().contentEquals("info")){
+		else if(a.getType().contentEquals("info")){
 			System.out.println(a.getMessage());
 		}
+		else {
+			System.out.println("tu quittes le jeu");
+		}
+		
 	}
 
 	public Annonce FaireAnnonce() throws RemoteException {	
@@ -178,10 +181,12 @@ public class Joueur extends UnicastRemoteObject implements Client {
 			this.getDes().removeElementAt(0);
 		}
 		
-		if(this.des.size() == 0){
+	/*	if(this.des.size() == 0){
 			// ici on a plus de dés donc on doit quitter la partie
+			System.out.println("il ne vous reste plus de des, vous avez perdu ....CIAO");
 			this.serveurImplem.quitterPartie(this.pseudo, this.partie);
-		}
+			System.exit(0);
+		}*/
 	}
 
 	public void ajouterDes() throws RemoteException {

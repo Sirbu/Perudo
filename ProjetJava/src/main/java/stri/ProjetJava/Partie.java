@@ -32,14 +32,24 @@ public class Partie implements ActionListener {
         this.joueurs = new Vector<Client>();
     }
 
-    public void enleverJoueurByPseudo(String pseudo){
+    public boolean checkFinPartie(){
+    	
+    	if(this.joueurs.size() == 1){
+    		System.out.println("[+] Plus qu'un seul joueur dans la partie. " + this.joueurs.get(0) + " est le vainqueur !");
+    		return true;
+    	}    	
+    	return false;
+    }
+    
+    public synchronized void enleverJoueurByPseudo(String pseudo){
     	int joueurCourant = 0;
     	try {
-			while((joueurCourant < this.joueurs.size()-1) && (this.joueurs.get(joueurCourant).getPseudo() != pseudo)){
+			while((joueurCourant < this.joueurs.size()) && (this.joueurs.get(joueurCourant).getPseudo() != pseudo)){
 				joueurCourant++;
 			}
-			System.out.println(this.joueurs.get(joueurCourant).getPseudo());
+			System.out.println("Il va partir : "+this.joueurs.get(joueurCourant).getPseudo());
 
+			// -1 car la boucle while s'exécute uen fois de trop.
 			this.joueurs.remove(joueurCourant);
 
     	} catch (RemoteException e) {
@@ -48,11 +58,11 @@ public class Partie implements ActionListener {
 		}
     }
 
-    public void enleverJoueurByIndex(int i){
+    public synchronized void enleverJoueurByIndex(int i){
     	this.joueurs.remove(i);
     }
 
-    public boolean ajouterJoueur(Client c){
+    public synchronized boolean ajouterJoueur(Client c){
 
         if(this.joueurs.size() == nbrJoueursMax){
 			return false;
@@ -111,7 +121,7 @@ public class Partie implements ActionListener {
     // Si l'annonce termine une manche, traiterAnnonce retourne le pseudo
     // du joueur à reprendre la main. Sinon elle retourne une chaine vide
     String traiterAnnonce(Annonce annonceCourante) throws RemoteException{
-		String prochainJoueur = "";
+		String prochainJoueur = "none";
     	
     	// On doit d'abord diffuser l'annonce courante
 	    broadcastAnnonce(annonceCourante);
@@ -175,58 +185,122 @@ public class Partie implements ActionListener {
     }
     
     // Ne pas incrémenter le compteur de joueur lors de l'élimination d'un joueur
-    public void lancerPartie(int joueur){
-    	String joueurReprise = "";  // Le nom du joueur qui reprend la main après la fin d'une manche  
-    	int joueurCourant = joueur;
+    public void lancerPartie(){
+    	int joueurCourant = 0;
+    	int indexJoueurReprise = 0;
+    	String joueurReprise = "none";
     	Annonce annonceCourante;
     	
-    	System.out.println("[+] Début d'une manche !");
-    	this.derniereAnnonce = null;
-    	this.broadcastAnnonce(new Annonce("info", "Une nouvelle manche commence !", "Serveur"));
-    	
-    	this.lancerTousLesDes();
-    	
-		try {
-			this.joueurs.get(0).lancerDes();
-		} catch (RemoteException e1) {
-			e1.printStackTrace();
-		}
+    	// boucle des manches
+    	// tant qu'il reste plus d'un joueur, il reste des manches à jouer
+    	while((this.joueurs.size() > 1)){
+    		
+    	 	System.out.println("[+] Début d'une manche !");
+        	this.derniereAnnonce = null;
 
-    	while((this.joueurs.size() != 0) && !(joueurReprise.contentEquals(""))){
-    		try {
-				annonceCourante = this.joueurs.get(joueurCourant).FaireAnnonce();
+        	joueurReprise = "none";
 
-				joueurReprise = traiterAnnonce(annonceCourante);
-				if(!joueurReprise.contentEquals("")){
-					if(this.joueurs.size() == 1){
-						System.out.println("[+] Il ne reste plus qu'un joueur.");
-						System.out.println("[+] C'est la victoire pour "+ this.joueurs.get(0).getPseudo()+" !");
+        	this.broadcastAnnonce(new Annonce("info", "Une nouvelle manche commence !", "Serveur"));
+        	this.lancerTousLesDes();
+
+        	while(joueurReprise.contentEquals("none")){
+        		try {
+    				annonceCourante = this.joueurs.get(joueurCourant).FaireAnnonce();
+
+    				joueurReprise = traiterAnnonce(annonceCourante);
+    			} catch (RemoteException e) {
+    				// TODO Améliorer la gestion des déconnexions brutales
+    				System.out.println("[!] Le client "+ joueurCourant +" est déconnecté !");
+    				
+    				if(this.joueurs.size() >= joueurCourant){
+    					System.out.println("[+] Il est déjà parti...");
+    				}else{
+    					this.enleverJoueurByIndex(joueurCourant);
+    				}
+    				continue;
+    			}       		
+        		
+        		joueurCourant++;
+        		if(joueurCourant >= (this.joueurs.size())){
+        			joueurCourant = 0;
+        		}
+        	}
+        	
+        	
+        	// ici, le joueurReprise != "none"
+        	// Permet de retrouver l'indice du joueur dont le pseudo est joueurReprise
+			// TODO : a mettre dans une fonction
+        	if(!joueurReprise.contentEquals("none")){
+        		try{				
+					indexJoueurReprise = getIndexByPseudo(joueurReprise);
+					
+					// offset to test
+					System.out.println("Joueur de merde : "+ this.joueurs.get(indexJoueurReprise).getPseudo() + "index : " + indexJoueurReprise);
+					
+					System.out.println("Manche terminée : " + this.joueurs.get(indexJoueurReprise).getPseudo() + " doit recommencer !");
+					
+					// déterminer si le joueur doit quitter la partie.
+					if(this.getJoueurByPseudo(joueurReprise).getDes().size() == 0){
+						// on prévient tout le monde de la défaite du joueur
+						System.out.println("[+] Le joueur "+ joueurReprise +" n'a plus de dés !");
+						Annonce a = new Annonce("info", "Le joueur " + joueurReprise + " a perdu !", "Serveur");
+						broadcastAnnonce(a);
+						
+						// on prévient le joueur avec une annonce particulière
+						a.setType("defaite");
+						this.getJoueurByPseudo(joueurReprise).AfficheAnnonce(a);
+	
+						this.enleverJoueurByIndex(indexJoueurReprise);
+						System.out.println("AFTER => Taille joueurs = " + this.joueurs.size());
+						
+						// Comme le joueur qui devait reprendre a perdu, on rend 
+						// la main au joueur suivant.
+						// joueurCourant = indexJoueurReprise+1;
 					}
 					
-					// Permet de retrouver l'indice du joueur dont le pseudo est joueurReprise
-					int i = 0;
-					while( (i < this.joueurs.size()) && !this.joueurs.get(i).getPseudo().contentEquals(joueurReprise) ){
-						i++;
-					}
-					this.lancerPartie(i);
-				}
-				
-			} catch (RemoteException e) {
-				// TODO Améliorer la gestion des déconnexions brutales
-				System.out.println("[!] Le client "+ joueurCourant +" est déconnecté !");
-				this.enleverJoueurByIndex(joueurCourant);
-				continue;
+					joueurCourant = getIndexByPseudo(joueurReprise);
+					
+				}catch(RemoteException e){
+					System.out.println("RemoteException");
+					e.printStackTrace();
+					System.out.println("Taille de merde : " + this.joueurs.size());
+				}      		        		
+			}else{
+				joueurCourant++;
 			}
-    		
-    		if(joueurCourant == (this.joueurs.size()-1)){
+			
+    		if(joueurCourant >= (this.joueurs.size())){
     			joueurCourant = 0;
-    		}else{
-    			joueurCourant++;
     		}
     	}
+		
+		try {
+			System.out.println("[+] Il ne reste plus qu'un joueur.");
+			System.out.println("[+] C'est la victoire pour "+ this.joueurs.get(0).getPseudo()+" !");
+			
+			Annonce a = new Annonce("info", "Vous avez gagné !", "Serveur");
+			this.joueurs.get(0).AfficheAnnonce(a);
+			
+			// on informe le joueur que la partie est terminée
+			a = new Annonce("gameover", "gameover", "Serveur");
+			this.joueurs.get(0).AfficheAnnonce(a);
+			this.enleverJoueurByIndex(0);
+			
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
 
     // getters & setters
+    public int getIndexByPseudo(String pseudo) throws RemoteException{
+    	int i = 0;
+		while( (i < this.joueurs.size()-1) && !this.joueurs.get(i).getPseudo().contentEquals(pseudo) ){
+			i++;
+		}
+		return i;
+    }
+    
     public String getStatus(){
         return this.status;
     }
@@ -238,7 +312,6 @@ public class Partie implements ActionListener {
     public Client getJoueurByPseudo(String pseudo) throws RemoteException{
     	int i = 0;
     	for(i = 0; (i < this.joueurs.size()) && (!this.joueurs.get(i).getPseudo().contentEquals(pseudo)); i++);
-    	System.out.println(" Index joueur => "+ i);
     	return this.joueurs.get(i);
     }
 
@@ -266,7 +339,7 @@ public class Partie implements ActionListener {
             	 System.out.println("[+] La partie va commencer !");
                  this.timer.stop();
                  this.status = "RUNNNING";
-                 this.lancerPartie(0); 
+                 this.lancerPartie(); 
              }
     }
 
