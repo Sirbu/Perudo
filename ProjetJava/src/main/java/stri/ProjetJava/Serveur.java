@@ -17,4 +17,5 @@ public interface Serveur extends java.rmi.Remote {
     public void quitterPartie(String pseudo, String partie) throws java.rmi.RemoteException;
     public Annonce getDerniereAnnonce(String partie) throws java.rmi.RemoteException;
     public Vector<Client> getJoueursConnectes(String partie) throws java.rmi.RemoteException;
+    public Vector<Partie> getListePartie() throws java.rmi.RemoteException;
 }

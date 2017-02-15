@@ -24,7 +24,7 @@ public class ServeurImplem extends UnicastRemoteObject implements Serveur {
 		
 
     // Deviendra un Vector ou autre pour la gestion multi-parties.
-    private Partie partie;
+    private Vector<Partie> parties;
     
     public ServeurImplem() throws RemoteException{
         super();
@@ -33,7 +33,7 @@ public class ServeurImplem extends UnicastRemoteObject implements Serveur {
     
     public synchronized boolean rejoindrePartie(Client c, String partie) throws java.rmi.RemoteException{
         // D'abord on vérifie que la partie est bien en attente de joueurs
-        if(this.partie == null){
+        if(this.getPartie(partie) == null){
         	System.out.println("[*] Tentative de connexion sur une partie non existante..." + ((Joueur)c).getPseudo());
         	return false;
         }
@@ -76,7 +76,7 @@ public class ServeurImplem extends UnicastRemoteObject implements Serveur {
             Naming.rebind("rmi://10.0.0.1/Serveur", srv);
             System.out.println("[+] Serveur déclaré");
 
-            srv.partie = new Partie("Perudo");
+            srv.parties.add(new Partie("Perudo"));
             System.out.println("[+] Partie initialisée");
             
         }catch(MalformedURLException e){
@@ -96,14 +96,17 @@ public class ServeurImplem extends UnicastRemoteObject implements Serveur {
     // Retourne la partie désignée par le nom
     // ou null si elle n'exsite pas
     public Partie getPartie(String nom){
-    	return this.partie;
+    	int i = 0;
+    	while((this.parties.get(i).getNom() != nom)){
+    		i++;
+    		if(i == this.parties.size()){
+    			break;
+    		}
+    	}
+    	return this.parties.get(i);
     }
 
-    public Partie getPartie() {
-            return partie;
-    }
-
-    public void setPartie(Partie partie) {
-            this.partie = partie;
-    }
+	public Vector<Partie> getListePartie() throws RemoteException {
+		return this.parties;
+	}
 }
