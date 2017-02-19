@@ -5,17 +5,38 @@
  */
 package stri.ProjetJava;
 
+import java.net.MalformedURLException;
+import java.rmi.Naming;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
+import java.util.Scanner;
+import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author SAI
  */
 public class GUIConnexion extends javax.swing.JFrame {
+    private Joueur player;
+    private Vector<Partie> listPartie;
 
     /**
      * Creates new form GUIConnexion
      */
-    public GUIConnexion() {
+    public GUIConnexion() throws RemoteException, MalformedURLException, NotBoundException, InterruptedException{
         initComponents();
+        
+        Serveur serveurimplem = (Serveur)Naming.lookup("rmi://127.0.0.1/Serveur");
+        this.player = new Joueur(serveurimplem);
+        
+        this.listPartie=serveurimplem.getListePartie();
+        this.comboPartie.addItem("...");
+        for(int i=0; i < listPartie.size();i++){
+            this.comboPartie.addItem(this.listPartie.get(i).getNom());
+        }
     }
 
     /**
@@ -28,11 +49,13 @@ public class GUIConnexion extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        champPseudo = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        comboPartie = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
         label1 = new java.awt.Label();
+        jLabel3 = new javax.swing.JLabel();
+        champPartie = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Perudo v2.0");
@@ -40,34 +63,31 @@ public class GUIConnexion extends javax.swing.JFrame {
 
         jLabel1.setText("Entrez votre pseudo :");
 
-        jTextField1.setFont(new java.awt.Font("Tahoma", 2, 13)); // NOI18N
-        jTextField1.setText("Pseudo");
-        jTextField1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        champPseudo.setFont(new java.awt.Font("Tahoma", 2, 13)); // NOI18N
+        champPseudo.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         jLabel2.setText("Choisissez votre partie :");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Partie 1", "Partie 2", "Partie 3" }));
-
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Démarrer !");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
 
         label1.setFont(new java.awt.Font("Dialog", 1, 48)); // NOI18N
         label1.setText("Perudo v2.0");
+
+        jLabel3.setText("Créer votre partie :");
+
+        champPartie.setFont(new java.awt.Font("Tahoma", 2, 13)); // NOI18N
+        champPartie.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
-                .addGap(22, 22, 22)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField1)
-                    .addComponent(jComboBox1, 0, 195, Short.MAX_VALUE))
-                .addGap(212, 212, 212))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -77,6 +97,22 @@ public class GUIConnexion extends javax.swing.JFrame {
                         .addGap(253, 253, 253)
                         .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(261, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(champPartie, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2))
+                        .addGap(22, 22, 22)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(champPseudo, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(comboPartie, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(212, 212, 212))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -86,18 +122,49 @@ public class GUIConnexion extends javax.swing.JFrame {
                 .addGap(124, 124, 124)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(54, 54, 54)
+                    .addComponent(champPseudo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(90, 90, 90)
+                    .addComponent(comboPartie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(42, 42, 42)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(champPartie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40)
                 .addComponent(jButton1)
                 .addContainerGap(62, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        // TODO add your handling code here:
+        if(this.champPseudo.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Eh tête en l'air, inscris ton nom wesh !");
+        }else{
+            this.player.setPseudo(this.champPseudo.getText());
+        
+            if(!this.champPartie.getText().equals("")){
+                try {
+                    this.player.getServeurImplem().rejoindrePartie(this.player, this.champPartie.getText());
+                } catch (RemoteException ex) {
+                    Logger.getLogger(GUIConnexion.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            else if(!this.comboPartie.getSelectedItem().equals("...")){
+                try {
+                    this.player.getServeurImplem().rejoindrePartie(this.player, (String) this.comboPartie.getSelectedItem());
+                } catch (RemoteException ex) {
+                    Logger.getLogger(GUIConnexion.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            else if(this.champPartie.getText().equals("") && this.comboPartie.getSelectedItem().equals("...")){
+                JOptionPane.showMessageDialog(null, "Eh tête en l'air, choisis une partie wesh !");
+            }
+        }
+    }//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -129,17 +196,29 @@ public class GUIConnexion extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GUIConnexion().setVisible(true);
+                try {
+                    new GUIConnexion().setVisible(true);
+                } catch (RemoteException ex) {
+                    Logger.getLogger(GUIConnexion.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (MalformedURLException ex) {
+                    Logger.getLogger(GUIConnexion.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (NotBoundException ex) {
+                    Logger.getLogger(GUIConnexion.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(GUIConnexion.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField champPartie;
+    private javax.swing.JTextField champPseudo;
+    private javax.swing.JComboBox<String> comboPartie;
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel jLabel3;
     private java.awt.Label label1;
     // End of variables declaration//GEN-END:variables
 }

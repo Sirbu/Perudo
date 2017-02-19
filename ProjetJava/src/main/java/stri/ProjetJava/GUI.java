@@ -1,5 +1,14 @@
 package stri.ProjetJava;
 
+import java.net.MalformedURLException;
+import java.rmi.Naming;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
+import java.util.Scanner;
+import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -11,11 +20,13 @@ package stri.ProjetJava;
  * @author SAI
  */
 public class GUI extends javax.swing.JFrame {
+    private Joueur player;
 
     /**
      * Creates new form GUI
      */
-    public GUI() {
+    public GUI(){
+
         initComponents();
     }
 
@@ -322,8 +333,12 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextArea1PropertyChange
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
-        // TODO add your handling code here:
-        quitterPartie();
+        try {
+            // TODO add your handling code here:
+            this.player.getServeurImplem().quitterPartie(this.player.getPseudo(), this.player.getPartie());
+        } catch (RemoteException ex) {
+            Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton3MouseClicked
 
     /**

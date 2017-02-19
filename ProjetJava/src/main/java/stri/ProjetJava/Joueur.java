@@ -23,10 +23,10 @@ public class Joueur extends UnicastRemoteObject implements Client {
 	private String partie; 
 	private String statut;
 
-	 protected Joueur(Serveur serveurimplem) throws RemoteException {
+	 protected Joueur(Serveur serveurimplem) throws RemoteException, MalformedURLException, NotBoundException {
 		super();
 		
-		this.serveurImplem=serveurimplem;
+                this.serveurImplem = serveurimplem;
 		des = new Vector<Integer>();
 		//au debut de la partie tout le monde a 6 des initilaisé à 0
 		for(int i=0;i < 6;i++){
@@ -236,11 +236,11 @@ public class Joueur extends UnicastRemoteObject implements Client {
 	    	
 	    	//LocateRegistry.createRegistry(1099);
 			Serveur serveurimplem=(Serveur)Naming.lookup("rmi://10.0.0.1/Serveur");
-			Joueur clientimplem=new Joueur(serveurimplem);
+//			clientimplem = new Joueur(serveurimplem);
 			System.out.println("Merci de rentrer un pseudo: ");
 			Scanner nom=new Scanner(System.in);
 			String nomJ =nom.nextLine();
-			clientimplem.setPseudo(nomJ);
+//			clientimplem.setPseudo(nomJ);
 			System.out.println("Voici la liste des Parties, Rejoignez-en une ou saisissez un nom pour en créer une!! ");
 			Vector<Partie> listPartie=serveurimplem.getListePartie();
 			for(int i=0; i < listPartie.size();i++){
@@ -252,10 +252,10 @@ public class Joueur extends UnicastRemoteObject implements Client {
 			
 			
 
-			clientimplem.setPartie(partie);
+//			clientimplem.setPartie(partie);
 			
-			Boolean rep=serveurimplem.rejoindrePartie(clientimplem, clientimplem.getPartie());
-			System.out.println("l'appel a renvoyé "+ rep);
+//			Boolean rep=serveurimplem.rejoindrePartie(clientimplem, clientimplem.getPartie());
+//			System.out.println("l'appel a renvoyé "+ rep);
 	    }
 	
 		//clientimplem.FaireAnnonce("voila la chaine passé en param");
