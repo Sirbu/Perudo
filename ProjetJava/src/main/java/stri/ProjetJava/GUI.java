@@ -1,3 +1,5 @@
+package stri.ProjetJava;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -184,6 +186,11 @@ public class GUI extends javax.swing.JFrame {
         jButton2.setText("jButton2");
 
         jButton3.setText("Quitter partie");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Mon jeu"));
@@ -313,6 +320,11 @@ public class GUI extends javax.swing.JFrame {
     private void jTextArea1PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jTextArea1PropertyChange
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextArea1PropertyChange
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        // TODO add your handling code here:
+        quitterPartie();
+    }//GEN-LAST:event_jButton3MouseClicked
 
     /**
      * @param args the command line arguments
