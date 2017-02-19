@@ -9,7 +9,6 @@ import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
-import java.util.Scanner;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -22,7 +21,7 @@ import javax.swing.JOptionPane;
 public class GUIConnexion extends javax.swing.JFrame {
     private Joueur player;
     private Vector<Partie> listPartie;
-
+    
     /**
      * Creates new form GUIConnexion
      */
@@ -141,6 +140,8 @@ public class GUIConnexion extends javax.swing.JFrame {
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
+        GUI fenetre;
+        String partie="";
         if(this.champPseudo.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Eh tête en l'air, inscris ton nom wesh !");
         }else{
@@ -148,14 +149,47 @@ public class GUIConnexion extends javax.swing.JFrame {
         
             if(!this.champPartie.getText().equals("")){
                 try {
+                    partie=this.champPartie.getText();
                     this.player.getServeurImplem().rejoindrePartie(this.player, this.champPartie.getText());
+                    
+                    this.setVisible(false);
+                    
+                    this.player.setGUI(new GUI());
+                    
+                    //recuperer les joueurs connectes
+                    String tmp="";
+                    Vector <Client> players=new Vector<Client>();
+                    players=this.player.getServeurImplem().getJoueursConnectes(partie);
+                    for(int i=0;i<players.size();i++){
+                        tmp+=players.get(i).getPseudo()+" | ";
+                    }
+                    this.player.getGUI().getListJoueurs().setText(tmp);
+                    this.player.getGUI().setVisible(true);
+                    
+                    
                 } catch (RemoteException ex) {
                     Logger.getLogger(GUIConnexion.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
             else if(!this.comboPartie.getSelectedItem().equals("...")){
                 try {
+                    partie=(String)this.comboPartie.getSelectedItem();
                     this.player.getServeurImplem().rejoindrePartie(this.player, (String) this.comboPartie.getSelectedItem());
+                    
+                    this.setVisible(false);
+                    
+                    this.player.setGUI(new GUI());
+                    
+                    //recuperer les joueurs connectes
+                    String tmp="";
+                    Vector <Client> players=new Vector<Client>();
+                    players=this.player.getServeurImplem().getJoueursConnectes(partie);
+                    for(int i=0;i<players.size();i++){
+                        tmp+=players.get(i).getPseudo()+" | ";
+                    }
+                    this.player.getGUI().getListJoueurs().setText(tmp);
+                    this.player.getGUI().setVisible(true);
+                    
                 } catch (RemoteException ex) {
                     Logger.getLogger(GUIConnexion.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -163,6 +197,8 @@ public class GUIConnexion extends javax.swing.JFrame {
             else if(this.champPartie.getText().equals("") && this.comboPartie.getSelectedItem().equals("...")){
                 JOptionPane.showMessageDialog(null, "Eh tête en l'air, choisis une partie wesh !");
             }
+            
+            
         }
     }//GEN-LAST:event_jButton1MouseClicked
 

@@ -22,7 +22,7 @@ public class Joueur extends UnicastRemoteObject implements Client {
 	private Serveur serveurImplem;
 	private String partie; 
 	private String statut;
-
+        private GUI fenetre;
 	 protected Joueur(Serveur serveurimplem) throws RemoteException, MalformedURLException, NotBoundException {
 		super();
 		
@@ -219,7 +219,13 @@ public class Joueur extends UnicastRemoteObject implements Client {
 	public void setPartie(String partie) {
 		this.partie = partie;
 	}
-	
+	public GUI getGUI(){
+            return this.fenetre;
+        }
+        public void setGUI(GUI gui){
+            this.fenetre=gui;
+        }
+        
 	public static void main (String[] args) throws RemoteException, MalformedURLException, NotBoundException, InterruptedException{
 		
 		System.out.println("*****************************PERUDO**************************************");
@@ -235,7 +241,7 @@ public class Joueur extends UnicastRemoteObject implements Client {
 	    }else{
 	    	
 	    	//LocateRegistry.createRegistry(1099);
-			Serveur serveurimplem=(Serveur)Naming.lookup("rmi://10.0.0.1/Serveur");
+			Serveur serveurimplem=(Serveur)Naming.lookup("rmi://127.0.0.1/Serveur");
 //			clientimplem = new Joueur(serveurimplem);
 			System.out.println("Merci de rentrer un pseudo: ");
 			Scanner nom=new Scanner(System.in);
