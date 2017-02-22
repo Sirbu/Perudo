@@ -85,7 +85,7 @@ public class Joueur extends UnicastRemoteObject implements Client {
 		
 		for(int i=0;i <this.getDes().size();i++){
 			if(this.getDes().elementAt(i).intValue()==1){
-				System.out.print(" |Perudo");
+                            this.getGUI().	System.out.print(" |Perudo");
 			}else{
 				System.out.print(" |"+this.getDes().elementAt(i));
 			}
@@ -93,7 +93,7 @@ public class Joueur extends UnicastRemoteObject implements Client {
 		System.out.println(" ");
 
 		Scanner sc=new Scanner(System.in);
-	    
+                
 		Annonce a;
 		String nombre = "";
 		
