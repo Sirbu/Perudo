@@ -1,6 +1,8 @@
 package stri.ProjetJava;
 
 import java.awt.Button;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;
@@ -8,7 +10,10 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.Timer;
 import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ButtonModel;
 
 public class Joueur extends UnicastRemoteObject implements Client {
@@ -107,14 +112,21 @@ public class Joueur extends UnicastRemoteObject implements Client {
             
             this.getGUI().getZoneAffichageDes().setText(tmp);
             
-//              Timer timer1 = new Timer(1000, new ActionListener() {
+          //  try {
+                //              Timer f = new Timer(1000, new ActionListener() {
 //            @Override
 //            public void actionPerformed(ActionEvent e) {
 //                refreshMessage();
 //            }
 //        });
-        while(!this.getGUI().annonceReady){ 
-            if (this.getGUI().annonceReady){   
+ while(this.getGUI().annonceReady==false){
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(Joueur.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+        if(this.getGUI().annonceReady){        
                 if (this.getGUI().getButton3().isSelected()){//surencherire
                         int nb=0;
                         int val=0;
@@ -139,24 +151,26 @@ public class Joueur extends UnicastRemoteObject implements Client {
                 }else if(this.getGUI().getButton2().isSelected()){//menteur
                         if(this.serveurImplem.getDerniereAnnonce(this.partie) == null){
                                 this.getGUI().addMessage("Impossible, vous êtes le premier joueur !");
+                                this.getGUI().annonceReady=false;
                         }else{
                                a = new Annonce("menteur"," ",this.getPseudo());
                         }
                 }else if(this.getGUI().getButton1().isSelected()){
                         if(this.serveurImplem.getDerniereAnnonce(this.partie) == null){
                                 this.getGUI().addMessage("Impossible, vous êtes le premier joueur !");
+                                this.getGUI().annonceReady=false;
                         }else{
                                 a = new Annonce("toutpile"," ",this.getPseudo());	
                         }
-                }else {
-                                this.getGUI().addMessage("Vous êtes stupide, ce n'est pas un chiffre valide...");
                 }	
-            }
-                this.getGUI().annonceReady=false;
-        }        
-            return a;
             
+            
+        }
     }
+                return a;
+ }
+            
+        
 
 	public void lancerDes() throws RemoteException {
 		Random rand = new Random();
