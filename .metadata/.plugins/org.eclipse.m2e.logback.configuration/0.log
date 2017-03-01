@@ -417,3 +417,1070 @@
 2017-01-16 16:37:08,112 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
 2017-01-16 16:37:08,115 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2017-01-16 16:37:08,115 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-16 17:22:04,404 [Worker-3] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2017-01-17 09:15:58,122 [Worker-0] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2017-01-17 09:38:41,174 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-17 09:38:41,175 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-17 09:38:41,178 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-17 09:38:41,178 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-17 09:52:37,506 [Worker-2] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2017-01-17 09:53:05,367 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-17 09:53:05,368 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-17 09:53:05,370 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-17 09:53:05,370 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-17 10:00:27,726 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-17 10:00:27,726 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-17 10:00:27,726 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-17 10:00:27,726 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-17 10:01:45,923 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-17 10:01:45,923 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-17 10:01:45,923 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-17 10:01:45,923 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-17 10:08:18,062 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-17 10:08:18,062 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-17 10:08:18,064 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-17 10:08:18,065 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-17 10:17:53,227 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-17 10:17:53,227 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-17 10:17:53,230 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-17 10:17:53,230 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-17 10:19:57,791 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-17 10:19:57,791 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-17 10:19:57,793 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-17 10:19:57,793 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-17 10:22:19,684 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-17 10:22:19,684 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-17 10:22:19,687 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-17 10:22:19,687 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-17 10:24:45,757 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-17 10:24:45,757 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-17 10:24:45,759 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-17 10:24:45,759 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-17 10:38:24,807 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-17 10:38:24,807 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-17 10:38:24,809 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-17 10:38:24,810 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-17 10:38:31,558 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-17 10:38:31,559 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-17 10:38:31,563 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-17 10:38:31,563 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-17 11:08:37,676 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-17 11:08:37,677 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-17 11:08:37,680 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-17 11:08:37,681 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-17 11:21:08,949 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-17 11:21:08,950 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-17 11:21:08,952 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-17 11:21:08,953 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-17 13:14:42,043 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-17 13:14:42,044 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-17 13:14:42,047 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-17 13:14:42,047 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-17 13:14:52,614 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-17 13:14:52,615 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-17 13:14:52,616 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-17 13:14:52,617 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-17 13:16:33,073 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-17 13:16:33,073 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-17 13:16:33,075 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-17 13:16:33,076 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-18 08:41:22,354 [Worker-2] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2017-01-18 08:45:49,100 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 08:45:49,101 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-18 08:45:49,103 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 08:45:49,104 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-18 08:50:41,161 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 08:50:41,161 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-18 08:50:41,163 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 08:50:41,163 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-18 08:56:48,133 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 08:56:48,133 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-18 08:56:48,136 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 08:56:48,136 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-18 08:57:38,179 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 08:57:38,179 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-18 08:57:38,181 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 08:57:38,181 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-18 08:58:05,283 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 08:58:05,283 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-18 08:58:05,284 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 08:58:05,284 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-18 08:59:58,028 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 08:59:58,028 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-18 08:59:58,031 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 08:59:58,031 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-18 09:03:50,373 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 09:03:50,374 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-18 09:03:50,375 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 09:03:50,375 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-18 09:04:00,580 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 09:04:00,581 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-18 09:04:00,584 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 09:04:00,584 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-18 09:32:50,666 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 09:32:50,666 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-18 09:32:50,668 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 09:32:50,668 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-18 09:33:32,460 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 09:33:32,461 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-18 09:33:32,463 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 09:33:32,464 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-18 09:35:27,103 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 09:35:27,104 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-18 09:35:27,105 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 09:35:27,105 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-18 09:35:47,262 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 09:35:47,262 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-18 09:35:47,264 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 09:35:47,264 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-18 09:38:27,722 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 09:38:27,722 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-18 09:38:27,724 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 09:38:27,724 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-18 09:40:08,162 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 09:40:08,163 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-18 09:40:08,165 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 09:40:08,165 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-18 09:40:21,363 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 09:40:21,363 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-18 09:40:21,365 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 09:40:21,365 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-18 09:40:27,999 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 09:40:27,999 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-18 09:40:28,002 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 09:40:28,002 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-18 09:40:52,385 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 09:40:52,385 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-18 09:40:52,386 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 09:40:52,386 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-18 09:41:32,884 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 09:41:32,884 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-18 09:41:32,885 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 09:41:32,886 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-18 09:43:08,015 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 09:43:08,015 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-18 09:43:08,016 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 09:43:08,017 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-18 12:48:04,094 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 12:48:04,095 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-18 12:48:04,098 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 12:48:04,098 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-18 12:48:49,516 [Worker-0] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2017-01-18 12:48:51,602 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 12:48:51,602 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-18 12:48:51,605 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 12:48:51,605 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-18 12:52:00,121 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 12:52:00,125 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-18 12:52:00,130 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 12:52:00,131 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-18 15:50:24,164 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 15:50:24,166 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-18 15:50:24,168 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 15:50:24,168 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-18 17:10:27,768 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 17:10:27,768 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-18 17:10:27,771 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 17:10:27,771 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-18 17:12:19,548 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 17:12:19,548 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-18 17:12:19,550 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 17:12:19,551 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-18 17:12:34,881 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 17:12:34,882 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-18 17:12:34,885 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 17:12:34,886 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-18 17:21:25,260 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 17:21:25,260 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-18 17:21:25,262 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 17:21:25,263 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-18 17:24:03,524 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 17:24:03,524 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-18 17:24:03,526 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 17:24:03,526 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-18 17:26:23,924 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 17:26:23,924 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-18 17:26:23,926 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 17:26:23,927 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-18 17:29:17,857 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 17:29:17,857 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-18 17:29:17,859 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-18 17:29:17,860 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 10:20:16,586 [Worker-2] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2017-01-19 10:26:17,000 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 10:26:17,001 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 10:26:17,005 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 10:26:17,005 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 10:28:09,654 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 10:28:09,654 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 10:28:09,656 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 10:28:09,657 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 10:29:32,632 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 10:29:32,632 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 10:29:32,634 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 10:29:32,635 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 10:30:17,050 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 10:30:17,051 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 10:30:17,053 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 10:30:17,054 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 10:47:16,768 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 10:47:16,768 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 10:47:16,774 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 10:47:16,775 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 10:47:36,279 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 10:47:36,280 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 10:47:36,282 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 10:47:36,283 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 10:47:45,266 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 10:47:45,266 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 10:47:45,269 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 10:47:45,269 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 10:48:29,727 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 10:48:29,728 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 10:48:29,733 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 10:48:29,734 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 10:57:32,420 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 10:57:32,420 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 10:57:32,423 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 10:57:32,424 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 10:59:16,910 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 10:59:16,911 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 10:59:16,913 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 10:59:16,914 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 11:00:12,946 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 11:00:12,946 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 11:00:12,948 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 11:00:12,948 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 11:01:16,057 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 11:01:16,057 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 11:01:16,059 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 11:01:16,060 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 11:02:11,582 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 11:02:11,582 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 11:02:11,585 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 11:02:11,585 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 11:02:27,888 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 11:02:27,888 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 11:02:27,891 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 11:02:27,891 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 11:05:17,742 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 11:05:17,742 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 11:05:17,744 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 11:05:17,744 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 11:08:33,427 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 11:08:33,427 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 11:08:33,429 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 11:08:33,430 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 11:13:07,961 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 11:13:07,962 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 11:13:07,964 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 11:13:07,964 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 11:13:40,873 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 11:13:40,873 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 11:13:40,875 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 11:13:40,875 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 11:13:55,491 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 11:13:55,491 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 11:13:55,493 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 11:13:55,494 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 11:15:09,645 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 11:15:09,645 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 11:15:09,646 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 11:15:09,647 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 11:16:21,516 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 11:16:21,517 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 11:16:21,519 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 11:16:21,519 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 11:16:29,051 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 11:16:29,051 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 11:16:29,053 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 11:16:29,053 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 11:17:11,068 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 11:17:11,069 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 11:17:11,071 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 11:17:11,071 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 11:17:19,773 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 11:17:19,773 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 11:17:19,778 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 11:17:19,779 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 11:17:51,272 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 11:17:51,273 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 11:17:51,276 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 11:17:51,276 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 11:18:04,819 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 11:18:04,819 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 11:18:04,820 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 11:18:04,821 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 11:18:18,472 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 11:18:18,472 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 11:18:18,475 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 11:18:18,476 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 11:18:41,818 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 11:18:41,818 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 11:18:41,820 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 11:18:41,821 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 11:21:39,013 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 11:21:39,013 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 11:21:39,015 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 11:21:39,016 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 11:24:29,129 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 11:24:29,129 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 11:24:29,131 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 11:24:29,131 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 11:24:40,529 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 11:24:40,529 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 11:24:40,530 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 11:24:40,531 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 11:25:51,980 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 11:25:51,980 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 11:25:51,983 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 11:25:51,983 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 11:27:31,175 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 11:27:31,176 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 11:27:31,179 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 11:27:31,179 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 12:57:25,873 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 12:57:25,873 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 12:57:25,896 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 12:57:25,896 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 12:59:28,059 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 12:59:28,060 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 12:59:28,062 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 12:59:28,062 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 13:00:55,065 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 13:00:55,066 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 13:00:55,067 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 13:00:55,068 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 13:01:05,877 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 13:01:05,877 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 13:01:05,879 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 13:01:05,879 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 13:23:05,634 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 13:23:05,634 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 13:23:05,636 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 13:23:05,637 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 15:45:43,524 [Worker-56] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 15:45:43,524 [Worker-56] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 15:45:43,526 [Worker-56] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 15:45:43,526 [Worker-56] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 15:47:38,936 [Worker-60] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 15:47:38,937 [Worker-60] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 15:47:38,941 [Worker-60] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 15:47:38,942 [Worker-60] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 15:47:53,228 [Worker-58] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 15:47:53,228 [Worker-58] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 15:47:53,231 [Worker-58] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 15:47:53,231 [Worker-58] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 15:48:52,314 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 15:48:52,314 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 15:48:52,317 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 15:48:52,317 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 15:49:10,064 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 15:49:10,064 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 15:49:10,066 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 15:49:10,067 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 15:49:31,325 [Worker-60] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 15:49:31,325 [Worker-60] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 15:49:31,327 [Worker-60] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 15:49:31,327 [Worker-60] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 15:51:49,522 [Worker-56] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 15:51:49,522 [Worker-56] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 15:51:49,526 [Worker-56] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 15:51:49,526 [Worker-56] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 15:51:56,643 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 15:51:56,644 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 15:51:56,647 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 15:51:56,648 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 15:52:42,713 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 15:52:42,713 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 15:52:42,715 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 15:52:42,715 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 15:57:09,804 [Worker-64] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 15:57:09,805 [Worker-64] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 15:57:09,808 [Worker-64] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 15:57:09,808 [Worker-64] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 15:57:16,130 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 15:57:16,130 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 15:57:16,133 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 15:57:16,134 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 16:05:54,354 [Worker-69] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 16:05:54,355 [Worker-69] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 16:05:54,357 [Worker-69] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 16:05:54,358 [Worker-69] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 16:06:00,649 [Worker-59] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 16:06:00,649 [Worker-59] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 16:06:00,652 [Worker-59] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 16:06:00,653 [Worker-59] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 16:07:29,799 [Worker-69] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 16:07:29,799 [Worker-69] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 16:07:29,802 [Worker-69] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 16:07:29,802 [Worker-69] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 16:20:45,381 [Worker-3] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2017-01-19 16:24:01,622 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 16:24:01,622 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 16:24:01,625 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 16:24:01,625 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 16:24:02,730 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 16:24:02,734 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 16:24:02,737 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 16:24:02,737 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 16:24:16,094 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 16:24:16,094 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 16:24:16,096 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 16:24:16,097 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 16:24:36,835 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 16:24:36,835 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 16:24:36,838 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 16:24:36,838 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 16:26:32,965 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 16:26:32,965 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 16:26:32,967 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 16:26:32,967 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 16:39:38,243 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 16:39:38,244 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 16:39:38,246 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 16:39:38,247 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 16:49:17,517 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 16:49:17,517 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 16:49:17,522 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 16:49:17,523 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 16:49:32,224 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 16:49:32,225 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 16:49:32,229 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 16:49:32,230 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 16:59:13,478 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 16:59:13,478 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 16:59:13,480 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 16:59:13,481 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 17:06:12,567 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:06:12,568 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 17:06:12,571 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:06:12,572 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 17:06:45,499 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:06:45,499 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 17:06:45,501 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:06:45,502 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 17:06:53,432 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:06:53,432 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 17:06:53,436 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:06:53,436 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 17:07:02,437 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:07:02,438 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 17:07:02,441 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:07:02,441 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 17:10:40,034 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:10:40,035 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 17:10:40,038 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:10:40,039 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 17:23:08,666 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:23:08,666 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 17:23:08,671 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:23:08,671 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 17:23:12,971 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:23:12,971 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 17:23:12,973 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:23:12,973 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 17:47:45,484 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:47:45,484 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 17:47:45,489 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:47:45,489 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 17:48:15,177 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:48:15,180 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 17:48:15,185 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:48:15,185 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 17:49:05,123 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:49:05,123 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 17:49:05,125 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:49:05,125 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 17:49:37,497 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:49:37,500 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 17:49:37,500 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:49:37,502 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 17:49:50,220 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:49:50,220 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 17:49:50,223 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:49:50,223 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 17:50:30,271 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:50:30,271 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 17:50:30,273 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:50:30,273 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 17:50:44,586 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:50:44,586 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 17:50:44,591 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:50:44,591 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 17:51:13,092 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:51:13,092 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 17:51:13,095 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:51:13,097 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 17:51:32,528 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:51:32,528 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 17:51:32,533 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:51:32,533 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 17:52:19,808 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:52:19,808 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 17:52:19,811 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:52:19,811 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 17:52:31,884 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:52:31,884 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 17:52:31,886 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:52:31,886 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 17:52:55,491 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:52:55,491 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 17:52:55,493 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:52:55,496 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 17:53:22,936 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:53:22,936 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 17:53:22,939 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:53:22,941 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 17:53:38,964 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:53:38,964 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 17:53:38,967 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:53:38,967 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 17:53:40,519 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:53:40,522 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 17:53:40,522 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:53:40,524 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 17:53:51,272 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:53:51,272 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 17:53:51,277 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:53:51,277 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 17:54:01,840 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:54:01,840 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 17:54:01,842 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:54:01,842 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 17:54:14,017 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:54:14,017 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 17:54:14,020 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:54:14,020 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 17:54:30,680 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:54:30,680 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 17:54:30,682 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:54:30,685 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 17:54:35,003 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:54:35,005 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 17:54:35,008 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:54:35,008 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 17:54:47,620 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:54:47,620 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 17:54:47,620 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:54:47,623 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 17:55:09,883 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:55:09,883 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 17:55:09,886 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:55:09,888 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 17:55:16,811 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:55:16,811 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 17:55:16,811 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:55:16,813 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-19 17:55:26,073 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:55:26,076 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-19 17:55:26,081 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-19 17:55:26,081 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-20 08:10:21,904 [Worker-2] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2017-01-20 08:35:43,098 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 08:35:43,099 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-20 08:35:43,102 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 08:35:43,103 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-20 08:36:44,754 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 08:36:44,755 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-20 08:36:44,757 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 08:36:44,757 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-20 08:37:18,889 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 08:37:18,890 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-20 08:37:18,892 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 08:37:18,893 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-20 08:38:18,835 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 08:38:18,835 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-20 08:38:18,837 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 08:38:18,838 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-20 08:39:55,329 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 08:39:55,330 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-20 08:39:55,332 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 08:39:55,332 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-20 08:40:54,192 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 08:40:54,193 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-20 08:40:54,195 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 08:40:54,195 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-20 08:41:21,817 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 08:41:21,818 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-20 08:41:21,822 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 08:41:21,822 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-20 08:44:10,803 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 08:44:10,803 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-20 08:44:10,808 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 08:44:10,809 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-20 08:46:01,821 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 08:46:01,822 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-20 08:46:01,831 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 08:46:01,832 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-20 08:46:23,648 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 08:46:23,649 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-20 08:46:23,652 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 08:46:23,653 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-20 08:47:08,441 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 08:47:08,441 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-20 08:47:08,444 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 08:47:08,444 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-20 08:47:28,251 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 08:47:28,251 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-20 08:47:28,253 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 08:47:28,254 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-20 08:47:57,545 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 08:47:57,545 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-20 08:47:57,547 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 08:47:57,547 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-20 08:48:26,253 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 08:48:26,254 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-20 08:48:26,257 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 08:48:26,258 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-20 08:48:28,433 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 08:48:28,434 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-20 08:48:28,438 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 08:48:28,438 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-20 08:49:34,691 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 08:49:34,692 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-20 08:49:34,694 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 08:49:34,695 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-20 08:49:49,637 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 08:49:49,637 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-20 08:49:49,640 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 08:49:49,640 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-20 08:50:01,452 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 08:50:01,453 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-20 08:50:01,456 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 08:50:01,457 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-20 09:01:47,241 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 09:01:47,241 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-20 09:01:47,243 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 09:01:47,244 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-20 09:08:56,881 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 09:08:56,881 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-20 09:08:56,884 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 09:08:56,884 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-20 09:11:03,717 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 09:11:03,717 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-20 09:11:03,720 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 09:11:03,721 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-20 09:13:54,933 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 09:13:54,934 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-20 09:13:54,936 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 09:13:54,937 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-20 09:14:04,695 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 09:14:04,695 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-20 09:14:04,699 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 09:14:04,700 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-20 09:14:10,849 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 09:14:10,850 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-20 09:14:10,853 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 09:14:10,853 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-20 09:14:43,033 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 09:14:43,033 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-20 09:14:43,036 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 09:14:43,036 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-20 09:14:52,997 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 09:14:52,998 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-20 09:14:53,000 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 09:14:53,000 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-20 09:15:01,521 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 09:15:01,521 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-20 09:15:01,523 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 09:15:01,524 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-20 09:15:43,917 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 09:15:43,918 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-20 09:15:43,920 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 09:15:43,921 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-20 09:19:46,334 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 09:19:46,334 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-20 09:19:46,336 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 09:19:46,337 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-20 09:31:05,503 [Worker-0] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2017-01-20 09:46:09,406 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 09:46:09,407 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-20 09:46:09,411 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 09:46:09,411 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-20 09:46:10,539 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 09:46:10,540 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-20 09:46:10,541 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 09:46:10,542 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-20 09:46:29,487 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 09:46:29,488 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-20 09:46:29,493 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-20 09:46:29,493 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-24 09:25:09,390 [Worker-2] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2017-01-24 10:27:51,434 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 10:27:51,434 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-24 10:27:51,434 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 10:27:51,434 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-24 10:28:47,288 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 10:28:47,288 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-24 10:28:47,288 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 10:28:47,288 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-24 10:29:24,396 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 10:29:24,396 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-24 10:29:24,406 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 10:29:24,406 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-24 10:29:53,875 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 10:29:53,875 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-24 10:29:53,875 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 10:29:53,875 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-24 10:30:12,906 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 10:30:12,906 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-24 10:30:12,906 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 10:30:12,906 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-24 10:39:34,653 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 10:39:34,653 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-24 10:39:34,653 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 10:39:34,653 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-24 10:42:20,076 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 10:42:20,076 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-24 10:42:20,076 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 10:42:20,076 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-24 10:45:22,606 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 10:45:22,606 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-24 10:45:22,616 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 10:45:22,616 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-24 10:52:18,501 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 10:52:18,501 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-24 10:52:18,501 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 10:52:18,501 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-24 10:56:24,588 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 10:56:24,588 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-24 10:56:24,588 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 10:56:24,588 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-24 10:56:51,333 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 10:56:51,333 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-24 10:56:51,333 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 10:56:51,333 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-24 11:03:03,375 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 11:03:03,375 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-24 11:03:03,375 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 11:03:03,375 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-24 11:03:15,468 [Worker-51] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 11:03:15,468 [Worker-51] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-24 11:03:15,478 [Worker-51] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 11:03:15,478 [Worker-51] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-24 11:03:21,944 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 11:03:21,944 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-24 11:03:21,944 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 11:03:21,944 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-24 11:03:31,350 [Worker-51] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 11:03:31,350 [Worker-51] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-24 11:03:31,350 [Worker-51] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 11:03:31,350 [Worker-51] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-24 11:03:36,130 [Worker-51] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 11:03:36,130 [Worker-51] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-24 11:03:36,140 [Worker-51] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 11:03:36,140 [Worker-51] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-24 11:22:10,300 [Worker-1] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2017-01-24 11:29:43,310 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 11:29:43,310 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-24 11:29:43,310 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 11:29:43,310 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-24 11:38:22,482 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 11:38:22,482 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-24 11:38:22,492 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 11:38:22,492 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-24 16:14:37,657 [Worker-3] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2017-01-24 16:19:20,413 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 16:19:20,414 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-24 16:19:20,418 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 16:19:20,418 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-24 16:20:18,815 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 16:20:18,816 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-24 16:20:18,818 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 16:20:18,819 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-24 16:20:46,606 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 16:20:46,606 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-24 16:20:46,609 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 16:20:46,609 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-24 16:21:30,140 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 16:21:30,141 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-24 16:21:30,143 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 16:21:30,143 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-24 16:24:47,084 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 16:24:47,085 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-24 16:24:47,088 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 16:24:47,089 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-24 16:24:50,886 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 16:24:50,886 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-24 16:24:50,889 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 16:24:50,890 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-24 16:39:47,882 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 16:39:47,882 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-24 16:39:47,883 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 16:39:47,884 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-24 16:40:13,699 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 16:40:13,700 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-24 16:40:13,707 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 16:40:13,708 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-24 16:40:47,512 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 16:40:47,512 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-24 16:40:47,514 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 16:40:47,514 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-24 16:46:29,514 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 16:46:29,514 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-24 16:46:29,516 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 16:46:29,516 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-24 16:48:10,768 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 16:48:10,768 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-24 16:48:10,770 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 16:48:10,770 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-24 16:48:41,163 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 16:48:41,163 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-24 16:48:41,166 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 16:48:41,166 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-24 16:50:56,574 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 16:50:56,574 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-24 16:50:56,576 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 16:50:56,576 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-24 16:51:39,024 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 16:51:39,024 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-24 16:51:39,026 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 16:51:39,027 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-24 16:53:13,339 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 16:53:13,339 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-24 16:53:13,341 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 16:53:13,342 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-24 16:54:22,298 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 16:54:22,299 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-24 16:54:22,303 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 16:54:22,303 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-24 16:55:00,100 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 16:55:00,101 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-24 16:55:00,102 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 16:55:00,103 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-24 16:58:51,813 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 16:58:51,814 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-24 16:58:51,815 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 16:58:51,816 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-24 17:02:01,295 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 17:02:01,295 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-24 17:02:01,297 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 17:02:01,298 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-24 17:02:10,431 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 17:02:10,431 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-24 17:02:10,433 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 17:02:10,434 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-24 17:05:52,082 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 17:05:52,083 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-24 17:05:52,085 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 17:05:52,086 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-24 17:06:26,743 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 17:06:26,743 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-24 17:06:26,745 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 17:06:26,745 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-24 17:06:52,619 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 17:06:52,620 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-24 17:06:52,621 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-24 17:06:52,622 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 15:27:35,013 [Worker-1] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2017-01-25 15:30:28,255 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 15:30:28,256 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 15:30:28,258 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 15:30:28,259 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 15:38:17,297 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 15:38:17,297 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 15:38:17,299 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 15:38:17,299 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 15:39:25,788 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 15:39:25,788 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 15:39:25,790 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 15:39:25,791 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 15:40:13,904 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 15:40:13,905 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 15:40:13,906 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 15:40:13,907 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 15:40:28,909 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 15:40:28,909 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 15:40:28,912 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 15:40:28,912 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 15:40:35,388 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 15:40:35,389 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 15:40:35,391 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 15:40:35,391 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 15:40:51,726 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 15:40:51,726 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 15:40:51,728 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 15:40:51,728 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 15:41:41,049 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 15:41:41,049 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 15:41:41,053 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 15:41:41,053 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 15:42:30,916 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 15:42:30,917 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 15:42:30,919 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 15:42:30,919 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 15:44:09,173 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 15:44:09,173 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 15:44:09,175 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 15:44:09,175 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 15:48:06,408 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 15:48:06,408 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 15:48:06,410 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 15:48:06,410 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 15:48:18,654 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 15:48:18,655 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 15:48:18,657 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 15:48:18,658 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 15:48:31,150 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 15:48:31,150 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 15:48:31,151 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 15:48:31,152 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 15:48:43,838 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 15:48:43,838 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 15:48:43,841 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 15:48:43,841 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 15:48:51,942 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 15:48:51,943 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 15:48:51,945 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 15:48:51,945 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 15:48:59,152 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 15:48:59,153 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 15:48:59,155 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 15:48:59,156 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 15:52:28,102 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 15:52:28,102 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 15:52:28,103 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 15:52:28,103 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 15:56:14,251 [Worker-1] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2017-01-25 16:08:09,230 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 16:08:09,231 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 16:08:09,233 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 16:08:09,234 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 16:10:54,188 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 16:10:54,188 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 16:10:54,189 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 16:10:54,190 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 16:11:31,268 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 16:11:31,269 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 16:11:31,271 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 16:11:31,272 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 16:14:40,960 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 16:14:40,960 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 16:14:40,962 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 16:14:40,963 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 16:20:33,540 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 16:20:33,540 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 16:20:33,542 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 16:20:33,542 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 16:24:09,873 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 16:24:09,873 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 16:24:09,876 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 16:24:09,877 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 16:24:22,914 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 16:24:22,914 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 16:24:22,916 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 16:24:22,916 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 16:32:37,041 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 16:32:37,041 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 16:32:37,045 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 16:32:37,045 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 16:33:39,792 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 16:33:39,792 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 16:33:39,795 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 16:33:39,795 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 16:35:42,305 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 16:35:42,305 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 16:35:42,307 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 16:35:42,307 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 16:36:32,232 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 16:36:32,232 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 16:36:32,234 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 16:36:32,234 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 16:37:46,126 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 16:37:46,127 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 16:37:46,129 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 16:37:46,129 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 16:39:00,802 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 16:39:00,802 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 16:39:00,804 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 16:39:00,804 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 16:40:01,188 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 16:40:01,189 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 16:40:01,190 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 16:40:01,190 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 16:54:22,611 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 16:54:22,611 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 16:54:22,613 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 16:54:22,613 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 17:05:32,361 [Worker-52] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 17:05:32,361 [Worker-52] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 17:05:32,365 [Worker-52] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 17:05:32,365 [Worker-52] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 17:09:02,396 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 17:09:02,396 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 17:09:02,398 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 17:09:02,398 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 17:11:49,340 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 17:11:49,340 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 17:11:49,342 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 17:11:49,343 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 17:13:39,378 [Worker-59] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 17:13:39,378 [Worker-59] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 17:13:39,380 [Worker-59] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 17:13:39,380 [Worker-59] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 17:16:31,954 [Worker-63] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 17:16:31,954 [Worker-63] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 17:16:31,957 [Worker-63] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 17:16:31,957 [Worker-63] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 19:30:03,230 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 19:30:03,230 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 19:30:03,235 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 19:30:03,236 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 20:03:08,692 [Worker-107] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 20:03:08,693 [Worker-107] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 20:03:08,695 [Worker-107] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 20:03:08,696 [Worker-107] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 20:04:41,405 [Worker-108] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 20:04:41,406 [Worker-108] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 20:04:41,408 [Worker-108] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 20:04:41,408 [Worker-108] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 20:05:18,654 [Worker-109] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 20:05:18,654 [Worker-109] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 20:05:18,657 [Worker-109] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 20:05:18,657 [Worker-109] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 20:05:39,205 [Worker-105] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 20:05:39,205 [Worker-105] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 20:05:39,208 [Worker-105] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 20:05:39,208 [Worker-105] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 20:06:29,582 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 20:06:29,582 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 20:06:29,584 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 20:06:29,585 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 20:06:55,630 [Worker-106] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 20:06:55,631 [Worker-106] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 20:06:55,633 [Worker-106] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 20:06:55,634 [Worker-106] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 20:07:11,065 [Worker-105] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 20:07:11,066 [Worker-105] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 20:07:11,071 [Worker-105] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 20:07:11,072 [Worker-105] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 20:07:30,109 [Worker-107] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 20:07:30,109 [Worker-107] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 20:07:30,113 [Worker-107] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 20:07:30,114 [Worker-107] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 20:07:58,005 [Worker-107] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 20:07:58,006 [Worker-107] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 20:07:58,011 [Worker-107] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 20:07:58,011 [Worker-107] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 20:08:35,142 [Worker-109] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 20:08:35,142 [Worker-109] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 20:08:35,145 [Worker-109] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 20:08:35,145 [Worker-109] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 20:09:04,401 [Worker-112] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 20:09:04,402 [Worker-112] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 20:09:04,406 [Worker-112] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 20:09:04,407 [Worker-112] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-25 20:09:31,495 [Worker-105] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 20:09:31,496 [Worker-105] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-25 20:09:31,498 [Worker-105] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-25 20:09:31,498 [Worker-105] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-26 09:59:34,401 [Worker-1] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2017-01-26 10:05:20,205 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-26 10:05:20,205 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-26 10:05:20,208 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-26 10:05:20,208 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
+2017-01-26 10:05:55,483 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-26 10:05:55,483 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\main\resources
+2017-01-26 10:05:55,484 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-01-26 10:05:55,485 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\stri\git\Perudo\ProjetJava\src\test\resources
