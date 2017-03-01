@@ -28,7 +28,7 @@ public class GUIConnexion extends javax.swing.JFrame {
     public GUIConnexion() throws RemoteException, MalformedURLException, NotBoundException, InterruptedException{
         initComponents();
         
-        Serveur serveurimplem = (Serveur)Naming.lookup("rmi://127.0.0.1/Serveur");
+        Serveur serveurimplem = (Serveur)Naming.lookup("rmi://10.0.0.1/Serveur");
         this.player = new Joueur(serveurimplem);
         
         this.listPartie=serveurimplem.getListePartie();
@@ -151,7 +151,7 @@ public class GUIConnexion extends javax.swing.JFrame {
                 try {
                     partie=this.champPartie.getText();
                     this.player.getServeurImplem().rejoindrePartie(this.player, this.champPartie.getText());
-                    
+                    this.player.setPartie(partie);
                     this.setVisible(false);
                     
                     this.player.setGUI(new GUI());
@@ -163,7 +163,7 @@ public class GUIConnexion extends javax.swing.JFrame {
                     for(int i=0;i<players.size();i++){
                         tmp+=players.get(i).getPseudo()+" | ";
                     }
-                    this.player.getGUI().getListJoueurs().setText(tmp);
+                    this.player.getGUI().getZoneListJoueurs().setText(tmp);
                     this.player.getGUI().setVisible(true);
                     
                     
@@ -175,7 +175,7 @@ public class GUIConnexion extends javax.swing.JFrame {
                 try {
                     partie=(String)this.comboPartie.getSelectedItem();
                     this.player.getServeurImplem().rejoindrePartie(this.player, (String) this.comboPartie.getSelectedItem());
-                    
+                    this.player.setPartie(partie);
                     this.setVisible(false);
                     
                     this.player.setGUI(new GUI());
@@ -186,8 +186,8 @@ public class GUIConnexion extends javax.swing.JFrame {
                     players=this.player.getServeurImplem().getJoueursConnectes(partie);
                     for(int i=0;i<players.size();i++){
                         tmp+=players.get(i).getPseudo()+" | ";
-                    }
-                    this.player.getGUI().getListJoueurs().setText(tmp);
+                    } 
+                    this.player.getGUI().getZoneListJoueurs().setText(tmp);
                     this.player.getGUI().setVisible(true);
                     
                 } catch (RemoteException ex) {

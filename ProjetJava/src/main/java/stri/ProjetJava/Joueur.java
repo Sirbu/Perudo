@@ -113,47 +113,49 @@ public class Joueur extends UnicastRemoteObject implements Client {
 //                refreshMessage();
 //            }
 //        });
-        while(!this.getGUI().annonceReady){    
-            if (this.getGUI().getButton3().isSelected()){//surencherire
-                    int nb=0;
-                    int val=0;
-                    Boolean bonneSaisie=false;
+        while(!this.getGUI().annonceReady){ 
+            if (this.getGUI().annonceReady){   
+                if (this.getGUI().getButton3().isSelected()){//surencherire
+                        int nb=0;
+                        int val=0;
+                        Boolean bonneSaisie=false;
 
-                    while(!bonneSaisie){
-//                            System.out.println("merci de rentrer le nombre de Dés puis la valeur:");
+                        while(!bonneSaisie){
+                                this.getGUI().addMessage("merci de rentrer le nombre de Dés puis la valeur:");
 
-                        try{
-                            nb = (Integer)this.getGUI().getNombreDes().getValue();
-                            val = (Integer)this.getGUI().getValeurDes().getSelectedItem();
-                        }catch(NumberFormatException e){
-                            continue;
+                            try{
+                                nb = (Integer)this.getGUI().getNombreDes().getValue();
+                                val = (Integer)this.getGUI().getValeurDes().getSelectedItem();
+                            }catch(NumberFormatException e){
+                                continue;
+                            }
+                            //verification de l validité de la saisie
+                            //3 des de 4 derniere annonce
+                            // 2 des de 4 moi
+                            a = new Annonce("surencherir",nb,val,this.getPseudo(), this.partie);
+                            bonneSaisie=a.verifAnnonce(serveurImplem);    
+                         // si le joueur est le premier a jouer dans cette manche il ne peut dire toutpile ni menteur
                         }
-                        //verification de l validité de la saisie
-                        //3 des de 4 derniere annonce
-                        // 2 des de 4 moi
-                        a = new Annonce("surencherir",nb,val,this.getPseudo(), this.partie);
-                        bonneSaisie=a.verifAnnonce(serveurImplem);    
-                     // si le joueur est le premier a jouer dans cette manche il ne peut dire toutpile ni menteur
-                    }
-            }else if(this.getGUI().getButton2().isSelected()){//menteur
-                    if(this.serveurImplem.getDerniereAnnonce(this.partie) == null){
-                            this.getGUI().addMessage("Impossible, vous êtes le premier joueur !");
-                    }else{
-                           a = new Annonce("menteur"," ",this.getPseudo());
-                    }
-            }else if(this.getGUI().getButton1().isSelected()){
-                    if(this.serveurImplem.getDerniereAnnonce(this.partie) == null){
-                            this.getGUI().addMessage("Impossible, vous êtes le premier joueur !");
-                    }else{
-                            a = new Annonce("toutpile"," ",this.getPseudo());	
-                    }
-            }else {
-                            this.getGUI().addMessage("Vous êtes stupide, ce n'est pas un chiffre valide...");
-            }	
-        }
-            // Maintenant on doit
-            
+                }else if(this.getGUI().getButton2().isSelected()){//menteur
+                        if(this.serveurImplem.getDerniereAnnonce(this.partie) == null){
+                                this.getGUI().addMessage("Impossible, vous êtes le premier joueur !");
+                        }else{
+                               a = new Annonce("menteur"," ",this.getPseudo());
+                        }
+                }else if(this.getGUI().getButton1().isSelected()){
+                        if(this.serveurImplem.getDerniereAnnonce(this.partie) == null){
+                                this.getGUI().addMessage("Impossible, vous êtes le premier joueur !");
+                        }else{
+                                a = new Annonce("toutpile"," ",this.getPseudo());	
+                        }
+                }else {
+                                this.getGUI().addMessage("Vous êtes stupide, ce n'est pas un chiffre valide...");
+                }	
+            }
+                this.getGUI().annonceReady=false;
+        }        
             return a;
+            
     }
 
 	public void lancerDes() throws RemoteException {
