@@ -1,5 +1,6 @@
 package stri.ProjetJava;
 
+import java.awt.Button;
 import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;
@@ -8,6 +9,7 @@ import java.rmi.server.UnicastRemoteObject;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.Vector;
+import javax.swing.ButtonModel;
 
 public class Joueur extends UnicastRemoteObject implements Client {
 	/**
@@ -64,87 +66,95 @@ public class Joueur extends UnicastRemoteObject implements Client {
 		
 	}
 
-	public Annonce FaireAnnonce() throws RemoteException {	
-		int tot=0;
-		// recupére le nombre de des de chaque joueur pour l'aider a ajuster son annonce
-		Vector<Client> player =this.serveurImplem.getJoueursConnectes(this.partie);
-		for(int i=0;i< player.size();i++){
-			System.out.println("le joueur "+ player.elementAt(i).getPseudo() + " a "
-			+player.elementAt(i).getDes().size() +" Dés");
-			tot+=player.elementAt(i).getDes().size();
-		}
-		
-		System.out.println("le nombre total de dés dans le jeu est de : "+tot);
-		//on affiche la derniere annonce
-		if(this.serveurImplem.getDerniereAnnonce(this.partie) != null){
-			System.out.println("la denière mise : "+this.serveurImplem.getDerniereAnnonce(this.getPartie()).getPseudo()+" a dit "+this.serveurImplem.getDerniereAnnonce(this.getPartie()).getNombre()
-					+" Dés de "+this.serveurImplem.getDerniereAnnonce(this.getPartie()).getValeur());
-		}
-		//on affiche le jeu du joueur
-		System.out.println("votre jeu est le suivant");
-		
-		for(int i=0;i <this.getDes().size();i++){
-			if(this.getDes().elementAt(i).intValue()==1){
-                            this.getGUI().	System.out.print(" |Perudo");
-			}else{
-				System.out.print(" |"+this.getDes().elementAt(i));
-			}
-		}
-		System.out.println(" ");
+	public Annonce FaireAnnonce() throws RemoteException {
+            Annonce a = null;
+            this.getGUI().annonceReady=false;
+            // D'abord on doit initialiser les boutons permettant la saisie
+            // d'une annonce !
+            this.getGUI().getNombreDes().setEnabled(true);
+            this.getGUI().getValeurDes().setEnabled(true);
+            String tmp;
+            int tot=0;
+            // recupére le nombre de des de chaque joueur pour l'aider a ajuster son annonce
+            String tmp1="";
+            Vector<Client> player =this.serveurImplem.getJoueursConnectes(this.partie);
+            for(int i=0;i< player.size();i++){
+                    tmp1+="le joueur "+ player.elementAt(i).getPseudo() + " a "
+                    +player.elementAt(i).getDes().size() +" Dés";
 
-		Scanner sc=new Scanner(System.in);
-                
-		Annonce a;
-		String nombre = "";
-		
-		do{
-			a = null;
-			System.out.println("Merci de rentrer 1 pour sur encherir ");
-			System.out.println("Merci de rentrer 2 pour menteur ");
-			System.out.println("Merci de rentrer 3 pour tout pile ");
-			
-			nombre =sc.nextLine();
+                    tot+=player.elementAt(i).getDes().size();
+            }
+            tmp1+="le nombre total de dés dans le jeu est de : " + tot;
+            this.getGUI().getZoneAffichagejeu().setText(tmp1);
+            //System.out.println("le nombre total de dés dans le jeu est de : "+tot);
+            //on affiche la derniere annonce
+            tmp="\n***************** A votre tour de jouer *****************";
+            if(this.serveurImplem.getDerniereAnnonce(this.partie) != null){
+                    tmp+="la denière mise : "+this.serveurImplem.getDerniereAnnonce(this.getPartie()).getPseudo()+" a dit "+this.serveurImplem.getDerniereAnnonce(this.getPartie()).getNombre()
+                                    +" Dés de "+this.serveurImplem.getDerniereAnnonce(this.getPartie()).getValeur();
+            }
+            
+            //on affiche le jeu du joueur
+           // System.out.println("votre jeu est le suivant");
+            tmp="votre jeu est le suivant ";
+            for(int i=0;i <this.getDes().size();i++){
+                    if(this.getDes().elementAt(i).intValue()==1){
+                        tmp+=" Perudo\n";
+                    }else{
+                        tmp+=this.getDes().elementAt(i)+"\n";
+                    }
+            }
+            
+            this.getGUI().getZoneAffichageDes().setText(tmp);
+            
+//              Timer timer1 = new Timer(1000, new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                refreshMessage();
+//            }
+//        });
+        while(!this.getGUI().annonceReady){    
+            if (this.getGUI().getButton3().isSelected()){//surencherire
+                    int nb=0;
+                    int val=0;
+                    Boolean bonneSaisie=false;
 
-			if (nombre.contentEquals("1")){
-				int nb=0;
-				int val=0;
-				Boolean bonneSaisie=false;
-		
-				while(!bonneSaisie){
-					System.out.println("merci de rentrer le nombre de Dés puis la valeur:");
-				    try{
-				    	nb = Integer.parseInt(sc.nextLine());
-				    	val = Integer.parseInt(sc.nextLine());
-				    }catch(NumberFormatException e){
-				    	continue;
-				    }
-				    //verification de l validité de la saisie
-				    //3 des de 4 derniere annonce
-				    // 2 des de 4 moi
-				    a = new Annonce("surencherir",nb,val,this.getPseudo(), this.partie);
-				    bonneSaisie=a.verifAnnonce(serveurImplem);    
-				 // si le joueur est le premier a jouer dans cette manche il ne peut dire toutpile ni menteur
-				}
-			}else if(nombre.contentEquals("2")){
-				if(this.serveurImplem.getDerniereAnnonce(this.partie) == null){
-					System.out.println("Impossible, vous êtes le premier joueur !");
-				}else{
-					a = new Annonce("menteur"," ",this.getPseudo());
-				}
-			}else if(nombre.contentEquals("3")){
-				if(this.serveurImplem.getDerniereAnnonce(this.partie) == null){
-					System.out.println("Impossible, vous êtes le premier joueur !");
-				}else{
-					a = new Annonce("toutpile"," ",this.getPseudo());	
-				}
-			}else {
-					System.out.println("Vous êtes stupide, ce n'est pas un chiffre valide...");
-			}	
-			
-		}while((!nombre.contentEquals("1") && !nombre.contentEquals("2") && !nombre.contentEquals("3")) || a == null);
-		
-		return a;
-	}
+                    while(!bonneSaisie){
+//                            System.out.println("merci de rentrer le nombre de Dés puis la valeur:");
+
+                        try{
+                            nb = (Integer)this.getGUI().getNombreDes().getValue();
+                            val = (Integer)this.getGUI().getValeurDes().getSelectedItem();
+                        }catch(NumberFormatException e){
+                            continue;
+                        }
+                        //verification de l validité de la saisie
+                        //3 des de 4 derniere annonce
+                        // 2 des de 4 moi
+                        a = new Annonce("surencherir",nb,val,this.getPseudo(), this.partie);
+                        bonneSaisie=a.verifAnnonce(serveurImplem);    
+                     // si le joueur est le premier a jouer dans cette manche il ne peut dire toutpile ni menteur
+                    }
+            }else if(this.getGUI().getButton2().isSelected()){//menteur
+                    if(this.serveurImplem.getDerniereAnnonce(this.partie) == null){
+                            this.getGUI().addMessage("Impossible, vous êtes le premier joueur !");
+                    }else{
+                           a = new Annonce("menteur"," ",this.getPseudo());
+                    }
+            }else if(this.getGUI().getButton1().isSelected()){
+                    if(this.serveurImplem.getDerniereAnnonce(this.partie) == null){
+                            this.getGUI().addMessage("Impossible, vous êtes le premier joueur !");
+                    }else{
+                            a = new Annonce("toutpile"," ",this.getPseudo());	
+                    }
+            }else {
+                            this.getGUI().addMessage("Vous êtes stupide, ce n'est pas un chiffre valide...");
+            }	
+        }
+            // Maintenant on doit
+            
+            return a;
+    }
 
 	public void lancerDes() throws RemoteException {
 		Random rand = new Random();

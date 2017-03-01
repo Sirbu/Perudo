@@ -1,5 +1,6 @@
 package stri.ProjetJava;
 
+import java.awt.Button;
 import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;
@@ -8,6 +9,11 @@ import java.util.Scanner;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JRadioButton;
+import javax.swing.JSpinner;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextArea;
 
@@ -28,9 +34,10 @@ public class GUI extends javax.swing.JFrame {
      * Creates new form GUI
      * @param player
      */
+    Boolean annonceReady;
     public GUI(){
         initComponents();
-        
+        annonceReady=false;
         
     }
 
@@ -113,11 +120,16 @@ public class GUI extends javax.swing.JFrame {
 
         jRadioButton2.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup1.add(jRadioButton2);
-        jRadioButton2.setText("Menteur");
+        jRadioButton2.setLabel("menteur");
+        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton2ActionPerformed(evt);
+            }
+        });
 
         jRadioButton3.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup1.add(jRadioButton3);
-        jRadioButton3.setText("Surenchérir");
+        jRadioButton3.setLabel("Surencherir");
         jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton3ActionPerformed(evt);
@@ -195,8 +207,20 @@ public class GUI extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jRadioButton1.getAccessibleContext().setAccessibleName("Toutpile");
+
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Envoyer");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         button1.setBackground(new java.awt.Color(255, 255, 255));
         button1.setLabel("Quitter partie");
@@ -359,6 +383,18 @@ public class GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton3ActionPerformed
 
+    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton2ActionPerformed
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        this.annonceReady=true;
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -436,9 +472,46 @@ public JTextArea getListJoueurs(){
      *
      * @return 
      */
-    public JTextArea getZoneAffichagePrincipale(){
-    return this.jTextArea5;
-}
-
+    public JTextArea getZoneAffichageDes(){
+      return this.jTextArea4; 
+    }
+    
+    
+    public JTextArea getZoneAffichagejeu(){
+      return this.jTextArea3;
+    }
+    
+    public JTextArea getZoneAffichageGeneral(){
+      return this.jTextArea5;
+    }
+    
+    public ButtonGroup getButtonGroup1() {
+        return buttonGroup1;
+    }
+    
+    public JRadioButton getButton1() {
+        return this.jRadioButton1;
+    }
+    public JRadioButton getButton2() {
+        return this.jRadioButton2;
+    }
+    public JRadioButton getButton3() {
+        return this.jRadioButton3;
+    }
+    public JSpinner getNombreDes(){
+        return this.jSpinner1;
+    }
+     public JComboBox getValeurDes(){
+        return this.jComboBox1;
+    }
+    public JButton bouttonOk(){
+        return this.jButton1;
+    }
+    
+    public void addMessage(String message){
+        this.getZoneAffichageGeneral().setText(
+                this.getZoneAffichageGeneral().getText() + message
+        );        
+    }
 
 }
