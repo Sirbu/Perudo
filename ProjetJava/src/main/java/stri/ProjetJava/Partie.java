@@ -1,4 +1,11 @@
 /*
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.Serializable;
+import java.rmi.RemoteException;
+import java.util.Vector;
+import javax.swing.Timer;
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -7,6 +14,7 @@ package stri.ProjetJava;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.Serializable;
 import java.rmi.RemoteException;
 import java.util.Vector;
 
@@ -16,15 +24,20 @@ import javax.swing.Timer;
  *
  * @author alexis
  */
-public class Partie implements Runnable, ActionListener {
+public class Partie implements Runnable, ActionListener, Serializable{
 
-    private String nom;
-    private int nbrJoueursMax = 6;              // Pourra être modifié à l'occaz
-    private String status;                      // WAIT || RUNNING || OVER
-    private Annonce derniereAnnonce;           // la derniereAnnonce émise par un joueur
-    private Vector<Client> joueurs;    			// Contient les joueurs
-    private Timer timer;
+    /**
+	 * Generated UID
+	 */
+	private static final long serialVersionUID = 7389133810306179749L;
+	
+	private String nom;
+    private String status;              // WAIT || RUNNING || OVER
+    private int nbrJoueursMax = 6;      // Pourra être modifié à l'occaz
+    private Annonce derniereAnnonce;    // La derniereAnnonce émise par un joueur
+    private Vector<Client> joueurs;    	// Contient les joueurs
 
+    private Timer timer;    // Permet de lancer la partie automatiquement
 
     public Partie(String nom){
         this.nom = nom;
@@ -33,14 +46,14 @@ public class Partie implements Runnable, ActionListener {
     }
 
     public boolean checkFinPartie(){
-    	
+
     	if(this.joueurs.size() == 1){
-    		System.out.println("[+] Plus qu'un seul joueur dans la partie. " + this.joueurs.get(0) + " est le vainqueur !");
+    		System.out.println("[+] Plus qu'un seul joueur dans la partie.\n[+] " + this.joueurs.get(0) + " est le vainqueur !");
     		return true;
-    	}    	
+    	}
     	return false;
     }
-    
+
     public synchronized void enleverJoueurByPseudo(String pseudo){
     	int joueurCourant = 0;
     	try {
@@ -70,7 +83,7 @@ public class Partie implements Runnable, ActionListener {
 		this.joueurs.add(c);
 
 		if(this.joueurs.size() == 1){
-		    this.timer = new Timer(10000, this);
+		    this.timer = new Timer(1000, this);
 		    this.timer.setInitialDelay(10000);
 		    this.timer.start();
 		}else if(this.joueurs.size() == nbrJoueursMax){
@@ -84,7 +97,7 @@ public class Partie implements Runnable, ActionListener {
     public int compterDes(int valeur){
     	int cpt = 0;
     	Vector<Integer> des = new Vector<Integer>();
-    	
+
     	for(int i = 0; i< this.joueurs.size(); i++){
     		// Pour chaque client on récupére ses dés...
     		try {
@@ -111,7 +124,7 @@ public class Partie implements Runnable, ActionListener {
         	try {
 				this.getListeJoueurs().get(i).AfficheAnnonce(a);
 			} catch (RemoteException e) {
-				System.out.println("Client "+ i +" déconnecté !");
+				System.out.println("[!] Client " + i + " brutalement déconnecté !");
 				this.enleverJoueurByIndex(i);
 			}
         }
@@ -122,33 +135,41 @@ public class Partie implements Runnable, ActionListener {
     // du joueur à reprendre la main. Sinon elle retourne une chaine vide
     String traiterAnnonce(Annonce annonceCourante) throws RemoteException{
 		String prochainJoueur = "none";
-    	
+
+        Annonce derniereAnnonce = null;
+        Annonce annonceNotif = null;
+
+        int valeurAnnonce = 0;
+        int nbrDesAnnonce = 0;
+        int nbrDesReel = 0;
+
     	// On doit d'abord diffuser l'annonce courante
 	    broadcastAnnonce(annonceCourante);
 
 	    // Dans le cas d'une surenchère, on ne fait rien d'autre
 	    // que de diffuser l'annonce. Dans le cas contraire on
 	    // peut commencer à compter les dés de la dernière annonce
-	    if(annonceCourante.getType().contentEquals("surencherir")){ 
+	    if(annonceCourante.getType().contentEquals("surencherir")){
 	    	// Si l'annonce est une simple surenchère, on l'enregistre comme dernière annonce
 		    this.derniereAnnonce = annonceCourante;
 	    }else{
-	       	Annonce derniereAnnonce = this.getDerniereAnnonce();
-	        Annonce annonceNotif = new Annonce("info", "", "Serveur");
+	       	derniereAnnonce = this.getDerniereAnnonce();
+	        annonceNotif = new Annonce("info", "", "Serveur");
 
-	        int valeurAnnonce = derniereAnnonce.getValeur();
-	        int nbrDesAnnonce = derniereAnnonce.getNombre();
-	        int nbrDesReel = 0;
+	        valeurAnnonce = derniereAnnonce.getValeur();
+	        nbrDesAnnonce = derniereAnnonce.getNombre();
+	        nbrDesReel = 0;
 
 	        // TODO: Vérifier le nom de la partie
 	        nbrDesReel = this.compterDes(valeurAnnonce);
-	        
-	        System.out.println("Il y a en tout "+ nbrDesReel + " de "+ valeurAnnonce);
-	        
+
+	        System.out.println("[+] Nombre réel de dés : " + nbrDesReel + " de "+ valeurAnnonce);
+
 	        if(annonceCourante.getType().contentEquals("menteur")){
 		        if(nbrDesReel < nbrDesAnnonce){
 		        	// Là celui qui vien de dénoncer un mensonge a eu raison !
-		        	annonceNotif.setMessage("Hé oui ! "+derniereAnnonce.getPseudo()+" était un sale menteur !\nJ'aime pas les menteurs et les fils de pute.");
+		        	annonceNotif.setMessage("Hé oui ! "+derniereAnnonce.getPseudo()
+                        + " était un sale menteur !\nJ'aime pas les menteurs et les fils de pute.");
 		        	this.getJoueurByPseudo(derniereAnnonce.getPseudo()).retirerDes();
 		        	prochainJoueur = derniereAnnonce.getPseudo();
 		        }else{
@@ -168,7 +189,7 @@ public class Partie implements Runnable, ActionListener {
 		        prochainJoueur = annonceCourante.getPseudo();
 		    }
 	        broadcastAnnonce(annonceNotif);
-	    }	  
+	    }
 	    return prochainJoueur;
 	}
 
@@ -183,18 +204,18 @@ public class Partie implements Runnable, ActionListener {
 			}
     	}
     }
-    
-    // Ne pas incrémenter le compteur de joueur lors de l'élimination d'un joueur
+
+    // Bon alors attention cette méthode est un peu poilue...
     public void run(){
     	int joueurCourant = 0;
     	int indexJoueurReprise = 0;
     	String joueurReprise = "none";
     	Annonce annonceCourante;
-    	
+
     	// boucle des manches
     	// tant qu'il reste plus d'un joueur, il reste des manches à jouer
     	while((this.joueurs.size() > 1)){
-    		
+
     	 	System.out.println("[+] Début d'une manche !");
         	this.derniereAnnonce = null;
 
@@ -211,85 +232,103 @@ public class Partie implements Runnable, ActionListener {
     			} catch (RemoteException e) {
     				// TODO Améliorer la gestion des déconnexions brutales
     				System.out.println("[!] Le client "+ joueurCourant +" est déconnecté !");
-    				
+
     				if(this.joueurs.size() >= joueurCourant){
     					System.out.println("[+] Il est déjà parti...");
     				}else{
     					this.enleverJoueurByIndex(joueurCourant);
     				}
     				continue;
-    			}       		
-        		
+    			}
+
         		joueurCourant++;
         		if(joueurCourant >= (this.joueurs.size())){
         			joueurCourant = 0;
         		}
         	}
-        	
-        	
+
         	// ici, le joueurReprise != "none"
         	// Permet de retrouver l'indice du joueur dont le pseudo est joueurReprise
 			// TODO : a mettre dans une fonction
         	if(!joueurReprise.contentEquals("none")){
-        		try{				
+        		try{
 					indexJoueurReprise = getIndexByPseudo(joueurReprise);
-					
+
 					// offset to test
-					System.out.println("Joueur de merde : "+ this.joueurs.get(indexJoueurReprise).getPseudo() + "index : " + indexJoueurReprise);
-					
-					System.out.println("Manche terminée : " + this.joueurs.get(indexJoueurReprise).getPseudo() + " doit recommencer !");
-					
+					System.out.println("Joueur de merde : "+ this.joueurs.get(indexJoueurReprise).getPseudo()
+                        + "index : " + indexJoueurReprise);
+
+					System.out.println("Manche terminée : " + this.joueurs.get(indexJoueurReprise).getPseudo()
+                        + " doit recommencer !");
+
 					// déterminer si le joueur doit quitter la partie.
 					if(this.getJoueurByPseudo(joueurReprise).getDes().size() == 0){
 						// on prévient tout le monde de la défaite du joueur
 						System.out.println("[+] Le joueur "+ joueurReprise +" n'a plus de dés !");
 						Annonce a = new Annonce("info", "Le joueur " + joueurReprise + " a perdu !", "Serveur");
 						broadcastAnnonce(a);
-						
+
 						// on prévient le joueur avec une annonce particulière
 						a.setType("defaite");
 						this.getJoueurByPseudo(joueurReprise).AfficheAnnonce(a);
-	
+
 						this.enleverJoueurByIndex(indexJoueurReprise);
 						System.out.println("AFTER => Taille joueurs = " + this.joueurs.size());
-						
-						// Comme le joueur qui devait reprendre a perdu, on rend 
+
+						// Comme le joueur qui devait reprendre a perdu, on rend
 						// la main au joueur suivant.
 						// joueurCourant = indexJoueurReprise+1;
 					}
-					
+
 					joueurCourant = getIndexByPseudo(joueurReprise);
-					
+
 				}catch(RemoteException e){
 					System.out.println("RemoteException");
 					e.printStackTrace();
 					System.out.println("Taille de merde : " + this.joueurs.size());
-				}      		        		
+				}
 			}else{
 				joueurCourant++;
 			}
-			
+
     		if(joueurCourant >= (this.joueurs.size())){
     			joueurCourant = 0;
     		}
     	}
-		
+
 		try {
 			System.out.println("[+] Il ne reste plus qu'un joueur.");
 			System.out.println("[+] C'est la victoire pour "+ this.joueurs.get(0).getPseudo()+" !");
-			
+
 			Annonce a = new Annonce("info", "Vous avez gagné !", "Serveur");
 			this.joueurs.get(0).AfficheAnnonce(a);
-			
+
 			// on informe le joueur que la partie est terminée
 			a = new Annonce("gameover", "gameover", "Serveur");
 			this.joueurs.get(0).AfficheAnnonce(a);
 			this.enleverJoueurByIndex(0);
-			
+
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+    }
+
+    // Méthode déclenchée lors de la fin du timer !
+    // En vérité elle n'est plus utilisée depuis que le mode multi-parties
+    // mais on sait pas jamais, ça pourrait servir ;)
+    public void actionPerformed(ActionEvent arg0) {
+        System.out.println("[+] Time's up !");
+        if(this.joueurs.size() == 1){
+            System.out.println("[+] Mais personne n'est là pour jouer...");
+            System.out.println("[+] Relance du timer !");
+            this.timer.start();
+        }else{
+            System.out.println("[+] La partie va commencer !");
+            this.timer.stop();
+            this.status = "RUNNNING";
+            this.run();
+        }
     }
 
     // getters & setters
@@ -300,7 +339,7 @@ public class Partie implements Runnable, ActionListener {
 		}
 		return i;
     }
-    
+
     public String getStatus(){
         return this.status;
     }
@@ -324,23 +363,9 @@ public class Partie implements Runnable, ActionListener {
     public Annonce getDerniereAnnonce(){
     	return this.derniereAnnonce;
     }
-    
+
     public void setDerniereAnnonce(Annonce a){
     	this.derniereAnnonce = a;
-    }
-    
-    public void actionPerformed(ActionEvent arg0) {
-             System.out.println("[+] Time's up !");
-             if(this.joueurs.size() == 1){
-            	 System.out.println("[+] Mais personne n'est là pour jouer...");
-            	 System.out.println("[+] Relance du timer !");
-            	 this.timer.start();
-             }else{
-            	 System.out.println("[+] La partie va commencer !");
-                 this.timer.stop();
-                 this.status = "RUNNNING";
-                 this.run(); 
-             }
     }
 
     public int getNbrJoueursMax() {

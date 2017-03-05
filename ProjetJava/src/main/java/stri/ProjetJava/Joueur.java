@@ -21,166 +21,176 @@ public class Joueur extends UnicastRemoteObject implements Client {
 	 *  identifiant serialization généré
 	 */
 	private static final long serialVersionUID = -8485613108316528072L;
-	
-	
+
+
 	private String pseudo;
 	private String couleur;
+    private String partie;
+    private String statut;
 	private Vector<Integer> des;
 	private Serveur serveurImplem;
-	private String partie; 
-	private String statut;
-        private GUI fenetre;
-	 protected Joueur(Serveur serveurimplem) throws RemoteException, MalformedURLException, NotBoundException {
-		super();
-		
-                this.serveurImplem = serveurimplem;
-		des = new Vector<Integer>();
-		//au debut de la partie tout le monde a 6 des initilaisé à 0
-		for(int i=0;i < 6;i++){
 
-			des.add(i, 0);
-		}		
+    protected Joueur(Serveur serveurimplem) throws RemoteException, MalformedURLException, NotBoundException {
+        super();
+
+        this.serveurImplem = serveurimplem;
+        des = new Vector<Integer>();
+
+        //au debut de la partie tout le monde a 6 des initilaisé à 0
+        for(int i=0;i < 6;i++){
+        	des.add(i, 0);
+        }
 	}
 
-
+    private void menuSaisieAnnonce(){
+        System.out.println("-=[ Votre tour ]=-");
+        System.out.println("  1) Miser");
+        System.out.println("  2) Dire menteur");
+        System.out.println("  3) Dire tout pile");
+    }
 
 	public void AfficheAnnonce(Annonce a) throws RemoteException {
-		// menteur		
-		if(a.getType().contentEquals("menteur")){
-			System.out.println(a.getPseudo() +" accuse " +serveurImplem.getDerniereAnnonce(this.partie).getPseudo() + " de menteur !!");
-		}
-		
-		//tout pile
-		else if(a.getType().contentEquals("toutpile")){
-			System.out.println(a.getPseudo() +" à decalré un tout pile !! ");
 
+		if(a.getType().contentEquals("menteur")){
+            // menteur
+    		System.out.println("[+] " + a.getPseudo() +" accuse " +serveurImplem.getDerniereAnnonce(this.partie).getPseudo() + " de menteur !!");
+		}else if(a.getType().contentEquals("toutpile")){
+            //tout pile
+            System.out.println("[+] " + a.getPseudo() +" à decalré un tout pile !! ");
+		}else if(a.getType().contentEquals("surencherir")){
+    		//sur enchere
+            System.out.println("[+] " + a.getPseudo()+" à Annoncer " + a.getNombre()+" Dés de "+a.getValeur());
+		}else if(a.getType().contentEquals("info")){
+            // annonce de type info
+            System.out.println("[INFO] " + a.getMessage());
+		}else {
+			System.out.println("[*] You lost THE GAME");
 		}
-		
-		//sur enchere
-		else if(a.getType().contentEquals("surencherir")){
-			System.out.println(a.getPseudo()+" à Annoncer " + a.getNombre()+" Dés de "+a.getValeur());
-		}
-		
-		// annonce de type info
-		else if(a.getType().contentEquals("info")){
-			System.out.println(a.getMessage());
-		}
-		else {
-			System.out.println("tu quittes le jeu");
-		}
-		
 	}
 
 	public Annonce FaireAnnonce() throws RemoteException {
-            Annonce a = null;
-            this.getGUI().annonceReady=false;
-            // D'abord on doit initialiser les boutons permettant la saisie
-            // d'une annonce !
-            this.getGUI().getNombreDes().setEnabled(true);
-            this.getGUI().getValeurDes().setEnabled(true);
-            String tmp;
-            int tot=0;
-            // recupére le nombre de des de chaque joueur pour l'aider a ajuster son annonce
-            String tmp1="";
-            Vector<Client> player =this.serveurImplem.getJoueursConnectes(this.partie);
-            for(int i=0;i< player.size();i++){
-                    tmp1+="le joueur "+ player.elementAt(i).getPseudo() + " a "
-                    +player.elementAt(i).getDes().size() +" Dés";
+        int nbrDesTotal = 0;
 
-                    tot+=player.elementAt(i).getDes().size();
-            }
-            tmp1+="le nombre total de dés dans le jeu est de : " + tot;
-            this.getGUI().getZoneAffichagejeu().setText(tmp1);
-            //System.out.println("le nombre total de dés dans le jeu est de : "+tot);
-            //on affiche la derniere annonce
-            tmp="\n***************** A votre tour de jouer *****************";
-            if(this.serveurImplem.getDerniereAnnonce(this.partie) != null){
-                    tmp+="la denière mise : "+this.serveurImplem.getDerniereAnnonce(this.getPartie()).getPseudo()+" a dit "+this.serveurImplem.getDerniereAnnonce(this.getPartie()).getNombre()
-                                    +" Dés de "+this.serveurImplem.getDerniereAnnonce(this.getPartie()).getValeur();
-            }
-            
-            //on affiche le jeu du joueur
-           // System.out.println("votre jeu est le suivant");
-            tmp="votre jeu est le suivant ";
-            for(int i=0;i <this.getDes().size();i++){
-                    if(this.getDes().elementAt(i).intValue()==1){
-                        tmp+=" Perudo\n";
-                    }else{
-                        tmp+=this.getDes().elementAt(i)+"\n";
-                    }
-            }
-            
-            this.getGUI().getZoneAffichageDes().setText(tmp);
-            
-            while(this.getGUI().annonceReady==false){
-                try {
-                    Thread.sleep(500);
-                } catch (InterruptedException ex) {
-                    Logger.getLogger(Joueur.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                
-        if(this.getGUI().annonceReady){        
-                if (this.getGUI().getButton3().isSelected()){//surencherire
-                        int nb=0;
-                        int val=0;
-                        Boolean bonneSaisie=false; 
-                        
-			if (nombre.contentEquals("1")){
-				int nb=0;
-				int val=0;
-				Boolean bonneSaisie=false;
-		
+		Annonce a;
+		String choix = "";
+        Scanner sc = new Scanner(System.in);
+
+        int nbrDes = 0;
+        int valDes = 0;
+        Boolean bonneSaisie = false;
+
+		// recupére le nombre de des de chaque joueur pour l'aider a ajuster son annonce
+		Vector<Client> player =this.serveurImplem.getJoueursConnectes(this.partie);
+
+		for(int i=0;i< player.size();i++){
+			System.out.println("[+] Le joueur "+ player.elementAt(i).getPseudo()
+                + " a " + player.elementAt(i).getDes().size() +" dés");
+
+            nbrDesTotal += player.elementAt(i).getDes().size();
+		}
+
+		System.out.println("[+] Le nombre total de dés est " + nbrDesTotal);
+
+        //on affiche la derniere annonce
+		if(this.serveurImplem.getDerniereAnnonce(this.partie) != null){
+			System.out.println("[+] " + this.serveurImplem.getDerniereAnnonce(this.getPartie()).getPseudo()
+                + " a dit " + this.serveurImplem.getDerniereAnnonce(this.getPartie()).getNombre()
+					+ " dés de "+this.serveurImplem.getDerniereAnnonce(this.getPartie()).getValeur());
+		}
+
+		//on affiche le jeu du joueur
+		System.out.println("[+] Votre jeu est le suivant : ");
+
+		for(int i = 0; i < this.getDes().size(); i++){
+			if(this.getDes().elementAt(i).intValue() == 1){
+				System.out.print("~(°▿°)~");
+			}else{
+				System.out.print(this.getDes().elementAt(i));
+			}
+
+            System.out.print(" - ");
+		}
+
+        // Boucle permettant de vérifier le choix de l'utilisateur
+		do{
+            a = null;
+            System.out.println("");
+            // Affichage du menu donnant le choix à l'utilisateur
+            menuSaisieAnnonce();
+
+			choix = sc.nextLine();
+
+            // miser
+			if (choix.contentEquals("1")){
 				while(!bonneSaisie){
-					System.out.println("merci de rentrer le nombre de Dés puis la valeur:");
+					System.out.println("[+] Merci de rentrer le nombre de dés puis la valeur :");
 				    try{
-				    	nb = Integer.parseInt(sc.nextLine());
-				    	val = Integer.parseInt(sc.nextLine());
+                        System.out.print("(Nombre dés) -> ");
+				    	nbrDes = Integer.parseInt(sc.nextLine());
+                        System.out.print("(Valeur dés) -> ");
+				    	valDes = Integer.parseInt(sc.nextLine());
 				    }catch(NumberFormatException e){
 				    	continue;
 				    }
-				    //verification de l validité de la saisie
-				    //3 des de 4 derniere annonce
-				    // 2 des de 4 moi
-				    a = new Annonce("surencherir",nb,val,this.getPseudo(), "perudo");
-				    bonneSaisie=a.verifAnnonce(serveurImplem);    
-				 // si le joueur est le premier a jouer dans cette manche il ne peut dire toutpile ni menteur
+
+				    // vérification de la validité de la saisie
+				    a = new Annonce("surencherir", nbrDes, valDes, this.getPseudo(), this.partie);
+				    bonneSaisie = a.verifAnnonce(serveurImplem);
 				}
-			}else if(nombre.contentEquals("2")){
+
+			}else if(choix.contentEquals("2")){  // dire menteur
+                // On ne peut dire menteur que si il existe une mise précédente
 				if(this.serveurImplem.getDerniereAnnonce(this.partie) == null){
-					System.out.println("Impossible, vous êtes le premier joueur !");
+					System.out.println("[!] Impossible, vous êtes le premier joueur !");
 				}else{
-					a = new Annonce("menteur"," ",this.getPseudo());
+					a = new Annonce("menteur","",this.getPseudo());
 				}
-			}else if(nombre.contentEquals("3")){
+
+			}else if(choix.contentEquals("3")){  // Dire tout pile
+                // on ne peut dire tout pile que si il existe une mise précédente
 				if(this.serveurImplem.getDerniereAnnonce(this.partie) == null){
-					System.out.println("Impossible, vous êtes le premier joueur !");
+					System.out.println("[!] Impossible, vous êtes le premier joueur !");
 				}else{
-					a = new Annonce("toutpile"," ",this.getPseudo());	
+					a = new Annonce("toutpile","",this.getPseudo());
 				}
 			}else {
-					System.out.println("Vous êtes stupide, ce n'est pas un chiffre valide...");
-			}	
-			
-		}while((!nombre.contentEquals("1") && !nombre.contentEquals("2") && !nombre.contentEquals("3")) || a == null);
-		
-		return a;
-	}
+					System.out.println("[!] Vous êtes stupide, ce n'est pas un chiffre valide...");
+			}
+
+		}while((!choix.contentEquals("1") && !choix.contentEquals("2") && !choix.contentEquals("3")) || a == null);
+
+        return a;
+    }
 
 	public void lancerDes() throws RemoteException {
 		Random rand = new Random();
-		for(int i=0; i< this.getDes().size();i++ ){
-			this.getDes().setElementAt(rand.nextInt(5)+1,i);	
-		}		
+
+		for(int i = 0; i< this.getDes().size(); i++){
+			this.getDes().setElementAt(rand.nextInt(5) + 1, i);
+		}
 	}
-	
+
+
+	public void retirerDes() throws RemoteException {
+		if(this.getDes().size() > 0){
+			this.getDes().removeElementAt(0);
+		}
+	}
+
+	public void ajouterDes() throws RemoteException {
+
+		getDes().addElement(0);
+	}
+
+    // Getters & Setters
 	public String getPseudo() {
 		return pseudo;
 	}
-	
+
     public void setPseudo(String pseudo) {
-        	this.pseudo = pseudo;
+    	this.pseudo = pseudo;
 	}
-	
+
     public String getCouleur() {
 		return couleur;
 	}
@@ -194,26 +204,6 @@ public class Joueur extends UnicastRemoteObject implements Client {
 		this.des = des;
 	}
 
-	
-
-	public void retirerDes() throws RemoteException {
-		if(this.getDes().size() > 0){
-			this.getDes().removeElementAt(0);
-		}
-		
-	/*	if(this.des.size() == 0){
-			// ici on a plus de dés donc on doit quitter la partie
-			System.out.println("il ne vous reste plus de des, vous avez perdu ....CIAO");
-			this.serveurImplem.quitterPartie(this.pseudo, this.partie);
-			System.exit(0);
-		}*/
-	}
-
-	public void ajouterDes() throws RemoteException {
-		
-		getDes().addElement(0);
-	}	
-
 	public Serveur getServeurImplem() {
 		return serveurImplem;
 	}
@@ -221,7 +211,7 @@ public class Joueur extends UnicastRemoteObject implements Client {
 	public void setServeurImplem(Serveur serveurImplem) {
 		this.serveurImplem = serveurImplem;
 	}
-	
+
 	public String getPartie() {
 		return partie;
 	}
@@ -229,64 +219,79 @@ public class Joueur extends UnicastRemoteObject implements Client {
 		return statut;
 	}
 
-
-
 	public void setStatut(String statut) {
 		this.statut = statut;
 	}
 
-
 	public void setPartie(String partie) {
 		this.partie = partie;
 	}
-	public GUI getGUI(){
-            return this.fenetre;
-        }
-        public void setGUI(GUI gui){
-            this.fenetre=gui;
-        }
-        
+
 	public static void main (String[] args) throws RemoteException, MalformedURLException, NotBoundException, InterruptedException{
-		
-		System.out.println("*****************************PERUDO**************************************");
-		System.out.println("1: quitter");
-		System.out.println("2: Rejoindre ou Créer une Partie");
-		System.out.println("merci d'indiquer votre choix : ");
-		Scanner sc=new Scanner(System.in);
-		String nombre =sc.nextLine();
-	    if(nombre.contentEquals("1")){
-	    	
-	    	System.out.println("************************MERCI DE VOTRE VISITE***********************");
-	    	System.exit(0);
-	    }else{
-	    	
-	    	//LocateRegistry.createRegistry(1099);
+        Scanner sc = new Scanner(System.in);
+        String choix = "";
 
-			Serveur serveurimplem=(Serveur)Naming.lookup("rmi://10.0.0.1/Serveur");
-			Joueur clientimplem=new Joueur(serveurimplem);
-			Vector<Partie> listPartie=serveurimplem.getListePartie();
-			System.out.println("Merci de rentrer un pseudo: ");
-			Scanner nom=new Scanner(System.in);
-			String nomJ =nom.nextLine();
-//			clientimplem.setPseudo(nomJ);
-			System.out.println("Voici la liste des Parties, Rejoignez-en une ou saisissez un nom pour en créer une!! ");
-			for(int i=0; i < listPartie.size();i++){
-				System.out.println(listPartie.get(i).getNom());
-			}
-			
-			Scanner reponse=new Scanner(System.in);
-			String partie =reponse.nextLine();
-			
-			
+        Serveur serveurimplem = null;
+        Joueur clientimplem = null;
+        Vector<Partie> listPartie = null;
 
-//			clientimplem.setPartie(partie);
-			
-//			Boolean rep=serveurimplem.rejoindrePartie(clientimplem, clientimplem.getPartie());
-//			System.out.println("l'appel a renvoyé "+ rep);
-	    }
-	
-		//clientimplem.FaireAnnonce("voila la chaine passé en param");
-		
+        String nomJ = "";
+        String partie = "";
+
+        Boolean rep = true;
+
+        do{ // BBoucle en cas d'erreur d'accès à une partie
+            System.out.println("***************************** PERUDO *****************************");
+            System.out.println("Merci d'indiquer votre choix : ");
+            System.out.println("   1) quitter");
+            System.out.println("   2) Rejoindre ou Créer une Partie");
+            System.out.print("-> ");
+
+            choix = sc.nextLine();
+
+            System.out.println("[D] Parsing choice !");
+            if(choix.contentEquals("1")){
+                System.out.println("[D] Choice was 1 !");
+                System.out.println("************************* Merci de votre visite *************************");
+                System.exit(0);
+            }else{
+                System.out.println("[D] Choice was 2 !");
+                serveurimplem = (Serveur)Naming.lookup("rmi://127.0.0.1/Serveur");
+                System.out.println("[D] Lookup OK !");
+                clientimplem = new Joueur(serveurimplem);
+                System.out.println("[D] Instanciation OK !");
+                listPartie = serveurimplem.getListePartie();
+                System.out.println("[D] List party OK !");
+
+                System.out.println("[+] Merci de rentrer un pseudo :");
+                System.out.print("-> ");
+
+                nomJ = sc.nextLine();
+                clientimplem.setPseudo(nomJ);
+
+                System.out.println("Voici la liste des Parties, Rejoignez-en une ou saisissez un nom pour en créer une !!");
+                if(listPartie.size() == 0){
+                	System.out.println(" Aucune partie disponible !");
+                }else{
+                    for(int i = 0; i < listPartie.size(); i++){
+                        System.out.println(" - " + listPartie.get(i).getNom());
+                    }
+                }
+
+                System.out.print("-> ");
+                partie = sc.nextLine();
+                clientimplem.setPartie(partie);
+
+                // Cet appel renvoie false si il y a eu une erreur en rejoignat la partie
+                System.out.println("[D] Preparing to join party !");
+                rep = serveurimplem.rejoindrePartie(clientimplem, clientimplem.getPartie());
+                System.out.println("[D] Attempt attempted !");
+
+                if (!rep){
+                    System.out.println("[!] Impossible de rejoindre la partie !");
+                }
+            }
+
+        }while(!rep);
 	}
-
 }
