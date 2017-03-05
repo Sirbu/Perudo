@@ -1,5 +1,8 @@
 package stri.ProjetJava;
 
+import java.awt.Button;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;
@@ -7,7 +10,11 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.Timer;
 import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.ButtonModel;
 
 public class Joueur extends UnicastRemoteObject implements Client {
 	/**
@@ -22,11 +29,11 @@ public class Joueur extends UnicastRemoteObject implements Client {
 	private Serveur serveurImplem;
 	private String partie; 
 	private String statut;
-
-	 protected Joueur(Serveur serveurimplem) throws RemoteException {
+        private GUI fenetre;
+	 protected Joueur(Serveur serveurimplem) throws RemoteException, MalformedURLException, NotBoundException {
 		super();
 		
-		this.serveurImplem=serveurimplem;
+                this.serveurImplem = serveurimplem;
 		des = new Vector<Integer>();
 		//au debut de la partie tout le monde a 6 des initilaisé à 0
 		for(int i=0;i < 6;i++){
@@ -64,47 +71,60 @@ public class Joueur extends UnicastRemoteObject implements Client {
 		
 	}
 
-	public Annonce FaireAnnonce() throws RemoteException {	
-		int tot=0;
-		// recupére le nombre de des de chaque joueur pour l'aider a ajuster son annonce
-		Vector<Client> player =this.serveurImplem.getJoueursConnectes(this.partie);
-		for(int i=0;i< player.size();i++){
-			System.out.println("le joueur "+ player.elementAt(i).getPseudo() + " a "
-			+player.elementAt(i).getDes().size() +" Dés");
-			tot+=player.elementAt(i).getDes().size();
-		}
-		
-		System.out.println("le nombre total de dés dans le jeu est de : "+tot);
-		//on affiche la derniere annonce
-		if(this.serveurImplem.getDerniereAnnonce(this.partie) != null){
-			System.out.println("la denière mise : "+this.serveurImplem.getDerniereAnnonce(this.getPartie()).getPseudo()+" a dit "+this.serveurImplem.getDerniereAnnonce(this.getPartie()).getNombre()
-					+" Dés de "+this.serveurImplem.getDerniereAnnonce(this.getPartie()).getValeur());
-		}
-		//on affiche le jeu du joueur
-		System.out.println("votre jeu est le suivant");
-		
-		for(int i=0;i <this.getDes().size();i++){
-			if(this.getDes().elementAt(i).intValue()==1){
-				System.out.print(" |Perudo");
-			}else{
-				System.out.print(" |"+this.getDes().elementAt(i));
-			}
-		}
-		System.out.println(" ");
+	public Annonce FaireAnnonce() throws RemoteException {
+            Annonce a = null;
+            this.getGUI().annonceReady=false;
+            // D'abord on doit initialiser les boutons permettant la saisie
+            // d'une annonce !
+            this.getGUI().getNombreDes().setEnabled(true);
+            this.getGUI().getValeurDes().setEnabled(true);
+            String tmp;
+            int tot=0;
+            // recupére le nombre de des de chaque joueur pour l'aider a ajuster son annonce
+            String tmp1="";
+            Vector<Client> player =this.serveurImplem.getJoueursConnectes(this.partie);
+            for(int i=0;i< player.size();i++){
+                    tmp1+="le joueur "+ player.elementAt(i).getPseudo() + " a "
+                    +player.elementAt(i).getDes().size() +" Dés";
 
-		Scanner sc=new Scanner(System.in);
-	    
-		Annonce a;
-		String nombre = "";
-		
-		do{
-			a = null;
-			System.out.println("Merci de rentrer 1 pour sur encherir ");
-			System.out.println("Merci de rentrer 2 pour menteur ");
-			System.out.println("Merci de rentrer 3 pour tout pile ");
-			
-			nombre =sc.nextLine();
-
+                    tot+=player.elementAt(i).getDes().size();
+            }
+            tmp1+="le nombre total de dés dans le jeu est de : " + tot;
+            this.getGUI().getZoneAffichagejeu().setText(tmp1);
+            //System.out.println("le nombre total de dés dans le jeu est de : "+tot);
+            //on affiche la derniere annonce
+            tmp="\n***************** A votre tour de jouer *****************";
+            if(this.serveurImplem.getDerniereAnnonce(this.partie) != null){
+                    tmp+="la denière mise : "+this.serveurImplem.getDerniereAnnonce(this.getPartie()).getPseudo()+" a dit "+this.serveurImplem.getDerniereAnnonce(this.getPartie()).getNombre()
+                                    +" Dés de "+this.serveurImplem.getDerniereAnnonce(this.getPartie()).getValeur();
+            }
+            
+            //on affiche le jeu du joueur
+           // System.out.println("votre jeu est le suivant");
+            tmp="votre jeu est le suivant ";
+            for(int i=0;i <this.getDes().size();i++){
+                    if(this.getDes().elementAt(i).intValue()==1){
+                        tmp+=" Perudo\n";
+                    }else{
+                        tmp+=this.getDes().elementAt(i)+"\n";
+                    }
+            }
+            
+            this.getGUI().getZoneAffichageDes().setText(tmp);
+            
+            while(this.getGUI().annonceReady==false){
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(Joueur.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+        if(this.getGUI().annonceReady){        
+                if (this.getGUI().getButton3().isSelected()){//surencherire
+                        int nb=0;
+                        int val=0;
+                        Boolean bonneSaisie=false; 
+                        
 			if (nombre.contentEquals("1")){
 				int nb=0;
 				int val=0;
@@ -121,7 +141,7 @@ public class Joueur extends UnicastRemoteObject implements Client {
 				    //verification de l validité de la saisie
 				    //3 des de 4 derniere annonce
 				    // 2 des de 4 moi
-				    a = new Annonce("surencherir",nb,val,this.getPseudo(), this.partie);
+				    a = new Annonce("surencherir",nb,val,this.getPseudo(), "perudo");
 				    bonneSaisie=a.verifAnnonce(serveurImplem);    
 				 // si le joueur est le premier a jouer dans cette manche il ne peut dire toutpile ni menteur
 				}
@@ -219,7 +239,13 @@ public class Joueur extends UnicastRemoteObject implements Client {
 	public void setPartie(String partie) {
 		this.partie = partie;
 	}
-	
+	public GUI getGUI(){
+            return this.fenetre;
+        }
+        public void setGUI(GUI gui){
+            this.fenetre=gui;
+        }
+        
 	public static void main (String[] args) throws RemoteException, MalformedURLException, NotBoundException, InterruptedException{
 		
 		System.out.println("*****************************PERUDO**************************************");
@@ -235,14 +261,15 @@ public class Joueur extends UnicastRemoteObject implements Client {
 	    }else{
 	    	
 	    	//LocateRegistry.createRegistry(1099);
+
 			Serveur serveurimplem=(Serveur)Naming.lookup("rmi://10.0.0.1/Serveur");
 			Joueur clientimplem=new Joueur(serveurimplem);
+			Vector<Partie> listPartie=serveurimplem.getListePartie();
 			System.out.println("Merci de rentrer un pseudo: ");
 			Scanner nom=new Scanner(System.in);
 			String nomJ =nom.nextLine();
-			clientimplem.setPseudo(nomJ);
+//			clientimplem.setPseudo(nomJ);
 			System.out.println("Voici la liste des Parties, Rejoignez-en une ou saisissez un nom pour en créer une!! ");
-			Vector<Partie> listPartie=serveurimplem.getListePartie();
 			for(int i=0; i < listPartie.size();i++){
 				System.out.println(listPartie.get(i).getNom());
 			}
@@ -252,10 +279,10 @@ public class Joueur extends UnicastRemoteObject implements Client {
 			
 			
 
-			clientimplem.setPartie(partie);
+//			clientimplem.setPartie(partie);
 			
-			Boolean rep=serveurimplem.rejoindrePartie(clientimplem, clientimplem.getPartie());
-			System.out.println("l'appel a renvoyé "+ rep);
+//			Boolean rep=serveurimplem.rejoindrePartie(clientimplem, clientimplem.getPartie());
+//			System.out.println("l'appel a renvoyé "+ rep);
 	    }
 	
 		//clientimplem.FaireAnnonce("voila la chaine passé en param");
