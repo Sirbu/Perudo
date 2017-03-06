@@ -5,12 +5,13 @@
  */
 package stri.ProjetJava;
 
-import java.net.MalformedURLException;
 import java.rmi.Naming;
+import java.util.Vector;
+import java.util.HashMap;
 import java.rmi.RemoteException;
+import java.net.MalformedURLException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.server.UnicastRemoteObject;
-import java.util.Vector;
 
 /**
  *
@@ -22,9 +23,13 @@ public class ServeurImplem extends UnicastRemoteObject implements Serveur {
 	 */
 	private static final long serialVersionUID = 8751288996597991517L;
 
-
-    // Deviendra un Vector ou autre pour la gestion multi-parties.
-    private Vector<Partie> parties;
+     private Vector<Partie> parties;
+	// Peut être un peu bizarre, mais au moins ça sera plus facile
+	// de synchro les infos de parties chez tout le monde.
+	// La clé c'est le nom de la partie, la valeur est le nom
+	// de l'objet RMI tel qu'il est déclaré à la registry
+	// (en fait c'est la même chose)
+//    private HashMap<String, String> parties;
 
     public ServeurImplem() throws RemoteException{
         super();
@@ -34,7 +39,6 @@ public class ServeurImplem extends UnicastRemoteObject implements Serveur {
 
     public synchronized boolean rejoindrePartie(Client c, String partie) throws java.rmi.RemoteException{
         Annonce a = null;
-        Partie p = null;
 
         // D'abord on vérifie que la partie est bien en attente de joueurs
         if(this.getPartie(partie) == null){
@@ -42,7 +46,7 @@ public class ServeurImplem extends UnicastRemoteObject implements Serveur {
                 + c.getPseudo());
 
         	System.out.println("[+] Je vais donc créer la partie !");
-        	p = new Partie(partie);
+        	Partie p = new Partie(partie);
 
         	this.parties.add(p);
         }else if(this.getPartie(partie).getStatus() != "WAIT"){
@@ -76,26 +80,27 @@ public class ServeurImplem extends UnicastRemoteObject implements Serveur {
     	}
     }
 
-    public static void main(String[] args) throws RemoteException {
-        try{
-            ServeurImplem srv = new ServeurImplem();
-
-            // initialise la registry
-            LocateRegistry.createRegistry(1099);
-
-            Naming.rebind("rmi://127.0.0.1/Serveur", srv);
-            System.out.println("[+] Serveur déclaré");
-
-        }catch(MalformedURLException e){
-            e.printStackTrace();
-        }
-    }
+//    public static void main(String[] args) throws RemoteException {
+//        try{
+//            ServeurImplem srv = new ServeurImplem();
+//
+//            // initialise la registry
+//            LocateRegistry.createRegistry(1099);
+//
+//            Naming.rebind("rmi://127.0.0.1/Serveur", srv);
+//            System.out.println("[+] Serveur déclaré");
+//
+//        }catch(MalformedURLException e){
+//            e.printStackTrace();
+//        }
+//    }
 
     // Getters & Setters
     public synchronized Annonce getDerniereAnnonce(String partie) throws java.rmi.RemoteException{
         return this.getPartie(partie).getDerniereAnnonce();
     }
 
+    // Retourne la liste des joueurs de la partie donnée en paramètre.
     public synchronized Vector<Client> getJoueursConnectes(String partie) throws java.rmi.RemoteException{
         return this.getPartie(partie).getListeJoueurs();
     }
@@ -116,15 +121,21 @@ public class ServeurImplem extends UnicastRemoteObject implements Serveur {
     }
 
     // Returns the lists of waiting parties
-	public synchronized Vector<Partie> getListePartie() throws RemoteException {
-		Vector<Partie> p = new Vector<Partie>();
+	public synchronized Vector<String> getListePartie() throws RemoteException {
+		Vector<String> p = new Vector<String>();
 		int i = 0;
 		while(i < this.parties.size()){
 			if(this.parties.get(i).getStatus().contentEquals("WAIT")){
-				p.add(this.parties.get(i));
+				p.add(this.parties.get(i).getNom());
 			}
 			i++;
 		}
 		return p;
+	}
+
+	@Override
+	public void ajouterPartie(String partie) throws RemoteException {
+		// TODO Auto-generated method stub
+		
 	}
 }

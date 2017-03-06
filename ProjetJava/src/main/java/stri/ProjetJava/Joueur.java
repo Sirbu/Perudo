@@ -1,27 +1,21 @@
 package stri.ProjetJava;
 
-import java.awt.Button;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.net.MalformedURLException;
+import java.nio.channels.ClosedByInterruptException;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.Random;
 import java.util.Scanner;
-import java.util.Timer;
 import java.util.Vector;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.ButtonModel;
 
 public class Joueur extends UnicastRemoteObject implements Client {
 	/**
 	 *  identifiant serialization généré
 	 */
 	private static final long serialVersionUID = -8485613108316528072L;
-
 
 	private String pseudo;
 	private String couleur;
@@ -59,7 +53,7 @@ public class Joueur extends UnicastRemoteObject implements Client {
             System.out.println("[+] " + a.getPseudo() +" à decalré un tout pile !! ");
 		}else if(a.getType().contentEquals("surencherir")){
     		//sur enchere
-            System.out.println("[+] " + a.getPseudo()+" à Annoncer " + a.getNombre()+" Dés de "+a.getValeur());
+            System.out.println("[+] " + a.getPseudo()+" a annoncé " + a.getNombre()+" Dés de "+a.getValeur());
 		}else if(a.getType().contentEquals("info")){
             // annonce de type info
             System.out.println("[INFO] " + a.getMessage());
@@ -233,65 +227,74 @@ public class Joueur extends UnicastRemoteObject implements Client {
 
         Serveur serveurimplem = null;
         Joueur clientimplem = null;
-        Vector<Partie> listPartie = null;
+        Vector<String> listPartie = new Vector<String>();
 
         String nomJ = "";
         String partie = "";
 
         Boolean rep = true;
 
-        do{ // BBoucle en cas d'erreur d'accès à une partie
-            System.out.println("***************************** PERUDO *****************************");
-            System.out.println("Merci d'indiquer votre choix : ");
-            System.out.println("   1) quitter");
-            System.out.println("   2) Rejoindre ou Créer une Partie");
+        System.out.println("***************************** PERUDO *****************************");
+        System.out.println("Merci d'indiquer votre choix : ");
+        System.out.println("   1) quitter");
+        System.out.println("   2) Rejoindre ou Créer une Partie");
+        System.out.print("-> ");
+
+        choix = sc.nextLine();
+
+        System.out.println("[D] Parsing choice !");
+        if(choix.contentEquals("1")){
+            System.out.println("[D] Choice was 1 !");
+            System.out.println("************************* Merci de votre visite *************************");
+            System.exit(0);
+        }else{
+            serveurimplem = (Serveur)Naming.lookup("rmi://127.0.0.1/Annuaire");
+
+            clientimplem = new Joueur(serveurimplem);
+
+            listPartie = serveurimplem.getListePartie();
+
+            System.out.println("[+] Merci de rentrer un pseudo :");
             System.out.print("-> ");
 
-            choix = sc.nextLine();
+            nomJ = sc.nextLine();
+            clientimplem.setPseudo(nomJ);
 
-            System.out.println("[D] Parsing choice !");
-            if(choix.contentEquals("1")){
-                System.out.println("[D] Choice was 1 !");
-                System.out.println("************************* Merci de votre visite *************************");
-                System.exit(0);
+            System.out.println("Voici la liste des Parties, Rejoignez-en une ou saisissez un nom pour en créer une !!");
+            if(listPartie.size() == 0){
+            	System.out.println(" Aucune partie disponible !");
             }else{
-                System.out.println("[D] Choice was 2 !");
-                serveurimplem = (Serveur)Naming.lookup("rmi://127.0.0.1/Serveur");
-                System.out.println("[D] Lookup OK !");
-                clientimplem = new Joueur(serveurimplem);
-                System.out.println("[D] Instanciation OK !");
-                listPartie = serveurimplem.getListePartie();
-                System.out.println("[D] List party OK !");
-
-                System.out.println("[+] Merci de rentrer un pseudo :");
-                System.out.print("-> ");
-
-                nomJ = sc.nextLine();
-                clientimplem.setPseudo(nomJ);
-
-                System.out.println("Voici la liste des Parties, Rejoignez-en une ou saisissez un nom pour en créer une !!");
-                if(listPartie.size() == 0){
-                	System.out.println(" Aucune partie disponible !");
-                }else{
-                    for(int i = 0; i < listPartie.size(); i++){
-                        System.out.println(" - " + listPartie.get(i).getNom());
-                    }
-                }
-
-                System.out.print("-> ");
-                partie = sc.nextLine();
-                clientimplem.setPartie(partie);
-
-                // Cet appel renvoie false si il y a eu une erreur en rejoignat la partie
-                System.out.println("[D] Preparing to join party !");
-                rep = serveurimplem.rejoindrePartie(clientimplem, clientimplem.getPartie());
-                System.out.println("[D] Attempt attempted !");
-
-                if (!rep){
-                    System.out.println("[!] Impossible de rejoindre la partie !");
+                for(int i = 0; i < listPartie.size(); i++){
+                    System.out.println(" - " + listPartie.get(i));
                 }
             }
 
-        }while(!rep);
+            System.out.print("-> ");
+            partie = sc.nextLine();
+            clientimplem.setPartie(partie);
+
+            System.out.println("[D] Preparing to join party !");
+            rep = serveurimplem.rejoindrePartie(clientimplem, clientimplem.getPartie());
+            System.out.println("[D] Attempt attempted !");
+            
+            System.out.println("[D] Résultat de rejoindre : "+rep);
+            if (!rep){
+            	// La partie n'existe pas, donc on doit la créer et la déclarer à la registry
+                System.out.println("[*] La partie n'existe pas !");
+                System.out.println("[+] Création et hébergement de la partie... ");
+                clientimplem.serveurImplem.ajouterPartie(partie);
+                System.out.println("[D] PARTIE CREEE ! SIZE LIST PARTIE = "+clientimplem.serveurImplem.getListePartie().size());
+                // SI la partie n'existe pas on doit créer un serveur pour l'héberger
+                clientimplem.serveurImplem = new ServeurImplem();
+                Naming.rebind("rmi://127.0.0.1/"+partie, clientimplem.serveurImplem);
+            }else{
+            	// la partie existe, on doit la rejoindre
+            	System.out.println("[D] La partie EXISTE");
+            	clientimplem.serveurImplem = (Serveur) Naming.lookup("rmi://127.0.0.1/"+partie);
+            }
+            
+            // Ici on rejoint la partie !
+            clientimplem.serveurImplem.rejoindrePartie(clientimplem, partie);
+        }
 	}
 }
