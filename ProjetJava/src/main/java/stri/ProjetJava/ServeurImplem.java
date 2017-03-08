@@ -135,7 +135,6 @@ public class ServeurImplem extends UnicastRemoteObject implements Serveur {
 
 	@Override
 	public void ajouterPartie(String partie) throws RemoteException {
-		// TODO Auto-generated method stub
-		
+        // We don't really care about this method in here.
 	}
 }
