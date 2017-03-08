@@ -242,9 +242,7 @@ public class Joueur extends UnicastRemoteObject implements Client {
 
         choix = sc.nextLine();
 
-        System.out.println("[D] Parsing choice !");
         if(choix.contentEquals("1")){
-            System.out.println("[D] Choice was 1 !");
             System.out.println("************************* Merci de votre visite *************************");
             System.exit(0);
         }else{
@@ -273,26 +271,21 @@ public class Joueur extends UnicastRemoteObject implements Client {
             partie = sc.nextLine();
             clientimplem.setPartie(partie);
 
-            System.out.println("[D] Preparing to join party !");
             rep = serveurimplem.rejoindrePartie(clientimplem, clientimplem.getPartie());
-            System.out.println("[D] Attempt attempted !");
             
-            System.out.println("[D] Résultat de rejoindre : "+rep);
             if (!rep){
             	// La partie n'existe pas, donc on doit la créer et la déclarer à la registry
                 System.out.println("[*] La partie n'existe pas !");
                 System.out.println("[+] Création et hébergement de la partie... ");
                 clientimplem.serveurImplem.ajouterPartie(partie);
-                System.out.println("[D] PARTIE CREEE ! SIZE LIST PARTIE = "+clientimplem.serveurImplem.getListePartie().size());
                 // SI la partie n'existe pas on doit créer un serveur pour l'héberger
                 clientimplem.serveurImplem = new ServeurImplem();
                 Naming.rebind("rmi://127.0.0.1/"+partie, clientimplem.serveurImplem);
             }else{
             	// la partie existe, on doit la rejoindre
-            	System.out.println("[D] La partie EXISTE");
             	clientimplem.serveurImplem = (Serveur) Naming.lookup("rmi://127.0.0.1/"+partie);
             }
-            
+
             // Ici on rejoint la partie !
             clientimplem.serveurImplem.rejoindrePartie(clientimplem, partie);
         }

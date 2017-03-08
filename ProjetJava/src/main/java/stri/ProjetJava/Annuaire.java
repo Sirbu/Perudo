@@ -11,14 +11,14 @@ import java.util.Vector;
 
 public class Annuaire extends UnicastRemoteObject implements Serveur {
 
-	/**	
+	/**
 	 *  Generated serial ID
 	 */
 	private static final long serialVersionUID = 3056871158025906817L;
 
 	// Contient le nom de l'objet RMI avec en clé le nom de la partie.
 	private HashMap<String, String> parties;
-	
+
 	protected Annuaire() throws RemoteException {
 		super();
 
@@ -39,12 +39,12 @@ public class Annuaire extends UnicastRemoteObject implements Serveur {
             e.printStackTrace();
         }
 	}
-	
+
 
 	@Override
 	public void quitterPartie(String pseudo, String partie) throws RemoteException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -72,7 +72,6 @@ public class Annuaire extends UnicastRemoteObject implements Serveur {
 	@Override
 	public boolean rejoindrePartie(Client c, String partie) throws RemoteException {
 		String partieDemande = this.parties.get(partie);
-		System.out.println("[D] Partie Demandée : " + partie);
 		
 		if(partieDemande != null){
 			// la partie existe
@@ -82,7 +81,7 @@ public class Annuaire extends UnicastRemoteObject implements Serveur {
 			return false;
 		}
 	}
-	
+
 
 	@Override
 	public void ajouterPartie(String partie) throws RemoteException {
