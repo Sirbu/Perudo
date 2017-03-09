@@ -80,21 +80,6 @@ public class ServeurImplem extends UnicastRemoteObject implements Serveur {
     	}
     }
 
-//    public static void main(String[] args) throws RemoteException {
-//        try{
-//            ServeurImplem srv = new ServeurImplem();
-//
-//            // initialise la registry
-//            LocateRegistry.createRegistry(1099);
-//
-//            Naming.rebind("rmi://127.0.0.1/Serveur", srv);
-//            System.out.println("[+] Serveur déclaré");
-//
-//        }catch(MalformedURLException e){
-//            e.printStackTrace();
-//        }
-//    }
-
     // Getters & Setters
     public synchronized Annonce getDerniereAnnonce(String partie) throws java.rmi.RemoteException{
         return this.getPartie(partie).getDerniereAnnonce();

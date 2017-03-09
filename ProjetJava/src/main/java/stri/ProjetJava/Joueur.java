@@ -246,7 +246,7 @@ public class Joueur extends UnicastRemoteObject implements Client {
             System.out.println("************************* Merci de votre visite *************************");
             System.exit(0);
         }else{
-            serveurimplem = (Serveur)Naming.lookup("rmi://127.0.0.1/Annuaire");
+            serveurimplem = (Serveur)Naming.lookup("rmi://10.0.0.1/Annuaire");
 
             clientimplem = new Joueur(serveurimplem);
 
@@ -272,7 +272,7 @@ public class Joueur extends UnicastRemoteObject implements Client {
             clientimplem.setPartie(partie);
 
             rep = serveurimplem.rejoindrePartie(clientimplem, clientimplem.getPartie());
-            
+
             if (!rep){
             	// La partie n'existe pas, donc on doit la créer et la déclarer à la registry
                 System.out.println("[*] La partie n'existe pas !");
@@ -280,7 +280,7 @@ public class Joueur extends UnicastRemoteObject implements Client {
                 clientimplem.serveurImplem.ajouterPartie(partie);
                 // SI la partie n'existe pas on doit créer un serveur pour l'héberger
                 clientimplem.serveurImplem = new ServeurImplem();
-                Naming.rebind("rmi://127.0.0.1/"+partie, clientimplem.serveurImplem);
+                Naming.rebind("rmi://10.0.0.1/"+partie, clientimplem.serveurImplem);
             }else{
             	// la partie existe, on doit la rejoindre
             	clientimplem.serveurImplem = (Serveur) Naming.lookup("rmi://127.0.0.1/"+partie);

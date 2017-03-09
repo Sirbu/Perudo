@@ -30,7 +30,7 @@ public class Partie implements Runnable, ActionListener, Serializable{
 	 * Generated UID
 	 */
 	private static final long serialVersionUID = 7389133810306179749L;
-	
+
 	private String nom;
     private String status;              // WAIT || RUNNING || OVER
     private int nbrJoueursMax = 6;      // Pourra être modifié à l'occaz

@@ -32,7 +32,7 @@ public class Annuaire extends UnicastRemoteObject implements Serveur {
             // initialise la registry
             LocateRegistry.createRegistry(1099);
 
-            Naming.rebind("rmi://127.0.0.1/Annuaire", srv);
+            Naming.rebind("rmi://10.0.0.1/Annuaire", srv);
             System.out.println("[+] Serveur déclaré");
 
         }catch(MalformedURLException e){
@@ -72,7 +72,7 @@ public class Annuaire extends UnicastRemoteObject implements Serveur {
 	@Override
 	public boolean rejoindrePartie(Client c, String partie) throws RemoteException {
 		String partieDemande = this.parties.get(partie);
-		
+
 		if(partieDemande != null){
 			// la partie existe
 			return true;
